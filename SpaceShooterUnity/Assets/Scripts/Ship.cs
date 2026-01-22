@@ -51,15 +51,23 @@ public class Ship : MonoBehaviour
         Debug.Log("Fire Projectile");
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+        Destroy(newProjectile, 4);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damageToTake)
     { 
-    
+        currentHealth -= damageToTake;
+
+        if (currentHealth <= 0)
+        {
+            Explode();
+        }
     }
 
     public void Explode()
-    { 
-    
+    {
+        //TODO: Make cool 'splosion particles
+        Destroy(gameObject);
     }
 }
