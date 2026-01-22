@@ -27,6 +27,14 @@ public class Ship : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        if (rb.velocity.magnitude > maxSpeed)
+        { 
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
+
     public void Thrust()
     {
         rb.AddForce(transform.up * acceleration);
