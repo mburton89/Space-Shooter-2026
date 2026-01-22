@@ -15,6 +15,12 @@ public class Ship : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public GameObject projectilePrefab;
+
+    public float projectileVelocity;
+
+    public Transform projectileSpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +47,10 @@ public class Ship : MonoBehaviour
     }
 
     public void PewPew()
-    { 
-    
+    {
+        Debug.Log("Fire Projectile");
+        GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
     }
 
     public void TakeDamage()
