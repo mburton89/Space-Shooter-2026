@@ -17,26 +17,31 @@ public class Ship : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    public GameObject explosionPrefab;
+
+
     public float projectileVelocity;
 
     public Transform projectileSpawnPoint;
 
+    ParticleSystem thrustParticles;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        thrustParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
         if (rb.linearVelocity.magnitude > maxSpeed)
-        { 
+        {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
     }
@@ -44,6 +49,9 @@ public class Ship : MonoBehaviour
     public void Thrust()
     {
         rb.AddForce(transform.up * acceleration);
+
+        thrustParticles.Emit(1);
+
     }
 
     public void PewPew()
@@ -56,7 +64,7 @@ public class Ship : MonoBehaviour
     }
 
     public void TakeDamage(int damageToTake)
-    { 
+    {
         currentHealth -= damageToTake;
 
         if (currentHealth <= 0)
@@ -68,6 +76,10 @@ public class Ship : MonoBehaviour
     public void Explode()
     {
         //TODO: Make cool 'splosion particles
+        GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+
         Destroy(gameObject);
+
+
     }
 }
