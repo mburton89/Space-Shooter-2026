@@ -21,10 +21,14 @@ public class Ship : MonoBehaviour
 
     public Transform projectileSpawnPoint;
 
+    ParticleSystem thrustParticles;
+
+    public GameObject explosionPrefab;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        thrustParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,7 @@ public class Ship : MonoBehaviour
     public void Thrust()
     {
         rb.AddForce(transform.up * acceleration);
+        thrustParticles.Emit(1);
     }
 
     public void PewPew()
@@ -62,12 +67,16 @@ public class Ship : MonoBehaviour
         if (currentHealth <= 0)
         {
             Explode();
+
+
         }
     }
 
     public void Explode()
     {
         //TODO: Make cool 'splosion particles
+        GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
+
         Destroy(gameObject);
     }
 }
