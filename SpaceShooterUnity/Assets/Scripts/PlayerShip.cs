@@ -4,37 +4,48 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
+  {
+
+  }
+
+  // Update is called once per frame
+  private void FixedUpdate()
+  {
+    FollowMouse();
+    Camera.main.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+
+    if (Input.GetMouseButton(0))
     {
-        
+      PewPew(1500f);
     }
 
-    // Update is called once per frame
-    void Update()
+    if (Input.GetKey(KeyCode.W))
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            PewPew();
-        }
-
-        if (Input.GetMouseButton(1))
-        {
-            Thrust();
-        }
-
-        FollowMouse(); 
+      Thrust(1f, true);
     }
-
-    void FollowMouse()
+    if (Input.GetKey(KeyCode.S))
     {
-        //Step 1: Find out where mouse cursor is relative to camera and screen
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-
-        //Step 2: Determine the direction between the ship and the mouse cursor
-        Vector2 directionToFace = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-
-        //Step 3: Make the ship actually point toward the mouse cursor
-        transform.up = directionToFace;
+      Thrust(-1f, true);
     }
+    if (Input.GetKey(KeyCode.D))
+    {
+      Thrust(1f, false);
+    }
+    if (Input.GetKey(KeyCode.A))
+    {
+      Thrust(-1f, false);
+    }
+  }
+
+
+  void FollowMouse()
+  {
+    Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+
+    Vector2 dirToFace = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+
+    transform.up = dirToFace;
+  }
 }

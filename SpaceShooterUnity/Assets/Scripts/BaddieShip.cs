@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class BaddieShip : Ship
 {
-    Transform target;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = FindObjectOfType<PlayerShip>().transform;
-    }
+  public float turnSpeed;
+  Transform target;
+  // Start is called before the first frame update
+  void Start()
+  {
+    target = FindObjectOfType<PlayerShip>().transform;
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        FollowTarget();
-    }
+  // Update is called once per frame
+  void FixedUpdate()
+  {
+    FollowTarget();
+    Thrust(1f, true);
+  }
 
-    void FollowTarget()
-    {
-        Vector2 directionToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-        transform.up = directionToFace;
-        Thrust();
-    }
+  void FollowTarget()
+  {
+    Vector2 dirToFace = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+
+    transform.up = Vector2.Lerp(transform.up, dirToFace.normalized, turnSpeed);
+  }
 }

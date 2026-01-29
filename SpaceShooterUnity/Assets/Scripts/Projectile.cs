@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int damageToGive;
+  public int dmg;
+  public GameObject owner;
 
-    [HideInInspector] public GameObject firingShip; //The ship that fired the projectile. This helps us avoid doing damage to the wrong ship.
-
-    private void OnTriggerEnter2D(Collider2D collision)
+  void OnTriggerEnter2D(Collider2D collision)
+  {
+    if (collision.GetComponent<Ship>() && collision.gameObject != owner)
     {
-        //If we made it this far, we collided with SOMETHING
-
-        if (collision.GetComponent<Ship>() && collision.gameObject != firingShip)
-        {
-            //If we made it this far, the thing we collided with is a SHIP. WOOHOO! ANNNNNNDD, its not the ship that fired the projectile
-
-            collision.GetComponent<Ship>().TakeDamage(damageToGive);
-
-            Destroy(gameObject);
-        }
+      collision.GetComponent<Ship>().TakeDamage(dmg);
+      Destroy(gameObject);
     }
+
+  }
 }
