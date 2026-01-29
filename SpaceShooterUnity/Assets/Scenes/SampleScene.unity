@@ -717,7 +717,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.9547169, g: 0.9547169, b: 0.9547169, a: 1}
-        key1: {r: 0, g: 0.7433963, b: 0.07798183, a: 1}
+        key1: {r: 0.033143394, g: 0.5018867, b: 0.082484834, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -746,18 +746,18 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 0.98679245, g: 1, b: 0.9881827, a: 1}
-        key1: {r: 0.9118862, g: 1, b: 0, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.9864351, g: 0.9924528, b: 0, a: 1}
+        key1: {r: 0, g: 1, b: 0.7209523, a: 1}
+        key2: {r: 0, g: 1, b: 0.7209523, a: 1}
+        key3: {r: 0, g: 1, b: 0.7209523, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 723
-        ctime1: 27971
-        ctime2: 0
-        ctime3: 0
+        ctime1: 40511
+        ctime2: 40511
+        ctime3: 27860
         ctime4: 0
         ctime5: 0
         ctime6: 0
