@@ -18,6 +18,7 @@ public class Ship : MonoBehaviour
   public Rigidbody2D rb;
 
   public GameObject projectilePrefab;
+  public GameObject explosionPrefab;
   public Transform projectileSpawnPoint;
 
 
@@ -74,6 +75,8 @@ public class Ship : MonoBehaviour
 
   public void Explode()
   {
+    GameObject explosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+    Destroy(explosion, 1f);
     Destroy(gameObject);
   }
 
