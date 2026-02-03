@@ -16,14 +16,13 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject projectilePrefab;
+    public GameObject explosionPrefab;
 
     public float projectileVelocity;
 
     public Transform projectileSpawnPoint;
 
     ParticleSystem thrustParticles;
-
-    public GameObject explosionPrefab;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,13 +33,13 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void FixedUpdate()
     {
         if (rb.linearVelocity.magnitude > maxSpeed)
-        {
+        { 
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
     }
@@ -61,7 +60,7 @@ public class Ship : MonoBehaviour
     }
 
     public void TakeDamage(int damageToTake)
-    {
+    { 
         currentHealth -= damageToTake;
 
         if (currentHealth <= 0)
@@ -74,7 +73,7 @@ public class Ship : MonoBehaviour
     {
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
+
         Destroy(gameObject);
     }
-
 }
