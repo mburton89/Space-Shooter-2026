@@ -24,12 +24,17 @@ public class Ship : MonoBehaviour
 
     public Transform projectileSpawnPoint;
 
+    public AudioSource shootAudioSource;
+
+    public bool canFire;
+
     ParticleSystem thrustParticles;
 
     // Start is called before the first frame update
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
+        canFire = true;
     }
 
     // Update is called once per frame
@@ -58,7 +63,13 @@ public class Ship : MonoBehaviour
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
-        Destroy(newProjectile, 4);
+
+        float newPitch = Random.Range(0.5f, 2f);
+        shootAudioSource.pitch = newPitch;
+        shootAudioSource.Play();
+
+        StartCoroutine(Reload());
+        Destroy(newProjectile, 3);
     }
 
     public void TakeDamage(int damageToTake)
@@ -76,5 +87,12 @@ public class Ship : MonoBehaviour
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    private IEnumerator Reload()
+    {
+        canFire = false;
+        yield return new WaitForSeconds(fireRate);
+        canFire = true;
     }
 }
