@@ -6,16 +6,61 @@ public class BaddieShip : Ship
 {
     Transform target;
 
+    public bool isShooter;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         target = FindObjectOfType<PlayerShip>().transform;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+         Debug.Log("1BaddieShip collided with " + collision.gameObject.name);
+        if (collision.gameObject.GetComponent<PlayerShip>())
+        {
+            Debug.Log("BaddieShip collided with Player Ship " + collision.gameObject.name);
+
+            //If this far, we collided with THE PLAYER SHIP
+            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
+            Explode();
+
+        }
+           
+    }
+
+    private void OnCollsionEnter2D(Collision2D collision)
+    {
+        //If we're here, we collided with SOMETHING
+        Debug.Log("2BaddieShip collided with " + collision.gameObject.name);
+
+
+        if (collision.gameObject.GetComponent<PlayerShip>())
+        {
+            Debug.Log("BaddieShip collided with Player Ship " + collision.gameObject.name);
+
+            //If this far, we collided with THE PLAYER SHIP
+            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
+            Explode();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(target != null)
+        {
         FollowTarget();
+            
+        if (isShooter && canPewPew)
+            {
+                PewPew();
+            }
+
+        }
+        
     }
 
     void FollowTarget()
