@@ -6,6 +6,8 @@ public class BaddieShip : Ship
 {
     Transform target;
 
+    public bool isShooter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,6 @@ public class BaddieShip : Ship
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //if we made it this far, we collided with SOMETHING
-
 
         if (collision.gameObject.GetComponent<PlayerShip>())
         {
@@ -28,7 +29,15 @@ public class BaddieShip : Ship
     // Update is called once per frame
     void Update()
     {
-        FollowTarget();
+        if (target != null)
+        {
+            FollowTarget();
+
+            if (isShooter && canPewPew)
+            {
+                PewPew();
+            }
+        }
     }
 
     void FollowTarget()

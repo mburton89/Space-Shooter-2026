@@ -4906,7 +4906,7 @@ GameObject:
   - component: {fileID: 6884017891571539435}
   - component: {fileID: 4715250908697283267}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Audio Source - Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
