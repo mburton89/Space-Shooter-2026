@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9031248132456319632}
   - component: {fileID: 8908704183436407296}
   m_Layer: 0
-  m_Name: BaddieShip
+  m_Name: Rammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,15 +164,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 10
   maxHP: 10
-  accel: 20
+  accel: 40
   currentSpeed: 0
-  maxSpeed: 40
+  maxSpeed: 60
   fireRate: 0
   rb: {fileID: 939969185716075255}
   projectilePrefab: {fileID: 0}
   explosionPrefab: {fileID: 5659396962058880066, guid: 8dd74715d645144b888216f0cc0a492d, type: 3}
   projectileSpawnPoint: {fileID: 8525526898619379251}
-  turnSpeed: 0.1
+  pewPewSound: {fileID: 0}
+  turnSpeed: 0.3
+  baddieType: 0
 --- !u!1 &8125137369923055969
 GameObject:
   m_ObjectHideFlags: 0

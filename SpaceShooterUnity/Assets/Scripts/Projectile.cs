@@ -6,14 +6,27 @@ public class Projectile : MonoBehaviour
 {
   public int dmg;
   public GameObject owner;
+  public bool isPlayerProjectile;
 
   void OnTriggerEnter2D(Collider2D collision)
   {
-    if (collision.GetComponent<Ship>() && collision.gameObject != owner)
+    if (isPlayerProjectile)
     {
-      collision.GetComponent<Ship>().TakeDamage(dmg);
-      Destroy(gameObject);
+      if (collision.GetComponent<BaddieShip>())
+      {
+        collision.GetComponent<BaddieShip>().TakeDamage(dmg);
+        Destroy(gameObject);
+      }
     }
+    else
+    {
+      if (collision.GetComponent<PlayerShip>())
+      {
+        collision.GetComponent<PlayerShip>().TakeDamage(dmg);
+        Destroy(gameObject);
+      }
+    }
+
 
   }
 }

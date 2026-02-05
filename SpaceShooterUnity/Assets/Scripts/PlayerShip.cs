@@ -21,22 +21,7 @@ public class PlayerShip : Ship
       PewPew(1500f);
     }
 
-    if (Input.GetKey(KeyCode.W))
-    {
-      Thrust(1f, true);
-    }
-    if (Input.GetKey(KeyCode.S))
-    {
-      Thrust(-1f, true);
-    }
-    if (Input.GetKey(KeyCode.D))
-    {
-      Thrust(1f, false);
-    }
-    if (Input.GetKey(KeyCode.A))
-    {
-      Thrust(-1f, false);
-    }
+
   }
 
 
