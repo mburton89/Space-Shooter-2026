@@ -15,7 +15,7 @@ public class PlayerShip : Ship
     {
         if (Input.GetMouseButtonDown(0))
         {
-            PewPew();
+            FireProjectile();
         }
 
         if (Input.GetMouseButton(1))

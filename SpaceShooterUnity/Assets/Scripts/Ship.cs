@@ -24,10 +24,16 @@ public class Ship : MonoBehaviour
 
     ParticleSystem thrustParticles;
 
+    public AudioSource fireProjectileAudioSource;
+    public AudioSource takeDamageAudioSource;
+
+    [HideInInspector] public bool canFire;
+
     // Start is called before the first frame update
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
+        canFire = true;
     }
 
     // Update is called once per frame
@@ -50,18 +56,33 @@ public class Ship : MonoBehaviour
         thrustParticles.Emit(1);
     }
 
-    public void PewPew()
+    public void FireProjectile()
     {
-        Debug.Log("Fire Projectile");
-        GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
-        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
-        Destroy(newProjectile, 4);
+            Debug.Log("Fire Projectile");
+            GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+            float newPitch = Random.Range(0.7f, 1.3f);
+
+            fireProjectileAudioSource.pitch = newPitch;
+
+            fireProjectileAudioSource.Play();
+
+            StartCoroutine(CoolDown());
+
+            Destroy(newProjectile, 4);
     }
 
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
+
+        float newPitch = Random.Range(0.8f, 1.3f);
+
+        takeDamageAudioSource.pitch = newPitch;
+
+        takeDamageAudioSource.Play();
 
         if (currentHealth <= 0)
         {
@@ -71,9 +92,16 @@ public class Ship : MonoBehaviour
 
     public void Explode()
     {
-        //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
 
         Destroy(gameObject);
     }
+
+    private IEnumerator CoolDown()
+    {
+        canFire = false;
+        yield return new WaitForSeconds(fireRate);
+        canFire = true;
+    }
+
 }

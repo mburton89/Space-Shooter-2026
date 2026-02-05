@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8421357991344863876}
   - component: {fileID: 1608244158682407726}
   m_Layer: 0
-  m_Name: Particle System - Explosion
+  m_Name: Particle System - Player Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,23 +222,23 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 4
+      minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
-        key1: {r: 1, g: 0.87463605, b: 0, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 0}
-        key3: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 0.45882356, g: 0.90413314, b: 1, a: 1}
+        key2: {r: 0.18746471, g: 0, b: 1, a: 0}
+        key3: {r: 0.18746471, g: 0, b: 1, a: 0}
         key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 49344
-        ctime2: 65535
-        ctime3: 65535
+        ctime1: 22590
+        ctime2: 61757
+        ctime3: 60986
         ctime4: 65535
         ctime5: 0
         ctime6: 0
@@ -253,7 +253,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -1359,7 +1359,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1368,18 +1368,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.4816036, g: 0.111320674, b: 1, a: 1}
+        key2: {r: 0.24313723, g: 0.35922766, b: 0.8392157, a: 0}
+        key3: {r: 0.20225367, g: 0.19215684, b: 0.6627451, a: 0}
+        key4: {r: 0.09983436, g: 0.08654323, b: 0.3207547, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
+        ctime1: 19352
+        ctime2: 38781
+        ctime3: 51272
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -1393,7 +1393,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: -1
-        m_NumColorKeys: 2
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -4984,7 +4984,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.919
       inSlope: 0
       outSlope: 0
       tangentMode: 0
