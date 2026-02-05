@@ -24,6 +24,8 @@ public class Ship : MonoBehaviour
 
     ParticleSystem thrustParticles;
 
+    public AudioSource pewPewAudioSource;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -56,6 +58,14 @@ public class Ship : MonoBehaviour
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+
+        pewPewAudioSource.pitch = newPitch;
+
+        pewPewAudioSource.Play();
+
+
         Destroy(newProjectile, 4);
     }
 
