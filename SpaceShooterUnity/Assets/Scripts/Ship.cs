@@ -27,9 +27,13 @@ public class Ship : MonoBehaviour
 
     public AudioSource pewPewAudioSource;
 
+    public bool canPewPew;
+
     // Start is called before the first frame update
     void Awake()
     {
+        canPewPew = true;
+
         thrustParticles = GetComponentInChildren<ParticleSystem>();
     }
 
@@ -66,6 +70,8 @@ public class Ship : MonoBehaviour
 
         pewPewAudioSource.pitch = newPitch;
 
+        StartCoroutine(CoolDown());
+
         Destroy(newProjectile, 4);
     }
 
@@ -85,5 +91,11 @@ public class Ship : MonoBehaviour
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
         Destroy(gameObject);
     }
-
+    
+    private IEnumerator CoolDown()
+    {
+        canPewPew = false;
+        yield return new WaitForSeconds(fireRate);
+        canPewPew = true;
+    }
 }
