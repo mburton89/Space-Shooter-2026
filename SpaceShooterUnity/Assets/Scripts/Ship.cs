@@ -25,6 +25,10 @@ public class Ship : MonoBehaviour
 
     ParticleSystem thrustParticles;
 
+    public AudioSource pewPewAudioSource;
+
+    public bool canPewPew = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,6 +61,15 @@ public class Ship : MonoBehaviour
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.5f, 1.2f);
+
+        pewPewAudioSource.pitch = newPitch;
+
+        pewPewAudioSource.Play();
+
+        StartCoroutine(CoolDown());
+
         Destroy(newProjectile, 4);
     }
 
@@ -75,5 +88,14 @@ public class Ship : MonoBehaviour
         //TODO: Make cool 'splosion particles
         GameObject newExlosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
+        Destroy(newExlosion, 1);
     }
+
+    private IEnumerator CoolDown()
+    {
+        canPewPew = false;
+        yield return new WaitForSeconds(fireRate);
+        canPewPew = true;
+    }
+
 }
