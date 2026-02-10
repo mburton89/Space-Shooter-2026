@@ -82,6 +82,7 @@ public class Ship : MonoBehaviour
     currentHP -= dmgToTake;
     if (isPlayerShip)
     {
+      HUD.Instance.UpdateHealthUI(currentHP, maxHP);
       dmgSound.Play();
     }
     if (currentHP <= 0)
