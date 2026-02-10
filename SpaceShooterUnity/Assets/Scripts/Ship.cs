@@ -69,12 +69,17 @@ public class Ship : MonoBehaviour
         shootAudioSource.Play();
 
         StartCoroutine(Reload());
-        Destroy(newProjectile, 3);
+        Destroy(newProjectile, 5);
     }
 
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
+
+        if(GetComponent<PlayerShip>())  //display 
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
 
         if (currentHealth <= 0)
         {
@@ -84,7 +89,6 @@ public class Ship : MonoBehaviour
 
     public void Explode()
     {
-        //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
