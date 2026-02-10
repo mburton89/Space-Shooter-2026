@@ -80,6 +80,11 @@ public class Ship : MonoBehaviour
 
         takeHitAudioSource.Play();
 
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+
         if (currentHealth <= 0)
         {
             Explode();
