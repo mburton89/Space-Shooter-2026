@@ -416,6 +416,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 385684540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &168813035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168813037}
+  - component: {fileID: 168813036}
+  m_Layer: 0
+  m_Name: Star Spawner Bright
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &168813036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168813035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c14f43a11b476e4c8cec3bbda722db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarSpawner
+  maxX: 1000
+  maxY: 1000
+  minZ: 400
+  maxZ: 1000
+  numberOfStarsToSpawn: 5000
+  star: {fileID: 6590909819695249434, guid: 5add5d358e5e8944bb8f27597613a6f0, type: 3}
+--- !u!4 &168813037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168813035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.87667, y: 3.65608, z: -1.51333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179994007
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +541,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179994007}
   m_CullTransparentMesh: 1
+--- !u!1 &341528103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341528105}
+  - component: {fileID: 341528104}
+  m_Layer: 0
+  m_Name: Star Spawner Suns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &341528104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c14f43a11b476e4c8cec3bbda722db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarSpawner
+  maxX: 1000
+  maxY: 1000
+  minZ: 30
+  maxZ: 400
+  numberOfStarsToSpawn: 600
+  star: {fileID: 733722135416851650, guid: fb5e8ecd866427c418b791ca5e36364f, type: 3}
+--- !u!4 &341528105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.87667, y: 3.65608, z: -1.51333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372709372
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,9 +693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 2
+  acceleration: 3
   currentSpeed: 0
-  maxSpeed: 2
+  maxSpeed: 13
   fireRate: 1
   rb: {fileID: 385684538}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
@@ -737,8 +837,8 @@ Transform:
   m_GameObject: {fileID: 385684535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.75, y: 2.4, z: 0}
-  m_LocalScale: {x: 1.58, y: 1, z: 1}
+  m_LocalPosition: {x: -6.35, y: 2.4, z: 0}
+  m_LocalScale: {x: 1.58, y: 1.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 166589622}
@@ -760,6 +860,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -785,7 +886,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2264151, g: 0.041651838, b: 0.17714494, a: 0}
+  m_BackGroundColor: {r: 0.20754719, g: 0.013705918, b: 0.17443813, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -809,7 +910,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -841,6 +942,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ffe7d524220274db4e0f5bec5ccf0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  target: {fileID: 794190064}
 --- !u!1 &527505951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1493,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.87, z: 0}
-  m_LocalScale: {x: 1, y: 1.11, z: 1}
+  m_LocalScale: {x: 1.23, y: 1.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1570301722}
@@ -1403,9 +1517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   maxHealth: 5
-  acceleration: 4
+  acceleration: 5
   currentSpeed: 0
-  maxSpeed: 10
+  maxSpeed: 15
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: 7a45215850a588049bc95c5fce18c1a3, type: 3}
@@ -11506,14 +11620,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 1
+  acceleration: 3
   currentSpeed: 0
-  maxSpeed: 1
+  maxSpeed: 12
   fireRate: 1
   rb: {fileID: 1587516231}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 6603328854964769578, guid: 55603f203d60fee488cd90d55657adc4, type: 3}
-  projectileVelocity: 200
+  projectileVelocity: 450
   projectileSpawnPoint: {fileID: 1833128470}
   explosionSpawnPoint: {fileID: 1136910870}
   pewPewAudioSource: {fileID: 527505953}
@@ -11650,8 +11764,8 @@ Transform:
   m_GameObject: {fileID: 1587516228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.79, y: 2.36, z: 0}
-  m_LocalScale: {x: 0.84, y: 0.62, z: 1}
+  m_LocalPosition: {x: 6.67, y: 2.36, z: 0}
+  m_LocalScale: {x: 0.84, y: 2.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1833128470}
@@ -16523,7 +16637,7 @@ Transform:
   m_GameObject: {fileID: 1641619939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.010000229, y: -0.27, z: 0}
+  m_LocalPosition: {x: -0.010000229, y: -0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16689,6 +16803,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794190064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1812988600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812988601}
+  - component: {fileID: 1812988602}
+  m_Layer: 0
+  m_Name: Star Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1812988601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812988600}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.87667, y: 3.65608, z: -1.51333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812988602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812988600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c14f43a11b476e4c8cec3bbda722db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarSpawner
+  maxX: 1000
+  maxY: 1000
+  minZ: 450
+  maxZ: 2500
+  numberOfStarsToSpawn: 9000
+  star: {fileID: 6393179015888177457, guid: 207516d6b600d904f85a38bbd50e6428, type: 3}
 --- !u!1 &1833128469
 GameObject:
   m_ObjectHideFlags: 0
@@ -16714,7 +16878,7 @@ Transform:
   m_GameObject: {fileID: 1833128469}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -0.01, z: 0}
+  m_LocalPosition: {x: -0, y: 0.551, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16730,3 +16894,6 @@ SceneRoots:
   - {fileID: 1587516233}
   - {fileID: 959287996}
   - {fileID: 372709375}
+  - {fileID: 1812988601}
+  - {fileID: 168813037}
+  - {fileID: 341528105}
