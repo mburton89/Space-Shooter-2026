@@ -11,7 +11,8 @@ public class PlayerShip : Ship
     }
 
     // Update is called once per frame
-    void Update()
+    
+    private void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
