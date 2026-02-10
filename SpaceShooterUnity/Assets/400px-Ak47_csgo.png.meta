@@ -1,0 +1,821 @@
+fileFormatVersion: 2
+guid: 5d31ce63625a0ad41af38c2918199d8d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2306962310623251195
+    second: 400px-Ak47_csgo_0
+  - first:
+      213: -8098592849561441988
+    second: 400px-Ak47_csgo_1
+  - first:
+      213: -7133924259709947144
+    second: 400px-Ak47_csgo_2
+  - first:
+      213: -3526265772175893029
+    second: 400px-Ak47_csgo_3
+  - first:
+      213: 3463696938041909354
+    second: 400px-Ak47_csgo_4
+  - first:
+      213: -6227884216702949418
+    second: 400px-Ak47_csgo_5
+  - first:
+      213: -5046460751363294337
+    second: 400px-Ak47_csgo_6
+  - first:
+      213: -7017904287430960944
+    second: 400px-Ak47_csgo_7
+  - first:
+      213: -6070767464178421095
+    second: 400px-Ak47_csgo_8
+  - first:
+      213: -2706305152272062392
+    second: 400px-Ak47_csgo_9
+  - first:
+      213: -7388622584470995663
+    second: 400px-Ak47_csgo_10
+  - first:
+      213: -5089022522918994309
+    second: 400px-Ak47_csgo_11
+  - first:
+      213: 202451881525507648
+    second: 400px-Ak47_csgo_12
+  - first:
+      213: -8160330365073512664
+    second: 400px-Ak47_csgo_13
+  - first:
+      213: 2012037435473499473
+    second: 400px-Ak47_csgo_14
+  - first:
+      213: -8556632945580664666
+    second: 400px-Ak47_csgo_15
+  - first:
+      213: -3763253736098048539
+    second: 400px-Ak47_csgo_16
+  - first:
+      213: -340344746211233533
+    second: 400px-Ak47_csgo_17
+  - first:
+      213: -5752233343492705417
+    second: 400px-Ak47_csgo_18
+  - first:
+      213: -8249081118905255242
+    second: 400px-Ak47_csgo_19
+  - first:
+      213: -7963618044797999733
+    second: 400px-Ak47_csgo_20
+  - first:
+      213: -7258681345798027870
+    second: 400px-Ak47_csgo_21
+  - first:
+      213: 4265759865097147096
+    second: 400px-Ak47_csgo_22
+  - first:
+      213: -2096113856017532805
+    second: 400px-Ak47_csgo_23
+  - first:
+      213: 1657277953578901872
+    second: 400px-Ak47_csgo_24
+  - first:
+      213: 9067723632059537733
+    second: 400px-Ak47_csgo_25
+  - first:
+      213: -6702144848304224121
+    second: 400px-Ak47_csgo_26
+  - first:
+      213: 2281311436966786885
+    second: 400px-Ak47_csgo_27
+  - first:
+      213: 6319012795024266153
+    second: 400px-Ak47_csgo_28
+  - first:
+      213: 4528610589610478504
+    second: 400px-Ak47_csgo_29
+  - first:
+      213: 8621328179755171545
+    second: 400px-Ak47_csgo_30
+  - first:
+      213: -8027593101773630044
+    second: 400px-Ak47_csgo_31
+  - first:
+      213: -4865847136559113155
+    second: 400px-Ak47_csgo_32
+  - first:
+      213: -3187891582474010591
+    second: 400px-Ak47_csgo_33
+  - first:
+      213: 4615437076365535582
+    second: 400px-Ak47_csgo_34
+  - first:
+      213: -3645764790720819092
+    second: 400px-Ak47_csgo_35
+  - first:
+      213: -8270431691290946086
+    second: 400px-Ak47_csgo_36
+  - first:
+      213: -1298508491341109647
+    second: 400px-Ak47_csgo_37
+  - first:
+      213: 288549553996163316
+    second: 400px-Ak47_csgo_38
+  - first:
+      213: -7166164581835875768
+    second: 400px-Ak47_csgo_39
+  - first:
+      213: -5883717551337235554
+    second: 400px-Ak47_csgo_40
+  - first:
+      213: -2784476770174050263
+    second: 400px-Ak47_csgo_41
+  - first:
+      213: 5542156224137577813
+    second: 400px-Ak47_csgo_42
+  - first:
+      213: -78616091872469304
+    second: 400px-Ak47_csgo_43
+  - first:
+      213: -4234882768218246200
+    second: 400px-Ak47_csgo_44
+  - first:
+      213: -3576985402023653622
+    second: 400px-Ak47_csgo_45
+  - first:
+      213: -3576921541309800754
+    second: 400px-Ak47_csgo_46
+  - first:
+      213: -6278934222627318101
+    second: 400px-Ak47_csgo_47
+  - first:
+      213: 352868176168529065
+    second: 400px-Ak47_csgo_48
+  - first:
+      213: 387718614183743106
+    second: 400px-Ak47_csgo_49
+  - first:
+      213: -284800922043759587
+    second: 400px-Ak47_csgo_50
+  - first:
+      213: 8322797294842503362
+    second: 400px-Ak47_csgo_51
+  - first:
+      213: -3558683786584981386
+    second: 400px-Ak47_csgo_52
+  - first:
+      213: -2105905794642756908
+    second: 400px-Ak47_csgo_53
+  - first:
+      213: -6333826370766239683
+    second: 400px-Ak47_csgo_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 133
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfac9eaaff9f30020800000000000000
+      internalID: 2306962310623251195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 127
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c392f5526b40c9f80800000000000000
+      internalID: -8098592849561441988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 125
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f27275dea53ffc90800000000000000
+      internalID: -7133924259709947144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 117
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd56d196ff201fc0800000000000000
+      internalID: -3526265772175893029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 120
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99275a7d72d40cba0800000000000000
+      internalID: -6070767464178421095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 115
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848a3097dc5417ad0800000000000000
+      internalID: -2706305152272062392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 115
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d7d21f7e6567990800000000000000
+      internalID: -7388622584470995663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_11
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 115
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e737b6af82069b0800000000000000
+      internalID: -5089022522918994309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 115
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046ff62e9e04fc200800000000000000
+      internalID: 202451881525507648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_13
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 119
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827a5fba4cea0ce80800000000000000
+      internalID: -8160330365073512664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 118
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1559f2823613ceb10800000000000000
+      internalID: 2012037435473499473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 119
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a89245cbabb04980800000000000000
+      internalID: -8556632945580664666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_16
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 118
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5d6346aac36cbc0800000000000000
+      internalID: -3763253736098048539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0712825a485dff610800000000000000
+      internalID: 1657277953578901872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_25
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549d25ab99607dd70800000000000000
+      internalID: 9067723632059537733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_26
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788cc9b15c23df2a0800000000000000
+      internalID: -6702144848304224121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547f07e3aa8d8af10800000000000000
+      internalID: 2281311436966786885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_28
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3d19258a4a1b750800000000000000
+      internalID: 6319012795024266153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_29
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab0ecf665bd8de30800000000000000
+      internalID: 4528610589610478504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_30
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de3f5e3d4c15a770800000000000000
+      internalID: 8621328179755171545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 59
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5186f1b92489090800000000000000
+      internalID: -8027593101773630044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 400px-Ak47_csgo_32
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cda064fc9097cb0800000000000000
+      internalID: -4865847136559113155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 20aa44b97ce17fc40b151cdb18e9707a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      400px-Ak47_csgo_0: 2306962310623251195
+      400px-Ak47_csgo_1: -8098592849561441988
+      400px-Ak47_csgo_10: -7388622584470995663
+      400px-Ak47_csgo_11: -5089022522918994309
+      400px-Ak47_csgo_12: 202451881525507648
+      400px-Ak47_csgo_13: -8160330365073512664
+      400px-Ak47_csgo_14: 2012037435473499473
+      400px-Ak47_csgo_15: -8556632945580664666
+      400px-Ak47_csgo_16: -3763253736098048539
+      400px-Ak47_csgo_17: -340344746211233533
+      400px-Ak47_csgo_18: -5752233343492705417
+      400px-Ak47_csgo_19: -8249081118905255242
+      400px-Ak47_csgo_2: -7133924259709947144
+      400px-Ak47_csgo_20: -7963618044797999733
+      400px-Ak47_csgo_21: -7258681345798027870
+      400px-Ak47_csgo_22: 4265759865097147096
+      400px-Ak47_csgo_23: -2096113856017532805
+      400px-Ak47_csgo_24: 1657277953578901872
+      400px-Ak47_csgo_25: 9067723632059537733
+      400px-Ak47_csgo_26: -6702144848304224121
+      400px-Ak47_csgo_27: 2281311436966786885
+      400px-Ak47_csgo_28: 6319012795024266153
+      400px-Ak47_csgo_29: 4528610589610478504
+      400px-Ak47_csgo_3: -3526265772175893029
+      400px-Ak47_csgo_30: 8621328179755171545
+      400px-Ak47_csgo_31: -8027593101773630044
+      400px-Ak47_csgo_32: -4865847136559113155
+      400px-Ak47_csgo_33: -3187891582474010591
+      400px-Ak47_csgo_34: 4615437076365535582
+      400px-Ak47_csgo_35: -3645764790720819092
+      400px-Ak47_csgo_36: -8270431691290946086
+      400px-Ak47_csgo_37: -1298508491341109647
+      400px-Ak47_csgo_38: 288549553996163316
+      400px-Ak47_csgo_39: -7166164581835875768
+      400px-Ak47_csgo_4: 3463696938041909354
+      400px-Ak47_csgo_40: -5883717551337235554
+      400px-Ak47_csgo_41: -2784476770174050263
+      400px-Ak47_csgo_42: 5542156224137577813
+      400px-Ak47_csgo_43: -78616091872469304
+      400px-Ak47_csgo_44: -4234882768218246200
+      400px-Ak47_csgo_45: -3576985402023653622
+      400px-Ak47_csgo_46: -3576921541309800754
+      400px-Ak47_csgo_47: -6278934222627318101
+      400px-Ak47_csgo_48: 352868176168529065
+      400px-Ak47_csgo_49: 387718614183743106
+      400px-Ak47_csgo_5: -6227884216702949418
+      400px-Ak47_csgo_50: -284800922043759587
+      400px-Ak47_csgo_51: 8322797294842503362
+      400px-Ak47_csgo_52: -3558683786584981386
+      400px-Ak47_csgo_53: -2105905794642756908
+      400px-Ak47_csgo_54: -6333826370766239683
+      400px-Ak47_csgo_6: -5046460751363294337
+      400px-Ak47_csgo_7: -7017904287430960944
+      400px-Ak47_csgo_8: -6070767464178421095
+      400px-Ak47_csgo_9: -2706305152272062392
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
