@@ -73,13 +73,25 @@ public class Ship : MonoBehaviour
         Destroy(newProjectile, 4);
     }
 
+    //need to still play sound when take damage bc u r bad at code
+
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
 
+        if(GetComponent<PlayerShip>())
+        {
+            //display health
+
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+
+
+        }
+
         if (currentHealth <= 0)
         {
             Explode();
+
         }
     }
 
