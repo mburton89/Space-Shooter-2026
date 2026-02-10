@@ -79,6 +79,12 @@ public class Ship : MonoBehaviour
     {
         currentHealth -= damageToTake;
 
+        if(GetComponent<PlayerShip>())
+        {
+            //Display Health
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+
         if (currentHealth <= 0)
         {
             Explode();
