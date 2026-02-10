@@ -78,6 +78,11 @@ public class Ship : MonoBehaviour
     { 
         currentHealth -= damageToTake;
 
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+
         float newPitch = Random.Range(0.8f, 1.3f);
 
         takeDamageAudioSource.pitch = newPitch;
@@ -88,6 +93,8 @@ public class Ship : MonoBehaviour
         {
             Explode();
         }
+
+
     }
 
     public void Explode()
