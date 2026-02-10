@@ -80,6 +80,12 @@ public class Ship : MonoBehaviour
         takeDamageAudioSource.Play();
         currentHealth -= damageToTake;
 
+        if(GetComponent<PlayerShip>())
+        {
+            // Display Health
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+
         if (currentHealth <= 0)
         {
             Explode();
