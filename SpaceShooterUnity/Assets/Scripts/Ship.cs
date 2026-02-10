@@ -79,6 +79,12 @@ public class Ship : MonoBehaviour
     { 
         currentHealth -= damageToTake;
 
+        if(GetComponent<PlayerShip>())
+        {
+            //Display Health
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth); //Establish a relay race/contract that makes it so the HUD doesn't go until needed by the TakeDamage
+        }
+
         float newPitch = Random.Range(.5f, 1.6f);
 
         takeDamageAudioSource.pitch = newPitch;
