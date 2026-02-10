@@ -1,5 +1,7 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -85,6 +87,12 @@ public class Ship : MonoBehaviour
         hurtAudioSource.Play();
 
         currentHealth -= damageToTake;
+
+        if (GetComponent<PlayerShip>())
+        {
+            //Display current Health
+            HUD.Instance.updateHealthUI(currentHealth, maxHealth);
+        }
 
         if (currentHealth <= 0)
         {
