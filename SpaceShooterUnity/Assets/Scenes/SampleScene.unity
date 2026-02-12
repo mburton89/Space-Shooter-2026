@@ -15612,7 +15612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1161823080
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15766,9 +15766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 4
+  acceleration: 3
   currentSpeed: 0
-  maxSpeed: 7
+  maxSpeed: 6
   fireRate: 1
   rb: {fileID: 1161823081}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
@@ -16186,11 +16186,11 @@ MonoBehaviour:
   acceleration: 5
   currentSpeed: 0
   maxSpeed: 8
-  fireRate: 3
+  fireRate: 2
   rb: {fileID: 2019881148}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 6016576194058111877, guid: 83b76cf7c68212540a92562d02c4c9d6, type: 3}
-  projectileVelocity: 10
+  projectileVelocity: 1000
   projectileSpawnPoint: {fileID: 1080054493}
   fireProjectileAudioSource: {fileID: 2006673083}
   takeDamageAudioSource: {fileID: 1945033881}
