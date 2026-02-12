@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,5 +30,10 @@ public class HUD : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
     }
 }
