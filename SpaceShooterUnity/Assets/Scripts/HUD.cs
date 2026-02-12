@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;   //need to use UI API in order to get access to Image and Button Objects
 
@@ -30,5 +31,10 @@ public class HUD : MonoBehaviour
     void Update()
     {
         
+    }
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
     }
 }

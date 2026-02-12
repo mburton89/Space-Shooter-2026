@@ -95,7 +95,12 @@ public class Ship : MonoBehaviour
     {
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
+
+        EnemyShipSpawner.Instance.CountEnemyShips();
+
         Destroy(gameObject);
+
+        Destroy(newExplosion, 4);
     }
     
     private IEnumerator CoolDown()
