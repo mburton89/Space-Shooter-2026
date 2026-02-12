@@ -20,4 +20,9 @@ public class HUD : MonoBehaviour
     healthBarFill.fillAmount = healthPer;
 
   }
+
+  public void DisplayWave(int currentWave)
+  {
+
+  }
 }

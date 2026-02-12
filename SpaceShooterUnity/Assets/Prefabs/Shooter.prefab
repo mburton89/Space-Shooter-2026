@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.47529262, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -174,6 +174,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 5659396962058880066, guid: 8dd74715d645144b888216f0cc0a492d, type: 3}
   projectileSpawnPoint: {fileID: 8525526898619379251}
   pewPewSound: {fileID: 4847967711420776598}
+  dmgSound: {fileID: 0}
   canPewPew: 1
   isPlayerShip: 0
   turnSpeed: 0.1

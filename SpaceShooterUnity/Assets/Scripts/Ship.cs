@@ -94,6 +94,9 @@ public class Ship : MonoBehaviour
   public void Explode()
   {
     GameObject explosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+
+    EnemyShipSpawner.Instance.CountEnemies();
+
     Destroy(explosion, 1f);
     Destroy(gameObject);
   }
