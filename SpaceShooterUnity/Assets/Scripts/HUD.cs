@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using UnityEngine;
 using UnityEngine.UI; //need to use UI API in order to get access to Image and Button objects
 
@@ -18,5 +19,10 @@ public class HUD : MonoBehaviour
         float healthAmount = (float)currentHealth / (float)maxHealth;
 
         healthBarFill.fillAmount = healthAmount;
+    }
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
     }
 }
