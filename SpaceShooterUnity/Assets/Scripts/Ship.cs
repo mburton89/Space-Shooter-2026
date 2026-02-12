@@ -101,7 +101,10 @@ public class Ship : MonoBehaviour
     {
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
 
+        EnemyShipSpawner.Instance.CountEnemyShips();
+
         Destroy(gameObject);
+        Destroy(newExplosion, 2);
     }
 
     private IEnumerator CoolDown()

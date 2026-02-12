@@ -21,7 +21,6 @@ public class BaddieShip : Ship
             // detect collision with Player Ship
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
             Explode();
-
         }
     }
 
