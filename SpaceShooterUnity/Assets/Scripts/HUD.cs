@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI; //meed to use UI API in order to get acces to Image and Button objects
 
@@ -17,5 +18,10 @@ public class HUD : MonoBehaviour
         float healthAmount = (float)currentHealth / (float)maxHealth;
 
         healthBarFill.fillAmount = healthAmount;
+    }
+
+    public void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
     }
 }
