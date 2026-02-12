@@ -36,6 +36,8 @@ public class Ship : MonoBehaviour
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
+
+        StartCoroutine(CoolDown());
         canPewPew = true;
     }
 
@@ -104,6 +106,9 @@ public class Ship : MonoBehaviour
     {
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+
+        EnemyShipSpawner.Instance.countEnemyShips();
+
         Destroy(gameObject);
         Destroy(newExplosion, 1);
     }
