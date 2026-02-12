@@ -82,6 +82,8 @@ public class Ship : MonoBehaviour
             HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
         }
 
+        EnemyShipSpawner.Instance.CountEnemyShips();
+
         if (currentHealth <= 0)
         {
             Explode();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,5 +18,10 @@ public class HUD : MonoBehaviour
         float healthAmount = (float)currentHealth / (float)maxHealth;
 
         healthBarFill.fillAmount = healthAmount;
+    }
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
     }
 }
