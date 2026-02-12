@@ -69,7 +69,7 @@ public class Ship : MonoBehaviour
         shootAudioSource.Play();
 
         StartCoroutine(Reload());
-        Destroy(newProjectile, 5);
+        Destroy(newProjectile, (float).2);
     }
 
     public void TakeDamage(int damageToTake)
@@ -90,6 +90,9 @@ public class Ship : MonoBehaviour
     public void Explode()
     {
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+
+        Spawner.Instance.CountEnemyShips();
+
         Destroy(gameObject);
     }
 

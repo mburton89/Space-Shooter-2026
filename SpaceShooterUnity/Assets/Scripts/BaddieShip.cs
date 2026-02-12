@@ -18,7 +18,7 @@ public class BaddieShip : Ship
     {
         if(collision.gameObject.GetComponent<PlayerShip>())
         {
-            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(4);
+            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(3);
             Explode();
         }
     }
