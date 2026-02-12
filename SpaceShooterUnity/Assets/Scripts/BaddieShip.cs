@@ -56,3 +56,4 @@ public class BaddieShip : Ship
         Thrust();
     }
 }
+// error pops up when player dies bc they need target, code for that

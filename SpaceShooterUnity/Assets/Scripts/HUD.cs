@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI; //need to use UI API in order to get access to Image and Buttono objects
 
@@ -21,5 +22,8 @@ public class HUD : MonoBehaviour
     
     }
 
-
+    public void DisplayWave(int currentWave)
+    {
+       Debug.Log("Wave: " +  currentWave);
+    }
 }
