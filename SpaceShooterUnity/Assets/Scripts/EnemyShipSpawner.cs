@@ -46,7 +46,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
             //Step 2: SPawn/Instantiate the enemy at the SpawnPoint
             int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
-            Instantiate(enemyShipPrefabs[0], spawnPoint.position, transform.rotation, null);
+            Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
     }
 
