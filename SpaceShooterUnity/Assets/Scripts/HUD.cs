@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,5 +19,9 @@ public class HUD : MonoBehaviour
 
         healthBarFill.fillAmount = healthAmount;
     }
-    
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE: " + currentWave);
+    }
 }
