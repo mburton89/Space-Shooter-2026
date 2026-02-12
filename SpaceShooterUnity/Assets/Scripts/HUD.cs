@@ -17,4 +17,12 @@ public class HUD : MonoBehaviour
 
         healthBarFill.fillAmount = healthAmount;
     }
+
+
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("Wave: " + currentWave);    }
+
+
 }
