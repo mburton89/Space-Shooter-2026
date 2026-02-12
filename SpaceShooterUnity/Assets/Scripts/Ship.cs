@@ -54,6 +54,7 @@ public class Ship : MonoBehaviour
     {
         rb.AddForce(transform.up * acceleration);
         thrustParticles.Emit(1);
+        
     }
 
     public void PewPew()
@@ -100,7 +101,11 @@ public class Ship : MonoBehaviour
     {
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, explosionSpawnPoint.position, transform.rotation);
+
+        EnemyShipSpawner.Instance.CountEnemyShips(); //Tell spawner to check how many ships are left
+
         Destroy(gameObject);
+        Destroy(newExplosion, 4);
     }
 
     private IEnumerator CoolDown()

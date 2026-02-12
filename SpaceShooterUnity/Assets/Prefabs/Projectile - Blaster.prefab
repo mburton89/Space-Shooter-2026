@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7308002733791005245}
   - component: {fileID: 2041085047713262280}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile - Blaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.39308167, g: 1, b: 0.6809382, a: 1}
+  m_Color: {r: 0.41412324, g: 0.9308176, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -1,4 +1,5 @@
 //Deleted top one because it made "Image" have two definitions
+using System;
 using UnityEngine;
 using UnityEngine.UI; //Need to use Unity UI API to access Image and Button components
 
@@ -16,5 +17,10 @@ public class HUD : MonoBehaviour
     {
         float healthAmount = (float)currentHealth / (float)maxHealth; //Calculate percent of health remaining
         healthBarFill.fillAmount = healthAmount; //Change health bar filling to match health amount
+    }
+
+    internal void DisplayWave(int currentWave)
+    {
+        Debug.Log("WAVE:" + currentWave); //This will print to console so we can test
     }
 }
