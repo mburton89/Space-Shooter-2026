@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: caf0b85c3b422f446ba88c86d4652e38
+  - enabled: 1
     path: Assets/Scenes/StarShooter_Alexander.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

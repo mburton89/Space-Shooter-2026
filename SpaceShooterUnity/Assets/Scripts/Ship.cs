@@ -104,6 +104,11 @@ public class Ship : MonoBehaviour
 
         EnemyShipSpawner.Instance.CountEnemyShips(); //Tell spawner to check how many ships are left
 
+        if (GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver(); //Tell game manager to start the game over process
+        }
+
         Destroy(gameObject);
         Destroy(newExplosion, 4);
     }
