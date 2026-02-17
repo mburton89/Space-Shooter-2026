@@ -5332,9 +5332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 2
   maxHealth: 2
-  acceleration: 3
+  acceleration: 4
   currentSpeed: 0
-  maxSpeed: 7
+  maxSpeed: 14
   fireRate: 0.5
   rb: {fileID: 3212814538374927954}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
