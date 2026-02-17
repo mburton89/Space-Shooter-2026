@@ -10,6 +10,8 @@ public class EnemyShipSpawner : MonoBehaviour
     public Transform pivotPoint;
     public Transform spawnPoint;
 
+    public AudioSource newHighScoreAudio;
+
     //data to consider
     int currentNumberOfShips;
     int currentWave;
@@ -28,6 +30,7 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
+         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
     }
 
     public void SpawnWaveOfEnemies()
@@ -59,6 +62,19 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
             SpawnWaveOfEnemies();
+
+            int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
+
+            if(currentWave > highestWaveAchieved)
+            {
+                //YAY, WE SET NEW SCORE / WAVE!
+                PlayerPrefs.SetInt("HighestWave", currentWave);
+
+                //TO DO: Tell HUD to show highest wave
+                HUD.Instance.DisplayHighestWave(currentWave);
+                  newHighScoreAudio.Play(); //Play audio for new score
+                
+            }
         }
     }
 
