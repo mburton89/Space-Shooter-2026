@@ -100,6 +100,11 @@ public class Ship : MonoBehaviour
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
 
+        if(GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver();
+        }
+
         Destroy(gameObject);
        
     }

@@ -31,6 +31,7 @@ void Start()
         baseNumberOfShips =
         FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
+        HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
     }
     
     public void SpawnWaveOfEnemies()
@@ -62,6 +63,16 @@ void Start()
             HUD.Instance.DisplayWave(currentWave);
 
             SpawnWaveOfEnemies();
+
+            int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
+
+            if(currentWave > highestWaveAchieved) 
+            {
+                PlayerPrefs.SetInt("HighestWave", currentWave);
+
+                //TODO: tell HUD to show highest wave
+                HUD.Instance.DisplayHighestWave(currentWave);
+            }
         }
     }
 }
