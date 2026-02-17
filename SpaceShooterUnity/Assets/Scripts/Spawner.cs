@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
     {
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
+        HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("Highest Wave"));
     }
 
     // Update is called once per frame
@@ -57,7 +58,15 @@ public class Spawner : MonoBehaviour
 
             HUD.Instance.DisplayWave(currentWave);
             SpawnWaveOfEnemies();
+
+            int highestWaveAchieved = PlayerPrefs.GetInt("Highest Wave");
+
+            if(currentWave > highestWaveAchieved)
+            {
+                //Set High Score
+                PlayerPrefs.SetInt("Highest Wave", currentWave);
+                HUD.Instance.DisplayHighestWave(currentWave);
+            }
         }
     }
-
 }

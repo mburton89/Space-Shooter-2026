@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4679724814116016566}
   - component: {fileID: 4546680696213257780}
   m_Layer: 0
-  m_Name: Baddie Ship - Arms
+  m_Name: Baddie Ship - Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 972549413109663507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.2491803, y: 0.39031577, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7771161741704736319}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.23457597, g: 0.4811321, b: 0.20652369, a: 1}
+  m_Color: {r: 0.5308172, g: 0.5660378, b: 0.3818085, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -171,16 +171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
-  acceleration: 0.5
+  currentHealth: 7
+  maxHealth: 7
+  acceleration: 0.4
   currentSpeed: 0
-  maxSpeed: 4
-  fireRate: 1.2
+  maxSpeed: 3
+  fireRate: 0.4
   rb: {fileID: 5250092446557800272}
   projectilePrefab: {fileID: 186535404877285595, guid: 1582ef5eb8960e546adc92ff580b6f7b, type: 3}
   explosionPrefab: {fileID: 766153116174669852, guid: 747818bf5af2bc741afa49ce8759064d, type: 3}
-  projectileVelocity: 1400
+  projectileVelocity: 1500
   projectileSpawnPoint: {fileID: 7771161741704736319}
   shootAudioSource: {fileID: 8741025388394798206}
   canFire: 1
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 3535694718665413352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,8 +261,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d7beee98119261141b7983d09d47ea26, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.799
-  m_Pitch: 0.83
+  m_Volume: 0.17
+  m_Pitch: 1.51
   Loop: 0
   Mute: 0
   Spatialize: 0

@@ -187,8 +187,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_Radius: 0.35
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.3
 --- !u!114 &2165889956694367247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 1.1
+  acceleration: 1
   currentSpeed: 0
   maxSpeed: 8
   fireRate: 1

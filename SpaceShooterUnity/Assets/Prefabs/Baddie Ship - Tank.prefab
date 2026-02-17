@@ -4953,7 +4953,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.46471164, g: 0.5268783, b: 0.5566038, a: 1}
+  m_Color: {r: 0.31367925, g: 0.4071736, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5024,8 +5024,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_Radius: 0.7
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.3
 --- !u!114 &7488237158226732258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5038,11 +5038,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 18
-  maxHealth: 18
-  acceleration: 0.2
+  currentHealth: 15
+  maxHealth: 15
+  acceleration: 0.6
   currentSpeed: 0
-  maxSpeed: 3
+  maxSpeed: 5
   fireRate: 1
   rb: {fileID: 2964432946080788915}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
