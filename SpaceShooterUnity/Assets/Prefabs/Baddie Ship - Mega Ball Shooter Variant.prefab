@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7197723575567503340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: acceleration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4755983405930461430, guid: 5530a1f1a08e6e4498dae85ae4253e83, type: 3}
+    - target: {fileID: 4424646903180913767, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_Color.g
+      value: 0.877371
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424646903180913767, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071210634104198102, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668273042173829321, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: m_Name
+      value: Baddie Ship - Mega Ball Shooter Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
