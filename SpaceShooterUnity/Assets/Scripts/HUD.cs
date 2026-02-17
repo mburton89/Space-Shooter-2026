@@ -1,8 +1,7 @@
-<<<<<<< Updated upstream
+// Updated upstream
 using System;
-=======
 using System.Collections;
->>>>>>> Stashed changes
+// Stashed changes
 using UnityEngine;
 using UnityEngine.UI; //meed to use UI API in order to get acces to Image and Button objects
 using TMPro;
@@ -31,9 +30,9 @@ public class HUD : MonoBehaviour
 
     public void DisplayWave(int currentWave)
     {
-<<<<<<< Updated upstream
+// Updated upstream
         Debug.Log("WAVE: " + currentWave);
-=======
+
         Debug.Log("WAVE: " +  currentWave);
         waveText.SetText("WAVE: " + currentWave);
 
@@ -44,6 +43,6 @@ public class HUD : MonoBehaviour
 
         highestWaveText.SetText("BEST: " + highestWave);
     
->>>>>>> Stashed changes
+ // Stashed changes
     }
 }
