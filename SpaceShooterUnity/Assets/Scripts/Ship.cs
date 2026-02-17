@@ -86,6 +86,11 @@ public class Ship : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (GetComponent<PlayerShip>())
+            {
+                GameManager.Instance.GameOver();
+            }
+
             Explode();
         }
     }
