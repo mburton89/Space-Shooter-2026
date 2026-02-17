@@ -86,16 +86,27 @@ public class Ship : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Explode();            
+            Explode();           
         }
     }
 
     public void Explode()
     {
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+       
         EnemySpawner.Instance.CountEnemyShips();
+        
+        if (GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver();
+        }
+        
+        //code can be called here because were alive
+
         Destroy(gameObject);
         Destroy(newExplosion, 1);
+
+        //code cant be called here cuz we dead rip
     }
 
     private IEnumerator CoolDown()
