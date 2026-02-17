@@ -5168,12 +5168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
+  currentHealth: 2
+  maxHealth: 2
   acceleration: 1
   currentSpeed: 0
-  maxSpeed: 6
-  fireRate: 1
+  maxSpeed: 5
+  fireRate: 2
   rb: {fileID: 8803704055411983273}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 7361476547607590844, guid: 58cae30fcbe6085429e85d74a0347bf0, type: 3}

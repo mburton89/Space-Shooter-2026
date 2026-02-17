@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI; //need to use UI API in order to get access to Image and Buttono objects
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class HUD : MonoBehaviour
 
 
     public Image healthBarFill;
+
+    public TextMeshProUGUI waveText;
+    public TextMeshProUGUI highestwaveText;
 
     private void Awake()
     {
@@ -25,5 +29,11 @@ public class HUD : MonoBehaviour
     public void DisplayWave(int currentWave)
     {
        Debug.Log("Wave: " +  currentWave);
+        waveText.SetText("Wave: " + currentWave);
+    }
+
+    internal void DisplayHighestWave(int highestWave)
+    {
+        highestwaveText.SetText("Best: " + highestWave);
     }
 }

@@ -101,8 +101,18 @@ public class Ship : MonoBehaviour
         GameObject newExlosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         EnemyShipSpawner.Instance.CountEnemyShips();
+
+        if(GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver();
+        }
+
+        //code can be called here bcuz we're ALIVE
+
         Destroy(gameObject);
         Destroy(newExlosion, 1);
+        
+        //code cant be called here cuz we DEADDDDDDDDDDDDDD loser
     }
 
     private IEnumerator CoolDown()
