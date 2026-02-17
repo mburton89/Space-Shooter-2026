@@ -1,12 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI; //need to use UI API in order to get acess to image and button objects
+using TMPro; //to get access to textmeshpro
 
 public class HUD : MonoBehaviour
 {
     public static HUD Instance;
 
     public Image healthBarFill;
+
+    public TextMeshProUGUI waveText;
+    public TextMeshProUGUI highestWaveText;
 
     private void Awake()
     {
@@ -23,5 +27,11 @@ public class HUD : MonoBehaviour
     public void DisplayWave(int currentWave)
     {
         Debug.Log("Wave: " + currentWave);
+        waveText.SetText("Wave: " +  currentWave);
+    }
+
+    internal void DisplayHighestWave(int highestWave)
+    {
+        highestWaveText.SetText("Best: " +  highestWave);
     }
 }
