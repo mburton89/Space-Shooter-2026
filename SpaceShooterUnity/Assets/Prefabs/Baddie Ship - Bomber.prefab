@@ -465,7 +465,7 @@ MonoBehaviour:
   maxHealth: 3
   acceleration: 3
   currentSpeed: 0
-  maxSpeed: 5
+  maxSpeed: 6
   fireRate: 1
   rb: {fileID: 6950206416838547314}
   projectilePrefab: {fileID: 186535404877285595, guid: 294f9d4ccb551e146a08682c6489a070, type: 3}

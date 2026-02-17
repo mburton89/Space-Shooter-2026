@@ -303,7 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   maxHealth: 5
-  acceleration: 1.8
+  acceleration: 1.6
   currentSpeed: 0
   maxSpeed: 5
   fireRate: 5

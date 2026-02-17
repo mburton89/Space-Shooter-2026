@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic; // We need this for API and LIST functionality
 using System.Runtime.CompilerServices;
@@ -29,6 +30,7 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
+        HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
     }
 
     public void spawnWaveOfEnemies()
@@ -62,6 +64,21 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
             spawnWaveOfEnemies();
+
+            int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
+
+            if(currentWave > highestWaveAchieved)
+            {
+                // Heck yeah! You're on fiiiiiiire! New high score!
+
+                PlayerPrefs.SetInt("HighestWave", currentWave);
+
+                // TODO tell HUD to display highest wave
+                HUD.Instance.DisplayHighestWave(currentWave);
+
+
+
+            }
         }
     }
 }

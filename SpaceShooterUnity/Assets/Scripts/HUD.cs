@@ -1,12 +1,17 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
     public static HUD Instance;
 
     public Image healthBarFill;
+
+    public TextMeshProUGUI waveText;
+
+    public TextMeshProUGUI highestWaveText;
 
     private void Awake()
     {
@@ -23,5 +28,11 @@ public class HUD : MonoBehaviour
     public void DisplayWave(int currentWave)
     {
         Debug.Log("WAVE: " + currentWave);
+        waveText.SetText("WAVE: " + currentWave);
+    }
+
+    public void DisplayHighestWave(int highestWave)
+    {
+        highestWaveText.SetText("BEST: " + highestWave);
     }
 }

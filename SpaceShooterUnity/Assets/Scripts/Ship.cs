@@ -104,13 +104,24 @@ public class Ship : MonoBehaviour
 
     public void Explode()
     {
-        //TODO: Make cool 'splosion particles
+        
+        // Controls enemy ship elimination, explosion particles, and player-specific GAME OVER methods
+
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         EnemyShipSpawner.Instance.countEnemyShips();
 
+        if (GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver();
+        }
+
+        // Start of line, playership is active
+
         Destroy(gameObject);
         Destroy(newExplosion, 1);
+
+        // End of line, playership has been eliminated
     }
 
     private IEnumerator CoolDown()
