@@ -96,6 +96,13 @@ public class Ship : MonoBehaviour
 
         EnemyShipSpawner.Instance.CountEnemyShips();
 
+        if (GetComponent<PlayerShip>())
+        {
+            GameManager.Instance.GameOver();
+        }
+
+        
+
         Destroy(gameObject);
     }
 
