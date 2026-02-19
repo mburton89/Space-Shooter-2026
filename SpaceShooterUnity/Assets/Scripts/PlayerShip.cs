@@ -22,6 +22,12 @@ public class PlayerShip : Ship
         {
             Thrust();
         }
+        
+        //input.getkey  ("space") or (KeyCode.Space)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TurboPew();
+        }
 
         FollowMouse(); 
     }

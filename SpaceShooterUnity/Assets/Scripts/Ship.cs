@@ -23,9 +23,15 @@ public class Ship : MonoBehaviour
     public Transform projectileSpawnPoint;
     public Transform explosionSpawnPoint;
 
+    public GameObject turboPreFab;
+    public Transform turboSpawnPoint;
+
     ParticleSystem thrustParticles;
 
     public AudioSource pewPewAudioSource;
+    public AudioSource TurboPewAudioSource;
+
+    public int turboPewPew;
 
     [HideInInspector] public bool canPewPew;
 
@@ -73,6 +79,40 @@ public class Ship : MonoBehaviour
 
         Destroy(newProjectile, 4);
     }
+
+    public void TurboPew()
+    {
+        Debug.Log("TurboPew: " + turboPewPew);
+        if (turboPewPew > 0)
+        {
+            Debug.Log("Fire Projectile");
+            GameObject newProjectile = Instantiate(turboPreFab, turboSpawnPoint.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+            float newPitch = Random.Range(0.9f, 1.5f);
+
+            TurboPewAudioSource.pitch = newPitch;
+
+            TurboPewAudioSource.Play();
+
+            StartCoroutine(CoolDown());
+
+            Destroy(newProjectile, 4);
+
+            turboPewPew--;
+
+            if (GetComponent<PlayerShip>())
+            {
+                HUD.Instance.DisplayTurboPew(turboPewPew);
+            }
+
+            //TODO figure out how to make it go up per wave
+            Debug.Log("add turbo pew?");
+            
+        }
+    }
+
 
     public void TakeDamage(int damageToTake)
     { 

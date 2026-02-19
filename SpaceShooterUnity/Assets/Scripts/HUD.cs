@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
+    public TextMeshProUGUI turboPewText;
 
     private void Awake()
     {
@@ -33,5 +34,11 @@ public class HUD : MonoBehaviour
     internal void DisplayHighestWave(int highestWave)
     {
         highestWaveText.SetText("Best: " +  highestWave);
+    }
+
+    public void DisplayTurboPew(int turboPew)
+    {
+        Debug.Log("Turbo Pew: " + turboPew);
+        turboPewText.SetText("Turbo pews: " + turboPew);
     }
 }
