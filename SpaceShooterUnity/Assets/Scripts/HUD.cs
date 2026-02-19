@@ -13,6 +13,8 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
 
+    public TextMeshProUGUI turboShotAmmoText;
+
     private void Awake()
     {
         Instance = this;
@@ -23,6 +25,11 @@ public class HUD : MonoBehaviour
         float healthAmount = (float)currentHealth / (float)maxHealth;
 
         healthBarFill.fillAmount = healthAmount;
+    }
+
+    internal void DisplayAmmo(int currentTurboShotAmmo)
+    {
+        turboShotAmmoText.SetText("Turbo Shots: " +  currentTurboShotAmmo);
     }
 
     internal void DisplayWave(int currentWave)

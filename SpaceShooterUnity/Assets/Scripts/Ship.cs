@@ -6,6 +6,8 @@ public class Ship : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
+    public int currentTurboShotAmmo;
+    public int maxTurboShotAmmo;
 
     public float acceleration;
     public float currentSpeed;
@@ -17,6 +19,7 @@ public class Ship : MonoBehaviour
 
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
+    public GameObject turboShotPrefab;
 
     public float projectileVelocity;
 
@@ -58,6 +61,7 @@ public class Ship : MonoBehaviour
     public void PewPew()
     {
         Debug.Log("Fire Projectile");
+
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
@@ -72,9 +76,35 @@ public class Ship : MonoBehaviour
         
         Destroy(newProjectile, 4);
     }
+    public void TurboShot()
+    {
+        Debug.Log("Turbo");
+
+        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+        pewPewAudioSource.pitch = newPitch;
+        pewPewAudioSource.Play();
+
+        StartCoroutine(CoolDown());
+
+        Destroy(newProjectile, 4);
+
+        //currentTurboShotAmmo -- 1;
+               
+        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
+    }
+
+    private void TurboShotAmmo(int maxTurboShotAmmo)
+    {
+        //if (currentTurboShotAmmo < 0)
+    }
+
 
     public void TakeDamage(int damageToTake)
-    { 
+    {
         currentHealth -= damageToTake;
         takeDamageAudioSource.Play();
 
@@ -86,21 +116,21 @@ public class Ship : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Explode();           
+            Explode();
         }
     }
 
     public void Explode()
     {
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
-       
+
         EnemySpawner.Instance.CountEnemyShips();
-        
+
         if (GetComponent<PlayerShip>())
         {
             GameManager.Instance.GameOver();
         }
-        
+
         //code can be called here because were alive
 
         Destroy(gameObject);
