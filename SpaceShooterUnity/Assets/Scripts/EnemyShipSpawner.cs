@@ -10,9 +10,11 @@ public class EnemyShipSpawner : MonoBehaviour
   public List<GameObject> enemyShipPrefabs;
   public Transform pivotPoint;
   public Transform spawnPoint;
+  public AudioSource waveSound;
 
   int currentShipCount;
   int currentWave;
+  int highestWave;
   int baseShipCount;
 
 
@@ -27,6 +29,8 @@ public class EnemyShipSpawner : MonoBehaviour
   {
     baseShipCount = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
     currentShipCount = baseShipCount;
+    highestWave = PlayerPrefs.GetInt("waveHighscore");
+    HUD.Instance.DisplayHighestWave(highestWave);
   }
 
   // Update is called once per frame
@@ -42,6 +46,8 @@ public class EnemyShipSpawner : MonoBehaviour
       Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
     }
     HUD.Instance.DisplayWave(currentWave);
+    HUD.Instance.DisplayHighestWave(highestWave);
+    waveSound.Play();
   }
 
   public void CountEnemies()
@@ -54,6 +60,16 @@ public class EnemyShipSpawner : MonoBehaviour
     {
       currentWave++;
       SpawnEnemyWave();
+
+      highestWave = PlayerPrefs.GetInt("waveHighscore");
+
+      if (currentWave > highestWave)
+      {
+        // SUPER HYPER MEGA YAY
+        PlayerPrefs.SetInt("waveHighscore", currentWave);
+        HUD.Instance.DisplayHighestWave(currentWave);
+
+      }
     }
   }
 }

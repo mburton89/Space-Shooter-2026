@@ -8,11 +8,13 @@ public class Projectile : MonoBehaviour
   public int dmg;
   public GameObject owner;
   public bool isPlayerProjectile;
+  public CircleCollider2D daIrcle;
 
   void Update()
   {
     if (isPlayerProjectile)
     {
+      daIrcle.radius = 1f;
       GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
     }
   }

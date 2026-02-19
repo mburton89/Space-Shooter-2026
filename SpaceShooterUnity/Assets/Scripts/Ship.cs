@@ -95,7 +95,15 @@ public class Ship : MonoBehaviour
   {
     GameObject explosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
 
-    EnemyShipSpawner.Instance.CountEnemies();
+    if (!isPlayerShip)
+    {
+      EnemyShipSpawner.Instance.CountEnemies();
+    }
+    else
+    {
+      GameManager.Instance.GameOver();
+    }
+
 
     Destroy(explosion, 1f);
     Destroy(gameObject);
