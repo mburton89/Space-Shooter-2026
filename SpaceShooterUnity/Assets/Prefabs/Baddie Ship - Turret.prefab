@@ -180,7 +180,7 @@ MonoBehaviour:
   rb: {fileID: 5250092446557800272}
   projectilePrefab: {fileID: 186535404877285595, guid: 1582ef5eb8960e546adc92ff580b6f7b, type: 3}
   explosionPrefab: {fileID: 766153116174669852, guid: 747818bf5af2bc741afa49ce8759064d, type: 3}
-  projectileVelocity: 1500
+  projectileVelocity: 1300
   projectileSpawnPoint: {fileID: 7771161741704736319}
   shootAudioSource: {fileID: 8741025388394798206}
   canFire: 1

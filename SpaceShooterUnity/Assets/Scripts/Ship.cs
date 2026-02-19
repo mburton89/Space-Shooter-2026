@@ -18,6 +18,8 @@ public class Ship : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    public GameObject projectilebigPrefab;
+
     public GameObject explosionPrefab;
 
     public float projectileVelocity;
@@ -30,10 +32,13 @@ public class Ship : MonoBehaviour
 
     ParticleSystem thrustParticles;
 
+    ParticleSystem bigParticles;
+
     // Start is called before the first frame update
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
+        bigParticles = GetComponentInChildren<ParticleSystem>();
         canFire = true;
     }
 
@@ -70,6 +75,20 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(Reload());
         Destroy(newProjectile, (float).2);
+    }
+    public void BigOne()
+    {
+        Debug.Log("Fire Big One");
+        GameObject newProjectile = Instantiate(projectilebigPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<ProjectileBig>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.8f, 1.25f);
+        shootAudioSource.pitch = newPitch;
+        shootAudioSource.Play();
+
+        StartCoroutine(Reload());
+        Destroy(newProjectile, 1);
     }
 
     public void TakeDamage(int damageToTake)

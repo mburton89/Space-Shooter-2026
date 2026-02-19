@@ -5679,6 +5679,7 @@ MonoBehaviour:
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
+  projectilebigPrefab: {fileID: 186535404877285595, guid: 8a89f1cfe423e8f438c52d3a2882a4c2, type: 3}
   explosionPrefab: {fileID: 766153116174669852, guid: 747818bf5af2bc741afa49ce8759064d, type: 3}
   projectileVelocity: 10
   projectileSpawnPoint: {fileID: 1570301722}
