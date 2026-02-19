@@ -28,6 +28,13 @@ public class Ship : MonoBehaviour
 
     public bool canPewPew;
 
+    public GameObject TurboShotPrefab;
+    public GameObject TurboExplosionPrefab;
+    public float TurboShotVelocity;
+    public Transform TurboShotSpawnPoint;
+    public AudioSource TurboShotSound;
+
+    public bool canTurboShoot;
 
     // Start is called before the first frame update
     void Awake()

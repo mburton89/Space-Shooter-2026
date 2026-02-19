@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TurboShot : MonoBehaviour
 {
-    public int DamageToGive;
+    public int damageToGive;
     [HideInInspector] public GameObject firingShip;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +13,7 @@ public class TurboShot : MonoBehaviour
         {
             //If we made it this far, the thing we collided with is a SHIP. WOOHOO! ANNNNNNDD, its not the ship that fired the projectile
 
-            collision.GetComponent<Ship>().TakeDamage(DamageToGive);
+            collision.GetComponent<Ship>().TakeDamage(damageToGive);
 
             Destroy(gameObject);
         }

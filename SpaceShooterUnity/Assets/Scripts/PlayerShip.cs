@@ -3,15 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShip : Ship
-{
-    public GameObject TurboShotPrefab;
-    public GameObject TurboExplosionPrefab;
-    public float TurboShotVelocity;
-    public Transform TurboShotSpawnPoint;
-    public AudioSource TurboShotSound;
-
-
-    // Start is called before the first frame update
+{   // Start is called before the first frame update
     void Start()
     {
         
@@ -74,8 +66,8 @@ public class PlayerShip : Ship
 
     private IEnumerator TurboShotCoolDown()
     {
-        canPewPew = false;
+        canTurboShoot = false;
         yield return new WaitForSeconds(fireRate);
-        canPewPew = true;
+        canTurboShoot = true;
     }
 }
