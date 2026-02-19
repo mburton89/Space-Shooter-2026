@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -29,6 +30,10 @@ public class Ship : MonoBehaviour
     public AudioSource takeHitAudioSource;
 
     public bool canPewPew = true;
+
+    public int turboShots = 3;
+
+    public GameObject turboProjectilePrefab;
 
     // Start is called before the first frame update
     void Awake()
@@ -73,6 +78,41 @@ public class Ship : MonoBehaviour
         
         Destroy(newProjectile, 4);
     }
+    public void Turbo()
+    {
+        if (turboShots > 0)
+        {
+            Debug.Log("Use Turbo");
+            GameObject newProjectile = Instantiate(turboProjectilePrefab, projectileSpawnPoint.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile.GetComponent<TurboProjectile>().firingShip = gameObject;
+
+            float newPitch = Random.Range(0.8f, 1.2f);
+
+            pewPewAudioSource.pitch = newPitch;
+
+            pewPewAudioSource.Play();
+
+            StartCoroutine(Cooldown());
+
+            Destroy(newProjectile, 4);
+
+            turboShots--;
+
+            if (GetComponent<PlayerShip>())
+            {
+                HUD.Instance.DisplayTurbo(turboShots);
+            }
+        }
+    }
+
+    public void ShowTurbo()
+    {
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.DisplayTurbo(turboShots);
+        }
+    }
 
     public void TakeDamage(int damageToTake)
     { 
@@ -96,7 +136,11 @@ public class Ship : MonoBehaviour
         GameObject newExplosion = Instantiate(explosionPrefab, explosionSpawnPoint.position, transform.rotation);
         //TODO: Make cool 'splosion particles
 
-        EnemyShipSpawner.Instance.CountEnemyShips();
+        int addTurbo = EnemyShipSpawner.Instance.CountEnemyShips();
+
+        turboShots += addTurbo;
+
+        ShowTurbo();
 
         if (GetComponent<PlayerShip>())
         {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.ComponentModel; // we need this API for LIST functionality
+using System.ComponentModel;
+using System.Runtime.InteropServices.WindowsRuntime; // we need this API for LIST functionality
 
 public class EnemyShipSpawner : MonoBehaviour
 
@@ -15,6 +16,8 @@ public class EnemyShipSpawner : MonoBehaviour
     int currentWave;
     int baseNumberOfShips;
     //TODO max waves if we want to "beat" the game
+
+    int addTurbo = 0;
 
     private void Awake()
     {
@@ -46,8 +49,9 @@ public class EnemyShipSpawner : MonoBehaviour
         }
     }
 
-    public void CountEnemyShips()
+    public int CountEnemyShips()
     {
+
         currentNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
 
         Debug.Log("Number of Current Enemy Ships" + currentNumberOfShips); // prints to console for testing
@@ -57,6 +61,8 @@ public class EnemyShipSpawner : MonoBehaviour
             currentWave++;
             //TODO Update HUD with current wave number
             HUD.Instance.DisplayWave(currentWave);
+
+            addTurbo++;
 
             SpawnWaveOfEnemies();
 
@@ -71,8 +77,9 @@ public class EnemyShipSpawner : MonoBehaviour
                 HUD.Instance.DisplayHighestWave(currentWave);
             }
         }
+
+        return addTurbo;
+
     }
-
-
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class PlayerShip : Ship
         if (Input.GetMouseButton(1))
         {
             Thrust();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Turbo();
         }
 
         FollowMouse(); 
