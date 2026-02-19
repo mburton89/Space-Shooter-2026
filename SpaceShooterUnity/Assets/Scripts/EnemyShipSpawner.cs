@@ -58,7 +58,7 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
             SpawnWaveOfEnemies();
 
-4            // ADD TURBO BONUS HERE
+            // ADD TURBO BONUS HERE
             PlayerShip player = FindObjectOfType<PlayerShip>();
             if (player != null)
             {
