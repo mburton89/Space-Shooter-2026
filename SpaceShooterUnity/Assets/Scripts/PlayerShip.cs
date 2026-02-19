@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
+    public GameObject TurboShotPrefab;
+    public GameObject TurboExplosionPrefab;
+    public float TurboShotVelocity;
+    public Transform TurboShotSpawnPoint;
+    public AudioSource TurboShotSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +30,11 @@ public class PlayerShip : Ship
             Thrust();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TurboShot();
+        }
+
         FollowMouse(); 
     }
 
@@ -36,5 +48,34 @@ public class PlayerShip : Ship
 
         //Step 3: Make the ship actually point toward the mouse cursor
         transform.up = directionToFace;
+    }
+
+    public void TurboShot()
+    {
+        Debug.Log("Fire TurboShot");
+
+        GameObject newTurboExplosion = Instantiate(TurboExplosionPrefab, TurboShotSpawnPoint.position, transform.rotation);
+
+        GameObject newTurboShot = Instantiate(TurboShotPrefab, TurboShotSpawnPoint.position, transform.rotation);
+
+        newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * TurboShotVelocity);
+        newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+
+        TurboShotSound.pitch = newPitch;
+
+        TurboShotSound.Play();
+
+        StartCoroutine(TurboShotCoolDown());
+
+        Destroy(newTurboShot, 4);
+    }
+
+    private IEnumerator TurboShotCoolDown()
+    {
+        canPewPew = false;
+        yield return new WaitForSeconds(fireRate);
+        canPewPew = true;
     }
 }
