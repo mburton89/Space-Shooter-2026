@@ -58,6 +58,16 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
             SpawnWaveOfEnemies();
 
+            // ADD TURBO BONUS HERE
+            PlayerShip player = FindObjectOfType<PlayerShip>();
+            if (player != null)
+            {
+                player.turboAmmo += 1;                 // +1 ammo
+                HUD.Instance.UpdateTurboUI(player.turboAmmo); // Update HUD immediately
+            }
+
+            // Check for highest wave
+
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
 
             if (currentWave > highestWaveAchieved)

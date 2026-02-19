@@ -15,10 +15,21 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
+    public TextMeshProUGUI turboText;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        PlayerShip player = FindObjectOfType<PlayerShip>();
+
+        if (player != null)
+        {
+            UpdateTurboUI(player.turboAmmo);
+        }
     }
 
     public void UpdateHealthUI(int currentHealth, int maxHealth)
@@ -29,7 +40,9 @@ public class HUD : MonoBehaviour
     }
 
     public void DisplayWave(int currentWave)
+
     {
+
 // Updated upstream
         Debug.Log("WAVE: " + currentWave);
 
@@ -45,4 +58,11 @@ public class HUD : MonoBehaviour
     
  // Stashed changes
     }
+
+    public void UpdateTurboUI(int currentAmmo)
+    {
+        turboText.SetText("TURBO: " + currentAmmo);
+    }
+
+
 }
