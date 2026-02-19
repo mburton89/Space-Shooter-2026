@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
+    public TextMeshProUGUI currentQuadAmmoText;
 
     private void Awake()
     {
@@ -33,5 +34,10 @@ public class HUD : MonoBehaviour
     internal void DisplayHighestWave(int highestWave)
     {
         highestWaveText.SetText("BEST: " + highestWave);
+    }
+
+    internal void DisplayCurrentQuadAmmo(int currentQuadAmmo)
+    {
+        currentQuadAmmoText.SetText("QUAD LASER AMMO: " + currentQuadAmmo);
     }
 }

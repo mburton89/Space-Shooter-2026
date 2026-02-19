@@ -1,6 +1,7 @@
 
 using UnityEngine;
-using System.Collections.Generic; // we need this API for LIST functionality
+using System.Collections.Generic;
+using System.Collections.Concurrent; // we need this API for LIST functionality
 public class EnemyShipSpawner : MonoBehaviour
 {
     public static EnemyShipSpawner Instance;
@@ -14,6 +15,8 @@ public class EnemyShipSpawner : MonoBehaviour
     int currentNumberOfShips;
     
     int currentWave;
+
+    int currentQuadAmmo;
     
     int baseNumberOfShips;
     
@@ -23,6 +26,7 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         Instance = this;
         currentWave = 1;
+        currentQuadAmmo = 3;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -59,6 +63,10 @@ void Start()
     if (currentNumberOfShips == 1)
         {
             currentWave++;
+            if (FindObjectOfType<Ship>().currentQuadAmmo < 3)
+            {
+                FindObjectOfType<Ship>().currentQuadAmmo++;
+            }
             //TODO Update HUD with current wave number
             HUD.Instance.DisplayWave(currentWave);
 
@@ -74,5 +82,12 @@ void Start()
                 HUD.Instance.DisplayHighestWave(currentWave);
             }
         }
+    }
+
+    public void CountCurrentQuadAmmo()
+    {
+        currentQuadAmmo =
+        FindObjectsByType<Ship>(FindObjectsSortMode.None).Length;
+        Debug.Log("Quad Laser Ammo: " + currentQuadAmmo);
     }
 }

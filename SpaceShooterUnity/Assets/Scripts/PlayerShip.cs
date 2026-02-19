@@ -23,6 +23,15 @@ public class PlayerShip : Ship
             Thrust();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentQuadAmmo > 0)
+            {
+                currentQuadAmmo--;
+                QuadLaser();
+            }
+        }
+
         FollowMouse(); 
     }
 

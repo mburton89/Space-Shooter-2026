@@ -207,7 +207,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &73078078
@@ -5876,6 +5876,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1570301722}
+  - {fileID: 1001021217}
   - {fileID: 357979835}
   - {fileID: 73078080}
   - {fileID: 977793232}
@@ -5903,11 +5904,17 @@ MonoBehaviour:
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 1517032572036187509, guid: ad3f4c1c29647b242ad6163f18b36f18, type: 3}
+  quadLaserPrefab: {fileID: 7435505725922664553, guid: b6fe3e6cb6d5d044e9587cb9309d5601, type: 3}
+  maxQuadAmmo: 3
+  currentQuadAmmo: 3
   projectileVelocity: 1000
+  quadLaserVelocity: 10
   projectileSpawnPoint: {fileID: 1570301722}
+  quadLaserSpawnPoint: {fileID: 1001021217}
   pewPewAudioSource: {fileID: 73078079}
   thrusterAudioSource: {fileID: 977793231}
   ouchieAudioSource: {fileID: 1263632582}
+  quadLaserAudioSource: {fileID: 4875077363786697685, guid: 27c7c5aee6535944888fb450b0fdfe28, type: 3}
   canPewPew: 1
 --- !u!82 &794190066
 AudioSource:
@@ -6335,6 +6342,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794190064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001021216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001021217}
+  m_Layer: 0
+  m_Name: Quad Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001021217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001021216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
