@@ -9,6 +9,7 @@ public class BaddieShip : Ship
     public bool isShooter;
 
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
         target = FindObjectOfType<PlayerShip>().transform;

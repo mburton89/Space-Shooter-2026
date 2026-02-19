@@ -18,23 +18,29 @@ public class Ship : MonoBehaviour
     public GameObject projectilePrefab;
 
     public float projectileVelocity;
+    public float currentCharge;
+    
+  
 
     public Transform projectileSpawnPoint;
 
     ParticleSystem thrustParticles;
 
     public GameObject explosionPrefab;
+    public GameObject TurboPrefab;
 
     public AudioSource pewPewAudioSource;
     public AudioSource takeDamageAudioSource;
 
     public bool canPewPew;
+    public bool canTurboShot;
 
     // Start is called before the first frame update
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
         canPewPew = true;
+        canTurboShot = true;
     }
 
     // Update is called once per frame
@@ -71,8 +77,41 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(CoolDown());
 
+        Destroy(newProjectile, 4);
+    }
+
+    public void TurboShot()
+    {
+        Debug.Log("Fire Turbo");
+        GameObject newProjectile = Instantiate(TurboPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        takeDamageAudioSource.Play();
+        
+
+        if (GetComponent<PlayerShip>())
+        {
+            // Display Turbo Shot
+            HUD.Instance.UpdateTurboUI(currentCharge);
+        }
+
+        if (currentCharge <= 0)
+        {
+           
+
+
+        }
+
+        float newPitch = Random.Range(2f, 2f);
+
+        pewPewAudioSource.pitch = newPitch;
+        pewPewAudioSource.Play();
+
+        StartCoroutine(CoolDown());
 
         Destroy(newProjectile, 4);
+
     }
 
     public void TakeDamage(int damageToTake)
