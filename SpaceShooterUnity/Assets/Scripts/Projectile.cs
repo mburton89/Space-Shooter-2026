@@ -16,8 +16,6 @@ public class Projectile : MonoBehaviour
         {
             //If we made it this far, the thing we collided with is a SHIP. WOOHOO! ANNNNNNDD, its not the ship that fired the projectile
 
-            Debug.Log("Collided with " + collision.gameObject);
-
             collision.GetComponent<Ship>().TakeDamage(damageToGive);
 
             Destroy(gameObject);
