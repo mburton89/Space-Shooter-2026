@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
+    public TextMeshProUGUI currentBombsText;
 
     private void Awake()
     {
@@ -26,6 +27,11 @@ public class HUD : MonoBehaviour
 
         healthBarFill.fillAmount = healthAmount;
 
+    }
+
+    public void UpdateGlitterBombInventory(int currentGlitterBombs)
+    {
+        currentBombsText.SetText("G. BOMBS: " + currentGlitterBombs);
     }
 
     public void DisplayWave(int currentWave)

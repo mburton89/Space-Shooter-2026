@@ -72,8 +72,8 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
             SpawnWaveOfEnemies();
+            FindObjectOfType<PlayerShip>().ReplenishBombs();
         }
 
     }
-
 }
