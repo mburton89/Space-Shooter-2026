@@ -14,11 +14,13 @@ public class Ship : MonoBehaviour
     public float maxSpeed;
 
     public float fireRate;
+    public float currentCharge;
 
     public Rigidbody2D rb;
 
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
+    public GameObject chargePrefab;
 
     public float projectileVelocity;
 
@@ -31,6 +33,7 @@ public class Ship : MonoBehaviour
     public AudioSource hurtAudioSource;
 
     public bool canPewPew;
+    public bool canCharge;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,6 +42,8 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(CoolDown());
         canPewPew = true;
+        currentCharge = 3;
+
     }
 
     // Update is called once per frame
@@ -69,6 +74,40 @@ public class Ship : MonoBehaviour
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
 
         float ranPitch = Random.Range(1f, 1.1f);
+
+        pewPewAudioSource.pitch = ranPitch;
+
+        pewPewAudioSource.Play();
+
+        StartCoroutine(CoolDown());
+
+        Destroy(newProjectile, 4);
+    }
+
+    public void ChargeShot()
+    {
+
+        if (currentCharge <= 0)
+        {
+            return;
+        }
+
+        Debug.Log("Fire big shot");
+        GameObject newProjectile = Instantiate(chargePrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float ranPitch = Random.Range(2f, 2f);
+
+        currentCharge--;
+
+        if (GetComponent<PlayerShip>())
+        {
+            //Display current Health
+            HUD.Instance.DisplayShotUI(currentCharge);
+        }
+
+        // Subtract until 0, based on upmost If statement
 
         pewPewAudioSource.pitch = ranPitch;
 

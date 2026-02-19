@@ -13,6 +13,11 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI highestWaveText;
 
+    public TextMeshProUGUI currentShot;
+
+    public TextMeshProUGUI shotText;
+
+
     private void Awake()
     {
         Instance = this;
@@ -35,4 +40,11 @@ public class HUD : MonoBehaviour
     {
         highestWaveText.SetText("BEST: " + highestWave);
     }
+
+    public void DisplayShotUI(float currentShot)
+    {
+        Debug.Log("Special: " + currentShot);
+        shotText.SetText("Charge: " + currentShot);
+    }
+
 }
