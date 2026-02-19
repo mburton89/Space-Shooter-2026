@@ -53,6 +53,9 @@ public class EnemyShipSpawner : MonoBehaviour
         if(currentNumberOfShips == 1)
         {
             currentWave += 1;
+
+
+
             HUD.Instance.DisplayWave(currentWave); //TODO Update HUD with current wave number
             SpawnWaveOfEnemies();
 

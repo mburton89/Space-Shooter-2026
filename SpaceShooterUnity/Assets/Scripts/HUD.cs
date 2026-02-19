@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestWaveText;
+    public TextMeshProUGUI turboShotText;
 
     private void Awake()
     {
@@ -34,4 +35,10 @@ public class HUD : MonoBehaviour
     {
         highestWaveText.SetText("BEST: " + highestWave);
     }
+
+    public void DisplayTurboShot(int currentTurboShot)
+    {
+        turboShotText.SetText("Turbo Shots: " + currentTurboShot);
+    }
+
 }

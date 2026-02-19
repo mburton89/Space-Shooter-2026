@@ -17,6 +17,7 @@ public class Ship : MonoBehaviour
 
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
+    public GameObject turboShotPrefab;
 
     public float projectileVelocity;
 
@@ -72,6 +73,8 @@ public class Ship : MonoBehaviour
 
         Destroy(newProjectile, 4);
     }
+
+    
 
     public void TakeDamage(int damageToTake)
     { 

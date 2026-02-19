@@ -1,13 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+
 
 public class PlayerShip : Ship
 {
+
+    public int maxShots = 3;
+    public int currentShots;
+
+    public void turboShot()
+    {
+        
+
+        Debug.Log("Fire Turbo Shot");
+        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+
+        pewPewAudioSource.pitch = newPitch;
+
+        pewPewAudioSource.Play();
+
+        currentShots--;
+        HUD.Instance.DisplayTurboShot(currentShots);
+
+        Destroy(newProjectile, 4);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentShots = maxShots;
     }
 
     // Update is called once per frame
@@ -23,8 +51,21 @@ public class PlayerShip : Ship
             Thrust();
         }
 
-        FollowMouse(); 
+
+        if (Input.GetKeyDown(KeyCode.Space) && currentShots > 0)
+
+        {
+            Debug.Log("current Shots " + currentShots);
+            Debug.Log("Max Shots " + maxShots);
+            turboShot();
+        }
+
+        FollowMouse();
+
+       
+
     }
+
 
     void FollowMouse()
     {
@@ -37,4 +78,6 @@ public class PlayerShip : Ship
         //Step 3: Make the ship actually point toward the mouse cursor
         transform.up = directionToFace;
     }
+
+    
 }
