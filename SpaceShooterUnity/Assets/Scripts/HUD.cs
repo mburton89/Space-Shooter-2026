@@ -5,13 +5,13 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public static HUD Instance; 
-
+    public static HUD Instance;
 
     public Image healthBarFill;
 
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI highestwaveText;
+    public TextMeshProUGUI turboShotAmmoText;
 
     private void Awake()
     {
@@ -24,6 +24,11 @@ public class HUD : MonoBehaviour
 
         healthBarFill.fillAmount = healthAmount;
     
+    }
+
+    internal void DisplayAmmo(int currentturboShotAmmo)
+    {
+        turboShotAmmoText.SetText("Turbo Shots: " + currentturboShotAmmo);
     }
 
     public void DisplayWave(int currentWave)

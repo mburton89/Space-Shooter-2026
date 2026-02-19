@@ -845,6 +845,7 @@ MonoBehaviour:
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
+  turboShotPrefab: {fileID: 186535404877285595, guid: 42805d017977e2940b7543a1aab50421, type: 3}
   explosionPrefab: {fileID: 7361476547607590844, guid: 58cae30fcbe6085429e85d74a0347bf0, type: 3}
   projectileVelocity: 1000
   projectileSpawnPoint: {fileID: 1570301722}
@@ -6260,6 +6261,7 @@ MonoBehaviour:
   enemyShipPrefabs:
   - {fileID: 4063400254664566786, guid: d016c8f491d1a884fa1f80b1d004fb4b, type: 3}
   - {fileID: 7957263983365508488, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
+  - {fileID: 4063400254664566786, guid: e8c0f25afce827345a53de20d44334c9, type: 3}
   pivotPoint: {fileID: 386124837}
   spawnPoint: {fileID: 413777171}
 --- !u!1 &1735391117

@@ -22,6 +22,14 @@ public class PlayerShip : Ship
         {
             Thrust();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TurboShot(); //HELPPPPPPPPPPPPP
+            {
+                Debug.Log("TurboShot");
+            }
+        }
+
 
         FollowMouse(); 
     }
