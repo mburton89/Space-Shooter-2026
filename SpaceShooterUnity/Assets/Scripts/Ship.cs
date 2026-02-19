@@ -12,22 +12,31 @@ public class Ship : MonoBehaviour
     public float maxSpeed;
 
     public float fireRate;
+    public float turboFireRate;
 
     public Rigidbody2D rb;
 
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
+    public GameObject turboShotPrefab;
+    public GameObject turboShotParticlesPrefab;
 
     public float projectileVelocity;
 
     public Transform projectileSpawnPoint;
     public Transform explosionSpawnPoint;
+    public Transform turboShotSpawnPoint;
 
     ParticleSystem thrustParticles;
+
     public AudioSource pewPewAudioSource;
     public AudioSource takeDamageAudioSource;
+    public AudioSource turboShotAudioSource;
 
     public bool canPewPew;
+    public bool canTurboShot;
+    public int currentTurboShots;
+    public int maxTurboShots;
 
 
     // Start is called before the first frame update
@@ -72,10 +81,56 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(CoolDown());
 
-        Destroy(newProjectile, 4);
+        Destroy(newProjectile, 3);
 
     }
 
+    public void TurboShot()
+    {
+        if (currentTurboShots >= 1 && canTurboShot)
+            {
+        Debug.Log("Turbo Shot");
+        GameObject newTurboShot = Instantiate(turboShotPrefab, turboShotSpawnPoint.position, transform.rotation);
+        GameObject turboShotParticles = Instantiate(turboShotParticlesPrefab, turboShotSpawnPoint.position, transform.rotation);
+        newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
+
+        float newPitch = Random.Range(.5f, 1.6f);
+
+        turboShotAudioSource.Play();
+        turboShotAudioSource.pitch = newPitch;
+
+        Debug.Log("Current Turbo Shots:" + currentTurboShots);
+        currentTurboShots --;
+        
+        LimitTurboShots();
+        HUD.Instance.UpdateTurboShotUI(currentTurboShots);
+
+         StartCoroutine(TurboCoolDown());
+
+         Destroy(newTurboShot, 4);
+            }
+    }
+
+    
+    public void LimitTurboShots()
+    {
+        if (currentTurboShots > maxTurboShots)
+        {
+            currentTurboShots = maxTurboShots;
+            HUD.Instance.UpdateTurboShotUI(currentTurboShots);
+        }
+         
+    }
+    public void AddTurboShot()
+    {
+        Debug.Log("Turbo Shot Bonus");
+        currentTurboShots++;
+        LimitTurboShots();
+        HUD.Instance.UpdateTurboShotUI(currentTurboShots);
+    
+
+    }
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
@@ -113,11 +168,20 @@ public class Ship : MonoBehaviour
         Destroy(newExplosion, 4);
     }
 
+
     private IEnumerator CoolDown()
     {
         canPewPew = false;
         yield return new WaitForSeconds(fireRate);
         canPewPew = true;
+
+    }
+
+     public IEnumerator TurboCoolDown()
+    {
+        canTurboShot = false;
+        yield return new WaitForSeconds(turboFireRate);
+        canTurboShot = true;
 
     }
 }

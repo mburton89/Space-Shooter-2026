@@ -17,6 +17,7 @@ public class EnemyShipSpawner : MonoBehaviour
     int currentWave;
     int baseNumberOfShips;
 
+
     //TO DO = Make a max amount of waves if we wanna "beat" the game
 
     private void Awake()
@@ -57,10 +58,20 @@ public class EnemyShipSpawner : MonoBehaviour
 
         if(currentNumberOfShips == 1)
         {
-            currentWave++;
+            NewWave();
+        }
+    }
+
+    public void NewWave()
+    {
+        currentWave++;
+        
+            
             //To Do: Update HUD with current wave #
             HUD.Instance.DisplayWave(currentWave);
 
+            FindObjectOfType<Ship>().AddTurboShot();
+            HUD.Instance.UpdateTurboShotUI(FindObjectOfType<Ship>().currentTurboShots);
             SpawnWaveOfEnemies();
 
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
@@ -75,7 +86,6 @@ public class EnemyShipSpawner : MonoBehaviour
                   newHighScoreAudio.Play(); //Play audio for new score
                 
             }
-        }
     }
 
 }

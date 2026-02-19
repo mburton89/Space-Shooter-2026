@@ -8,6 +8,9 @@ public class HUD : MonoBehaviour
 {
     public static HUD Instance; //Make this a singleton to access from other scripts
     public Image healthBarFill;
+    public Image turboShotOne; //ref to turbo shot one
+    public Image turboShotTwo; //ref to turbo shot 2
+    public Image turboShotThree; //ref to turbo shot 3
 
     public TextMeshProUGUI waveText; //ref to wave text
 
@@ -23,6 +26,40 @@ public class HUD : MonoBehaviour
     {
         float healthAmount = (float)currentHealth / (float)maxHealth; //Calculate percent of health remaining
         healthBarFill.fillAmount = healthAmount; //Change health bar filling to match health amount
+    }
+
+    public void UpdateTurboShotUI(int currentTurboShots)
+    {
+        Debug.Log("Current Turbo Shots:" + currentTurboShots);
+        //this function updates vis of turbo shot images
+        if (currentTurboShots == 0)
+        {
+            Debug.Log("Turbo0");
+            turboShotOne.enabled = false;
+            turboShotTwo.enabled = false;
+            turboShotThree.enabled = false;
+        }
+        if (currentTurboShots == 1)
+        {
+            Debug.Log("Turbo1");
+            turboShotOne.enabled = true;
+            turboShotTwo.enabled = false;
+            turboShotThree.enabled = false;
+        }
+        if (currentTurboShots == 2)
+        {
+            Debug.Log("Turbo2");
+            turboShotOne.enabled = true;
+            turboShotTwo.enabled = true;
+            turboShotThree.enabled = false;
+        }
+        if (currentTurboShots == 3)
+        {
+            Debug.Log("Turbo3");
+            turboShotOne.enabled = true;
+            turboShotTwo.enabled = true;
+            turboShotThree.enabled = true;
+        }
     }
 
     internal void DisplayWave(int currentWave)
