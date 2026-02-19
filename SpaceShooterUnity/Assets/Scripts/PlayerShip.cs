@@ -22,6 +22,13 @@ public class PlayerShip : Ship
         {
             Thrust();
         }
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+
+            PewPew();
+        }  
+        
 
         FollowMouse(); 
     }

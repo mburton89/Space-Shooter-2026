@@ -70,7 +70,7 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(CoolDown());
 
-        Destroy(newProjectile, 4);
+        Destroy(newProjectile, 10);
     }
 
     public void TakeDamage(int damageToTake)
