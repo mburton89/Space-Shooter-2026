@@ -48,6 +48,11 @@ public class EnemyShipSpawner : MonoBehaviour
 
     }
 
+    //public void SpawnTurboShotAmmo()
+   // {                                   ???????
+    ///    int NumberOfTurboShotAmmo = 
+    //}
+
     public void CountEnemyShips()
     {
         currentNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;

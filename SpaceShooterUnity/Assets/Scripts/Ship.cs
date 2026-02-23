@@ -33,8 +33,15 @@ public class Ship : MonoBehaviour
     public AudioSource pewPewAudioSource;
 
     public bool canPewPew = true;
+    public bool canTurboShot;
+
+    void Start()
+    {
+        currentTurboShotAmmo = maxTurboShotAmmo;
+    }
 
     public int maxAmmo { get; private set; }
+    public bool isDisabled { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
@@ -111,6 +118,25 @@ public class Ship : MonoBehaviour
         //if (currentturboShotAmmo < 0) ;
 
         //currentturboShotAmmo -= TurboShot;
+
+        if (currentTurboShotAmmo > 0)
+        {
+            currentTurboShotAmmo --;
+            Debug.Log("Ammo Left: " + currentTurboShotAmmo);
+        }
+        else
+        {
+            isDisabled = false;
+            Debug.Log("Out of Turbo Shots!");
+
+        }
+
+    }
+
+    public void ReplenishTurboShot()
+    {
+        currentTurboShotAmmo++;
+        Debug.Log("TurboShot Ammo Replenished!");
 
     }
 
