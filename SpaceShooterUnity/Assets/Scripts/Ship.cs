@@ -7,7 +7,7 @@ public class Ship : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public int currentTurboShotAmmo;
-    public int maxTurboShotAmmo;
+    public int maxTurboShotAmmo = 3;
 
     public float acceleration;
     public float currentSpeed;
@@ -92,16 +92,17 @@ public class Ship : MonoBehaviour
 
         Destroy(newProjectile, 4);
 
-        //currentTurboShotAmmo -- 1;
-               
-        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
+        if (currentTurboShotAmmo > maxTurboShotAmmo)
+        {
+            currentTurboShotAmmo--;
+            Debug.Log("Bang! Ammo Left: " + currentTurboShotAmmo);
+            HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
+        }
+        else
+        {
+            Debug.Log("Out of Turbo Shot Ammo!");
+        }
     }
-
-    private void TurboShotAmmo(int maxTurboShotAmmo)
-    {
-        //if (currentTurboShotAmmo < 0)
-    }
-
 
     public void TakeDamage(int damageToTake)
     {
