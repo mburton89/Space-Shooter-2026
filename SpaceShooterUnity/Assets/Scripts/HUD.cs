@@ -12,11 +12,13 @@ public class HUD : MonoBehaviour
 
   public TextMeshProUGUI waveText;
   public TextMeshProUGUI highestWaveText;
+  public TextMeshProUGUI turboShotsText;
 
   private void Awake()
   {
     Instance = this;
   }
+
 
   public void UpdateHealthUI(int currentHP, int maxHP)
   {
@@ -28,6 +30,11 @@ public class HUD : MonoBehaviour
   public void DisplayWave(int currentWave)
   {
     waveText.SetText("WAVE " + (currentWave - 1));
+  }
+
+  public void UpdateTurbos(int turbos)
+  {
+    turboShotsText.SetText(turbos + " TURBOSHOTS");
   }
 
   public void DisplayHighestWave(int highestWave)

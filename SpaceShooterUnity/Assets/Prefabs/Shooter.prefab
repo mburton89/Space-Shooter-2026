@@ -171,6 +171,7 @@ MonoBehaviour:
   fireRate: 0.7
   rb: {fileID: 939969185716075255}
   projectilePrefab: {fileID: 4809882805159961800, guid: 80102908f55224c76bfb322c9be53e64, type: 3}
+  turboPrefab: {fileID: 0}
   explosionPrefab: {fileID: 5659396962058880066, guid: 8dd74715d645144b888216f0cc0a492d, type: 3}
   projectileSpawnPoint: {fileID: 8525526898619379251}
   pewPewSound: {fileID: 4847967711420776598}

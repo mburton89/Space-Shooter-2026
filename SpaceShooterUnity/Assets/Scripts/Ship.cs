@@ -18,6 +18,7 @@ public class Ship : MonoBehaviour
   public Rigidbody2D rb;
 
   public GameObject projectilePrefab;
+  public GameObject turboPrefab;
   public GameObject explosionPrefab;
   public Transform projectileSpawnPoint;
 
