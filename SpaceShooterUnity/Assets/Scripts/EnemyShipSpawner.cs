@@ -14,7 +14,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
     //data to consider
     int currentNumberOfShips;
-    int currentWave;
+    public int currentWave;
     int baseNumberOfShips;
 
 
@@ -46,21 +46,20 @@ public class EnemyShipSpawner : MonoBehaviour
 
             //Step 2: Spawn enemy in spawn point
             int randomShipIndexEasy = Random.Range(0, 1);
-            int randomShipIndexMedium = Random.Range(0, 3);
+            int randomShipIndexMedium = Random.Range(2, 3);
             int randomShipIndexHard = Random.Range(2, 4);
-            Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, spawnPoint.rotation, null);
 
-            if (currentWave <= 3)
+            if (currentWave <= 5)
             {
                 Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, spawnPoint.rotation, null);
             }
 
-            if (currentWave >= 4)
+            if (currentWave >= 10)
             {
                  Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, spawnPoint.rotation, null);
             }
 
-            if (currentWave >= 8)
+            if (currentWave >= 15)
             {
                 Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, spawnPoint.rotation, null);
             }
@@ -84,6 +83,7 @@ public class EnemyShipSpawner : MonoBehaviour
         currentWave++;
         
             SpawnWaveOfEnemies();
+            PowerUpSpawner.Instance.SpawnPowerUpWave();
             
             //To Do: Update HUD with current wave #
             HUD.Instance.DisplayWave(currentWave);

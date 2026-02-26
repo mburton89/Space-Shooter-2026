@@ -87,8 +87,7 @@ public class Ship : MonoBehaviour
 
     public void TurboShot()
     {
-        if (GetComponent<PlayerShip>())
-        {
+        
         if (currentTurboShots >= 1 && canTurboShot)
             {
         Debug.Log("Turbo Shot");
@@ -111,7 +110,7 @@ public class Ship : MonoBehaviour
          StartCoroutine(TurboCoolDown());
 
          Destroy(newTurboShot, 4);
-            }
+            
         }
     }
 
@@ -134,6 +133,7 @@ public class Ship : MonoBehaviour
     
 
     }
+    
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
@@ -154,6 +154,8 @@ public class Ship : MonoBehaviour
             Explode();
         }
     }
+
+   
 
     public void Explode()
     {
@@ -187,4 +189,14 @@ public class Ship : MonoBehaviour
         canTurboShot = true;
 
     }
+     public void GiveHealth(int healthToGive)
+    {
+       currentHealth += healthToGive;
+
+       if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+    }
+    
 }

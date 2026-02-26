@@ -32,6 +32,8 @@ public class PlayerShip : Ship
 
     }
 
+
+
     void FollowMouse()
     {
         //Step 1: Find out where mouse cursor is relative to camera and screen
@@ -43,47 +45,4 @@ public class PlayerShip : Ship
         //Step 3: Make the ship actually point toward the mouse cursor
         transform.up = directionToFace;
     }
-
-
-    public void TurboShot()
-    {
-        
-        if (currentTurboShots >= 1 && canTurboShot)
-            {
-        Debug.Log("Turbo Shot");
-        GameObject newTurboShot = Instantiate(turboShotPrefab, turboShotSpawnPoint.position, transform.rotation);
-        GameObject turboShotParticles = Instantiate(turboShotParticlesPrefab, turboShotSpawnPoint.position, transform.rotation);
-        newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
-
-        float newPitch = Random.Range(.5f, 1.6f);
-
-        turboShotAudioSource.Play();
-        turboShotAudioSource.pitch = newPitch;
-
-        Debug.Log("Current Turbo Shots:" + currentTurboShots);
-        currentTurboShots --;
-        
-        LimitTurboShots();
-        HUD.Instance.UpdateTurboShotUI(currentTurboShots);
-
-         StartCoroutine(TurboCoolDown());
-
-         Destroy(newTurboShot, 4);
-            
-        }
-    }
-
-    
-    public void LimitTurboShots()
-    {
-        if (currentTurboShots > maxTurboShots)
-        {
-            currentTurboShots = maxTurboShots;
-            HUD.Instance.UpdateTurboShotUI(currentTurboShots);
-        }
-         
-    }
-   
-
 }
