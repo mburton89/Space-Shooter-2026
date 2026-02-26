@@ -29,6 +29,7 @@ public class HUD : MonoBehaviour
     {
         Debug.Log("WAVE: " + currentWave);
         waveText.SetText("WAVE: " + currentWave);
+        
     }
 
     internal void DisplayHighestWave(int highestWave)
