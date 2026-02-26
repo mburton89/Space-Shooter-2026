@@ -45,8 +45,25 @@ public class EnemyShipSpawner : MonoBehaviour
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation); //Rotate pivot point 2 new angle
 
             //Step 2: Spawn enemy in spawn point
-            int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
-            Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, spawnPoint.rotation, null);
+            int randomShipIndexEasy = Random.Range(0, 1);
+            int randomShipIndexMedium = Random.Range(0, 3);
+            int randomShipIndexHard = Random.Range(2, 4);
+            Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, spawnPoint.rotation, null);
+
+            if (currentWave <= 3)
+            {
+                Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, spawnPoint.rotation, null);
+            }
+
+            if (currentWave >= 4)
+            {
+                 Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, spawnPoint.rotation, null);
+            }
+
+            if (currentWave >= 8)
+            {
+                Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, spawnPoint.rotation, null);
+            }
         } 
     }
 
@@ -66,13 +83,19 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         currentWave++;
         
+            SpawnWaveOfEnemies();
             
             //To Do: Update HUD with current wave #
             HUD.Instance.DisplayWave(currentWave);
 
-            FindObjectOfType<Ship>().AddTurboShot();
-            HUD.Instance.UpdateTurboShotUI(FindObjectOfType<Ship>().currentTurboShots);
-            SpawnWaveOfEnemies();
+
+            //FindObjectOfType<Ship>().AddTurboShot();
+            Debug.Log("Turbo SHot Wave Bonus");
+            Ship playerShip = FindObjectOfType<Ship>();
+            playerShip.currentTurboShots++;
+            HUD.Instance.UpdateTurboShotUI(playerShip.currentTurboShots);
+            playerShip.LimitTurboShots();
+            
 
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
 

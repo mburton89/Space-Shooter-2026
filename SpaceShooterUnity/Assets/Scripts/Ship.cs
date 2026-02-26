@@ -87,6 +87,8 @@ public class Ship : MonoBehaviour
 
     public void TurboShot()
     {
+        if (GetComponent<PlayerShip>())
+        {
         if (currentTurboShots >= 1 && canTurboShot)
             {
         Debug.Log("Turbo Shot");
@@ -110,6 +112,7 @@ public class Ship : MonoBehaviour
 
          Destroy(newTurboShot, 4);
             }
+        }
     }
 
     

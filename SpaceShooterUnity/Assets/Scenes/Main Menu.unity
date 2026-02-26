@@ -1299,6 +1299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUD
   healthBarFill: {fileID: 0}
+  turboShotOne: {fileID: 0}
+  turboShotTwo: {fileID: 0}
+  turboShotThree: {fileID: 0}
   waveText: {fileID: 0}
   highestWaveText: {fileID: 1584378068}
 --- !u!1 &1954199020

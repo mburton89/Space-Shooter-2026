@@ -31,29 +31,31 @@ public class HUD : MonoBehaviour
     public void UpdateTurboShotUI(int currentTurboShots)
     {
         Debug.Log("Current Turbo Shots:" + currentTurboShots);
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        
         //this function updates vis of turbo shot images
-        if (currentTurboShots == 0)
+        if (playerShip.currentTurboShots == 0)
         {
             Debug.Log("Turbo0");
             turboShotOne.enabled = false;
             turboShotTwo.enabled = false;
             turboShotThree.enabled = false;
         }
-        if (currentTurboShots == 1)
+        if (playerShip.currentTurboShots == 1)
         {
             Debug.Log("Turbo1");
             turboShotOne.enabled = true;
             turboShotTwo.enabled = false;
             turboShotThree.enabled = false;
         }
-        if (currentTurboShots == 2)
+        if (playerShip.currentTurboShots == 2)
         {
             Debug.Log("Turbo2");
             turboShotOne.enabled = true;
             turboShotTwo.enabled = true;
             turboShotThree.enabled = false;
         }
-        if (currentTurboShots == 3)
+        if (playerShip.currentTurboShots == 3)
         {
             Debug.Log("Turbo3");
             turboShotOne.enabled = true;
