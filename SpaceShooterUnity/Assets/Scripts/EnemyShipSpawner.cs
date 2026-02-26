@@ -44,6 +44,9 @@ public class EnemyShipSpawner : MonoBehaviour
             int randomShipIndex = Random.Range(0, enemyShipPreFabs.Count);
             Instantiate(enemyShipPreFabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        playerShip.turboPewPew++;
+        HUD.Instance.DisplayTurboPew(playerShip.turboPewPew);
     }
 
     public void CountEnemyShips()

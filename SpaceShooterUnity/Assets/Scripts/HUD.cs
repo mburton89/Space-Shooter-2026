@@ -38,7 +38,8 @@ public class HUD : MonoBehaviour
 
     public void DisplayTurboPew(int turboPew)
     {
-        Debug.Log("Turbo Pew: " + turboPew);
-        turboPewText.SetText("Turbo pews: " + turboPew);
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        Debug.Log("Turbo Pew: " + playerShip.turboPewPew);
+        turboPewText.SetText("Turbo pews " + playerShip.turboPewPew);
     }
 }

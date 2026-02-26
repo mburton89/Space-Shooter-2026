@@ -80,40 +80,6 @@ public class Ship : MonoBehaviour
         Destroy(newProjectile, 4);
     }
 
-    public void TurboPew()
-    {
-        Debug.Log("TurboPew: " + turboPewPew);
-        if (turboPewPew > 0)
-        {
-            Debug.Log("Fire Projectile");
-            GameObject newProjectile = Instantiate(turboPreFab, turboSpawnPoint.position, transform.rotation);
-            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-            newProjectile.GetComponent<Projectile>().firingShip = gameObject;
-
-            float newPitch = Random.Range(0.9f, 1.5f);
-
-            TurboPewAudioSource.pitch = newPitch;
-
-            TurboPewAudioSource.Play();
-
-            StartCoroutine(CoolDown());
-
-            Destroy(newProjectile, 4);
-
-            turboPewPew--;
-
-            if (GetComponent<PlayerShip>())
-            {
-                HUD.Instance.DisplayTurboPew(turboPewPew);
-            }
-
-            //TODO figure out how to make it go up per wave
-            Debug.Log("add turbo pew?");
-            
-        }
-    }
-
-
     public void TakeDamage(int damageToTake)
     { 
         currentHealth -= damageToTake;
@@ -128,6 +94,17 @@ public class Ship : MonoBehaviour
         {
             Explode();
         }
+    }
+    public void GiveHealth(int healthToGive)
+    {
+        currentHealth += healthToGive;
+
+        if (GetComponent<PlayerShip>())
+        {
+            //display health
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+
     }
 
     public void Explode()
@@ -147,7 +124,7 @@ public class Ship : MonoBehaviour
         //code cant be called here cause we dead!
     }
 
-    private IEnumerator CoolDown()
+    public IEnumerator CoolDown()
     {
         canPewPew = false;
         yield return new WaitForSeconds(fireRate);

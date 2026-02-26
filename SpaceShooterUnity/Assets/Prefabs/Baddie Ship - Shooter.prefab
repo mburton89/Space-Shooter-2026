@@ -344,7 +344,11 @@ MonoBehaviour:
   projectileVelocity: 1500
   projectileSpawnPoint: {fileID: 2350625799771999132}
   explosionSpawnPoint: {fileID: 151445815905794910}
+  turboPreFab: {fileID: 0}
+  turboSpawnPoint: {fileID: 0}
   pewPewAudioSource: {fileID: 6784247054281381778}
+  TurboPewAudioSource: {fileID: 0}
+  turboPewPew: 0
   canPewPew: 1
   isShooter: 1
 --- !u!1 &5550926317028510343
