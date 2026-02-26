@@ -6,6 +6,8 @@ public class Ship : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
+    public int currentNumberOfTurboShots;
+    public int turboShotAmmo;
 
     public float acceleration;
     public float currentSpeed;
@@ -116,5 +118,11 @@ public class Ship : MonoBehaviour
         canPewPew = false;
         yield return new WaitForSeconds(fireRate);
         canPewPew = true;
+    }
+
+    internal void Givelife(int lifeToGive)
+    {
+        currentHealth += lifeToGive;
+        HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
     }
 }

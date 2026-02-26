@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerShip : Ship
 {   // Start is called before the first frame update
+
     void Start()
     {
-        
+        turboShotAmmo = 3;
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class PlayerShip : Ship
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TurboShot();
+            CountTurboShots();
         }
 
         FollowMouse(); 
@@ -48,8 +50,8 @@ public class PlayerShip : Ship
 
         GameObject newTurboExplosion = Instantiate(TurboExplosionPrefab, TurboShotSpawnPoint.position, transform.rotation);
 
-        GameObject newTurboShot = Instantiate(TurboShotPrefab, TurboShotSpawnPoint.position, transform.rotation);
-
+        GameObject newTurboShot= Instantiate(TurboShotPrefab, TurboShotSpawnPoint.position, transform.rotation);
+        
         newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * TurboShotVelocity);
         newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
 
@@ -62,6 +64,20 @@ public class PlayerShip : Ship
         StartCoroutine(TurboShotCoolDown());
 
         Destroy(newTurboShot, 4);
+    }
+
+    public void CountTurboShots()
+    {
+
+        Debug.Log("Number Of TurboShots: " + currentNumberOfTurboShots);
+
+        if (turboShotAmmo > 0)
+        {
+            turboShotAmmo--;
+            //TODO Update HUD with current wave number
+            HUD.Instance.DisplayTurboShot(turboShotAmmo);
+            TurboShot();
+        }
     }
 
     private IEnumerator TurboShotCoolDown()
