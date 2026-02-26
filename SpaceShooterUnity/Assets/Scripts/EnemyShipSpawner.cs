@@ -41,9 +41,31 @@ public class EnemyShipSpawner : MonoBehaviour
             float newZRotation = Random.Range(0f, 360f);
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation);
 
-            //Soawn/Instantiate the enemy in the spawn point
-            int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
-            Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
+            if (currentWave < 3)
+            {
+                //Soawn/Instantiate the enemy in the spawn point
+                int randomShipIndexEasy = Random.Range(0, 2);
+                Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, transform.rotation, null);
+            }
+
+            else if (currentWave < 6)
+            {
+                int randomShipIndexMedium = Random.Range(0, 3);
+                Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, transform.rotation, null);
+            }
+
+            else if (currentWave < 9)
+            {
+                int randomShipIndexHard = Random.Range(0, 5);
+                Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, transform.rotation, null);
+            }
+
+            else
+            {
+                int randomShipIndexExtreme = Random.Range(2, 5);
+                Instantiate(enemyShipPrefabs[randomShipIndexExtreme], spawnPoint.position, transform.rotation, null);
+            }
+
         }
 
         Ship playerShip = FindObjectOfType<PlayerShip>();
