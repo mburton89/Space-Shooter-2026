@@ -86,6 +86,7 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
             SpawnWaveOfEnemies();
+            PowerUps.Instance.SpawnHealthUps(currentWave);
 
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
 

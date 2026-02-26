@@ -131,6 +131,16 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void giveHealth(int healthToGive)
+    {
+        currentHealth += healthToGive;
+
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+    }
+
     public void Explode()
     {
         GameObject newExplosion = Instantiate(explosionPrefab, explosionSpawnPoint.position, transform.rotation);
@@ -156,4 +166,6 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(fireRate);
         canPewPew = true;
     }
+
+
 }
