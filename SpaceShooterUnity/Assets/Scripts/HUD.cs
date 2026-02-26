@@ -10,7 +10,9 @@ public class HUD : MonoBehaviour
     public Image healthBarFill;
 
     public TextMeshProUGUI waveText;
+
     public TextMeshProUGUI highestWaveText;
+
     public TextMeshProUGUI currentShotText;
 
     private void Awake()
@@ -48,15 +50,10 @@ public class HUD : MonoBehaviour
         highestWaveText.SetText("BEST: " + highestWave);
     }
 
-    public void UpdateTurboUI(float currentCharge)
-    {
-        throw new NotImplementedException();
-    }
-
     public void DisplayShot(float currentShot)
     {
         Debug.Log("Charge: " + currentShot);
-        waveText.SetText("Charge: " + currentShot);
+        currentShotText.SetText(" Turbo Shoot: " + currentShot);
     }
 
 }

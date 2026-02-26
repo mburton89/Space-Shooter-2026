@@ -41,6 +41,7 @@ public class Ship : MonoBehaviour
         thrustParticles = GetComponentInChildren<ParticleSystem>();
         canPewPew = true;
         canTurboShot = true;
+        currentCharge = 3;
     }
 
     // Update is called once per frame
@@ -82,30 +83,28 @@ public class Ship : MonoBehaviour
 
     public void TurboShot()
     {
+        if (currentCharge <= 0)
+        {
+            return;
+        }
+
         Debug.Log("Fire Turbo");
         GameObject newProjectile = Instantiate(TurboPrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
 
-        takeDamageAudioSource.Play();
-        
+        float newPitch = Random.Range(2f, 2f);
+
+        currentCharge--;
 
         if (GetComponent<PlayerShip>())
         {
             // Display Turbo Shot
-            HUD.Instance.UpdateTurboUI(currentCharge);
+            HUD.Instance.DisplayShot(currentCharge);
         }
-
-        if (currentCharge <= 0)
-        {
-           
-
-
-        }
-
-        float newPitch = Random.Range(2f, 2f);
 
         pewPewAudioSource.pitch = newPitch;
+
         pewPewAudioSource.Play();
 
         StartCoroutine(CoolDown());
