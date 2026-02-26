@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.2491803, y: 0.39031577, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 3.75, y: 3.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7771161741704736319}
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.5308172, g: 0.5660378, b: 0.3818085, a: 1}
+  m_Sprite: {fileID: 4479195952542164382, guid: bd2f62cb99d9ed6408a1452324387418, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,8 +157,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.3
+  m_Offset: {x: 0, y: 0.24}
+  m_Radius: 0.18
 --- !u!114 &4546680696213257780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,12 +175,13 @@ MonoBehaviour:
   maxHealth: 7
   acceleration: 0.4
   currentSpeed: 0
-  maxSpeed: 3
+  maxSpeed: 4
   fireRate: 0.4
   rb: {fileID: 5250092446557800272}
   projectilePrefab: {fileID: 186535404877285595, guid: 1582ef5eb8960e546adc92ff580b6f7b, type: 3}
+  projectilebigPrefab: {fileID: 0}
   explosionPrefab: {fileID: 766153116174669852, guid: 747818bf5af2bc741afa49ce8759064d, type: 3}
-  projectileVelocity: 1300
+  projectileVelocity: 1600
   projectileSpawnPoint: {fileID: 7771161741704736319}
   shootAudioSource: {fileID: 8741025388394798206}
   canFire: 1
@@ -210,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 3535694718665413352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0.611, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,8 +373,8 @@ Transform:
   m_GameObject: {fileID: 8772005234248986629}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3978814082077544472}

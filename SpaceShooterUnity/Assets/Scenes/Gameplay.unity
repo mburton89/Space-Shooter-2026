@@ -690,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 770683633}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.29000002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5554,8 +5554,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Offset: {x: 0, y: 0.15}
+  m_Radius: 0.15
 --- !u!50 &794190062
 Rigidbody2D:
   serializedVersion: 5
@@ -5630,12 +5630,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.98336077, b: 0.48584908, a: 1}
+  m_Sprite: {fileID: 5466572421338971400, guid: dfb16905c16c2fb4486fe00034abfad5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.45, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5651,7 +5651,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1570301722}
@@ -5936,7 +5936,7 @@ Transform:
   m_GameObject: {fileID: 1481990430}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6079,7 +6079,7 @@ Transform:
   m_GameObject: {fileID: 1570301721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6361,7 +6361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690165068548962909, guid: 881c5aac5b210c747aa315bb73dd94b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.44
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 3690165068548962909, guid: 881c5aac5b210c747aa315bb73dd94b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6399,12 +6399,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie Ship - Ram
       objectReference: {fileID: 0}
-    - target: {fileID: 6325919180118534049, guid: 881c5aac5b210c747aa315bb73dd94b4, type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6325919180118534049, guid: 881c5aac5b210c747aa315bb73dd94b4, type: 3}
-      propertyPath: m_Offset.y
+    - target: {fileID: 8365394009619982186, guid: 881c5aac5b210c747aa315bb73dd94b4, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
