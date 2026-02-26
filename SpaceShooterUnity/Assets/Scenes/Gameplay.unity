@@ -919,6 +919,7 @@ MonoBehaviour:
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
+  bigShotPrefab: {fileID: 3340079926955608245, guid: 055db5e99b3e8ac4c8fa6733342b6047, type: 3}
   chargePrefab: {fileID: 741029231313097472, guid: a1c54dca4e8278344bddb3221415e98c, type: 3}
   projectileVelocity: 1000
   projectileSpawnPoint: {fileID: 1570301722}

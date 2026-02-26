@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 22dfaa77863fc2a44a172c5d8e54a3db, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -311,6 +311,7 @@ MonoBehaviour:
   rb: {fileID: 8347024712546198170}
   projectilePrefab: {fileID: 186535404877285595, guid: 294f9d4ccb551e146a08682c6489a070, type: 3}
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
+  bigShotPrefab: {fileID: 0}
   chargePrefab: {fileID: 0}
   projectileVelocity: 0
   projectileSpawnPoint: {fileID: 6095337208765233216}
@@ -363,7 +364,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5b0fccf9daf62a4478d8ebfc1b25de46, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -49,8 +49,9 @@ public class EnemyShipSpawner : MonoBehaviour
             Instantiate(enemyShipPrefab[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
 
-        FindObjectOfType<PlayerShip>().currentCharge++;
-        HUD.Instance.DisplayShotUI(FindObjectOfType<PlayerShip>().currentCharge++);
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        playerShip.currentCharge += 1;
+        HUD.Instance.DisplayShotUI(playerShip.currentCharge);
     }
 
     public void countEnemyShips()

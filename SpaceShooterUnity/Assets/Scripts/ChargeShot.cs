@@ -18,7 +18,6 @@ public class ChargeShot : MonoBehaviour
 
             collision.GetComponent<Ship>().TakeDamage(damageToGive);
 
-            Destroy(gameObject);
         }
     }
 }

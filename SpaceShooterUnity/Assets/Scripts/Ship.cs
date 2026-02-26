@@ -20,6 +20,7 @@ public class Ship : MonoBehaviour
 
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
+    public GameObject bigShotPrefab;
     public GameObject chargePrefab;
 
     public float projectileVelocity;
@@ -40,8 +41,8 @@ public class Ship : MonoBehaviour
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
 
+        canPewPew = false;
         StartCoroutine(CoolDown());
-        canPewPew = true;
         currentCharge = 3;
 
     }
@@ -95,7 +96,6 @@ public class Ship : MonoBehaviour
         Debug.Log("Fire big shot");
         GameObject newProjectile = Instantiate(chargePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
 
         float ranPitch = Random.Range(2f, 2f);
 
@@ -166,7 +166,7 @@ public class Ship : MonoBehaviour
     private IEnumerator CoolDown()
     {
         canPewPew = false;
-        yield return new WaitForSeconds(fireRate);
+        yield return new WaitForSeconds(Random.Range(fireRate, fireRate + 1));
         canPewPew = true;
     }
 
