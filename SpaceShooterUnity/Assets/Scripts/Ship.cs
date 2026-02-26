@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
-{
+{    
     public int currentHealth;
     public int maxHealth;
     public int currentTurboShotAmmo;
@@ -41,7 +41,7 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -73,35 +73,8 @@ public class Ship : MonoBehaviour
         pewPewAudioSource.Play();
 
         StartCoroutine(CoolDown());
-        
-        Destroy(newProjectile, 4);
-    }
-    public void TurboShot()
-    {
-        Debug.Log("Turbo");
-
-        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
-        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
-
-        float newPitch = Random.Range(0.9f, 1.1f);
-        pewPewAudioSource.pitch = newPitch;
-        pewPewAudioSource.Play();
-
-        StartCoroutine(CoolDown());
 
         Destroy(newProjectile, 4);
-
-        if (currentTurboShotAmmo > maxTurboShotAmmo)
-        {
-            currentTurboShotAmmo--;
-            Debug.Log("Bang! Ammo Left: " + currentTurboShotAmmo);
-            HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
-        }
-        else
-        {
-            Debug.Log("Out of Turbo Shot Ammo!");
-        }
     }
 
     public void TakeDamage(int damageToTake)
@@ -145,5 +118,37 @@ public class Ship : MonoBehaviour
         canPewPew = false;
         yield return new WaitForSeconds(fireRate);
         canPewPew = true;
+    }
+    public void TurboShot()
+    {
+        Debug.Log("TurboShot");
+
+        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+
+        pewPewAudioSource.pitch = newPitch;
+
+        pewPewAudioSource.Play();
+
+        StartCoroutine(CoolDown());
+
+        Destroy(newProjectile, 4);
+    }
+
+    public void TurboAmmo()
+    {
+        if (currentTurboShotAmmo > 0)
+        {
+            TurboShot();
+            currentTurboShotAmmo--;
+        }
+        else if (currentTurboShotAmmo <= 0)
+        {
+
+        }
+        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
     }
 }
