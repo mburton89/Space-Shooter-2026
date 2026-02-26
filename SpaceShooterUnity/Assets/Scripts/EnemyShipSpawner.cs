@@ -53,7 +53,11 @@ void Start()
             Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
 
         }
+        PlayerShip playerShip = FindObjectOfType<PlayerShip>();
+
+        HUD.Instance.DisplayCurrentQuadAmmo(playerShip.currentQuadAmmo);
     }
+
 
     public void CountEnemyShips()
     {
@@ -63,9 +67,9 @@ void Start()
     if (currentNumberOfShips == 1)
         {
             currentWave++;
-            if (FindObjectOfType<Ship>().currentQuadAmmo < 3)
+            if (FindObjectOfType<PlayerShip>().currentQuadAmmo < 3)
             {
-                FindObjectOfType<Ship>().currentQuadAmmo++;
+                FindObjectOfType<PlayerShip>().currentQuadAmmo++;
             }
             //TODO Update HUD with current wave number
             HUD.Instance.DisplayWave(currentWave);

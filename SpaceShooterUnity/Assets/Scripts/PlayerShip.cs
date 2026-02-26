@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
+
+    public int maxQuadAmmo = 3;
+    public int currentQuadAmmo;
+    public void QuadLaser()
+    {
+        Debug.Log("Fire Quad");
+        GameObject quadLaserProjectile = Instantiate(quadLaserPrefab, quadLaserSpawnPoint.position, transform.rotation);
+        quadLaserProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * quadLaserVelocity);
+        quadLaserProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        quadLaserAudioSource.Play();
+
+        currentQuadAmmo--;
+        HUD.Instance.DisplayCurrentQuadAmmo(currentQuadAmmo);
+
+        Destroy(quadLaserProjectile, 20);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +40,12 @@ public class PlayerShip : Ship
             Thrust();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (currentQuadAmmo > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && currentQuadAmmo > 0)   
             {
-                currentQuadAmmo--;
+                Debug.Log("Quad Laser Ammo: " + currentQuadAmmo);
                 QuadLaser();
             }
-        }
+     
 
         FollowMouse(); 
     }

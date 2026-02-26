@@ -19,9 +19,6 @@ public class Ship : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject quadLaserPrefab;
 
-    public int maxQuadAmmo = 3;
-    public int currentQuadAmmo;
-
     public float projectileVelocity;
     public float quadLaserVelocity;
 
@@ -45,7 +42,6 @@ public class Ship : MonoBehaviour
     void Awake()
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
-        currentQuadAmmo = maxQuadAmmo;
     }
 
     // Update is called once per frame
@@ -85,19 +81,6 @@ public class Ship : MonoBehaviour
         StartCoroutine(CoolDown());
 
         Destroy(newProjectile, 4);
-    }
-    public void QuadLaser()
-    {
-        Debug.Log("Fire Quad");
-        GameObject quadLaserProjectile = Instantiate(quadLaserPrefab, quadLaserSpawnPoint.position, transform.rotation);
-        quadLaserProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * quadLaserVelocity);
-        quadLaserProjectile.GetComponent<Projectile>().firingShip = gameObject;
-
-        quadLaserAudioSource.Play();
-
-        StartCoroutine(CoolDown());
-
-        Destroy(quadLaserProjectile, 20);
     }
 
     public void TakeDamage(int damageToTake)
