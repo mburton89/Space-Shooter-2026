@@ -307,14 +307,17 @@ MonoBehaviour:
   currentSpeed: 0
   maxSpeed: 5
   fireRate: 5
+  currentCharge: 0
   rb: {fileID: 8347024712546198170}
   projectilePrefab: {fileID: 186535404877285595, guid: 294f9d4ccb551e146a08682c6489a070, type: 3}
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
+  chargePrefab: {fileID: 0}
   projectileVelocity: 660
   projectileSpawnPoint: {fileID: 6095337208765233216}
   pewPewAudioSource: {fileID: 3288394871652034886}
   hurtAudioSource: {fileID: 1494142563653457830}
   canPewPew: 1
+  canCharge: 0
   isRanger: 1
 --- !u!1 &1457224376673261017
 GameObject:
@@ -470,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 3203011801164283729}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

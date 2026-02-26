@@ -28,6 +28,11 @@ public class PlayerShip : Ship
             ChargeShot();
         }
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Explode();
+        }
+
         FollowMouse(); 
     }
 

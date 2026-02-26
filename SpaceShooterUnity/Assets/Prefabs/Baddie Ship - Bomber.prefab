@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1121820182921137686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -467,14 +467,17 @@ MonoBehaviour:
   currentSpeed: 0
   maxSpeed: 6
   fireRate: 1
+  currentCharge: 0
   rb: {fileID: 6950206416838547314}
   projectilePrefab: {fileID: 186535404877285595, guid: 294f9d4ccb551e146a08682c6489a070, type: 3}
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
+  chargePrefab: {fileID: 0}
   projectileVelocity: 0
   projectileSpawnPoint: {fileID: 1421713250631512468}
   pewPewAudioSource: {fileID: 485421694732283146}
   hurtAudioSource: {fileID: 5627553708594426669}
   canPewPew: 0
+  canCharge: 0
   isRanger: 0
 --- !u!1 &6213595691678925349
 GameObject:
