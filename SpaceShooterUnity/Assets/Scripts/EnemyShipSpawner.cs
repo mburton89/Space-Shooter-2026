@@ -17,8 +17,6 @@ public class EnemyShipSpawner : MonoBehaviour
     int baseNumberOfShips;
     //TODO max waves if we want to "beat" the game
 
-    int addTurbo = 0;
-
     private void Awake()
     {
         Instance = this;
@@ -47,9 +45,12 @@ public class EnemyShipSpawner : MonoBehaviour
             int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
             Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
+
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        playerShip.turboShots++;
     }
 
-    public int CountEnemyShips()
+    public void CountEnemyShips()
     {
 
         currentNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
@@ -61,8 +62,6 @@ public class EnemyShipSpawner : MonoBehaviour
             currentWave++;
             //TODO Update HUD with current wave number
             HUD.Instance.DisplayWave(currentWave);
-
-            addTurbo++;
 
             SpawnWaveOfEnemies();
 
@@ -77,8 +76,6 @@ public class EnemyShipSpawner : MonoBehaviour
                 HUD.Instance.DisplayHighestWave(currentWave);
             }
         }
-
-        return addTurbo;
 
     }
 

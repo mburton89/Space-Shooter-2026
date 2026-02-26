@@ -50,8 +50,9 @@ public class HUD : MonoBehaviour
     }
     public void DisplayTurbo(int turboShots)
     {
-        Debug.Log("Turbo " + turboShots);
-        turbo.SetText("Turbo " + turboShots);
+        Ship playerShip = FindObjectOfType<PlayerShip>();
+        Debug.Log("Turbo " + playerShip.turboShots);
+        turbo.SetText("Turbo " + playerShip.turboShots);
     }
 
 }

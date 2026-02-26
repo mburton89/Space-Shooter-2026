@@ -136,11 +136,9 @@ public class Ship : MonoBehaviour
         GameObject newExplosion = Instantiate(explosionPrefab, explosionSpawnPoint.position, transform.rotation);
         //TODO: Make cool 'splosion particles
 
-        int addTurbo = EnemyShipSpawner.Instance.CountEnemyShips();
+        EnemyShipSpawner.Instance.CountEnemyShips();
 
-        turboShots += addTurbo;
-
-        ShowTurbo();
+        HUD.Instance.DisplayTurbo(turboShots);
 
         if (GetComponent<PlayerShip>())
         {
