@@ -26,6 +26,8 @@ public class EnemyShipSpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+
+        InvokeRepeating("CountEnemyShips", 0, 1);
     }
 
    public void SpawnWaveOfEnemies()
@@ -55,7 +57,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
 
-        if(currentNumberOfShips == 1)
+        if(currentNumberOfShips == 0)
         {
             currentWave += 1;
 

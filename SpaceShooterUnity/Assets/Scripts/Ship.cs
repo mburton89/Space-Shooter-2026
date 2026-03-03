@@ -18,6 +18,7 @@ public class Ship : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject explosionPrefab;
     public GameObject turboShotPrefab;
+    public GameObject barrageShotPrefab;
 
     public float projectileVelocity;
 
