@@ -36,6 +36,8 @@ void Start()
         FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+
+        InvokeRepeating("CountEnemyShips", 0, 1);
     }
     
     public void SpawnWaveOfEnemies()
@@ -64,7 +66,7 @@ void Start()
         currentNumberOfShips =
         FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
-    if (currentNumberOfShips == 1)
+    if (currentNumberOfShips == 0)
         {
             currentWave++;
             if (FindObjectOfType<PlayerShip>().currentQuadAmmo < 3)
