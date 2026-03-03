@@ -20,6 +20,9 @@ public class Ship : MonoBehaviour
     public float projectileVelocity;
     public Transform projectileSpawnPoint;
 
+    public GameObject dualProjectilePrefab;
+    public Transform dualProjectileSpawnPoint;
+
     public GameObject explosionPrefab;
     public Transform explosionSpawnPoint;
 
@@ -63,6 +66,26 @@ public class Ship : MonoBehaviour
 
     public void PewPew()
     {
+        EnemyShipSpawner findWave = FindObjectOfType<EnemyShipSpawner>();
+
+        if (findWave.currentWave > 8)
+        {
+            Debug.Log("Fire Projectile Dual");
+            GameObject newProjectile2 = Instantiate(dualProjectilePrefab, dualProjectileSpawnPoint.position, transform.rotation);
+            newProjectile2.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile2.GetComponent<Projectile>().firingShip = gameObject;
+
+            float newPitch2 = Random.Range(0.8f, 1.2f);
+
+            pewPewAudioSource.pitch = newPitch2;
+
+            pewPewAudioSource.Play();
+
+            StartCoroutine(Cooldown());
+
+            Destroy(newProjectile2, 4);
+        }
+
         Debug.Log("Fire Projectile");
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);

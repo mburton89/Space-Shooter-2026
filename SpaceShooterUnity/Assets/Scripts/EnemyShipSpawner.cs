@@ -13,7 +13,7 @@ public class EnemyShipSpawner : MonoBehaviour
     public Transform spawnPoint;
 
     int currentNumberOfShips;
-    int currentWave;
+    public int currentWave;
     int baseNumberOfShips;
     //TODO max waves if we want to "beat" the game
 
@@ -29,6 +29,8 @@ public class EnemyShipSpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+
+        InvokeRepeating("CountEnemyShips", 0, 1); //ADDED ON 3/3/2026
     }
 
     public void SpawnWaveOfEnemies()
@@ -41,29 +43,23 @@ public class EnemyShipSpawner : MonoBehaviour
             float newZRotation = Random.Range(0f, 360f);
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation);
 
-            if (currentWave < 3)
+            if (currentWave < 5)
             {
                 //Soawn/Instantiate the enemy in the spawn point
                 int randomShipIndexEasy = Random.Range(0, 2);
                 Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, transform.rotation, null);
             }
 
-            else if (currentWave < 6)
+            else if (currentWave < 10)
             {
                 int randomShipIndexMedium = Random.Range(0, 3);
                 Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, transform.rotation, null);
             }
 
-            else if (currentWave < 9)
+            else
             {
                 int randomShipIndexHard = Random.Range(0, 5);
                 Instantiate(enemyShipPrefabs[randomShipIndexHard], spawnPoint.position, transform.rotation, null);
-            }
-
-            else
-            {
-                int randomShipIndexExtreme = Random.Range(2, 5);
-                Instantiate(enemyShipPrefabs[randomShipIndexExtreme], spawnPoint.position, transform.rotation, null);
             }
 
         }
@@ -79,7 +75,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         Debug.Log("Number of Current Enemy Ships" + currentNumberOfShips); // prints to console for testing
 
-        if (currentNumberOfShips == 1)
+        if (currentNumberOfShips == 0)
         {
             currentWave++;
             //TODO Update HUD with current wave number
@@ -99,7 +95,6 @@ public class EnemyShipSpawner : MonoBehaviour
                 HUD.Instance.DisplayHighestWave(currentWave);
             }
         }
-
     }
 
 }
