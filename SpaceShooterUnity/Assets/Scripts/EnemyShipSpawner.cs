@@ -47,6 +47,8 @@ public class EnemyShipSpawner : MonoBehaviour
         Ship playerShip = FindObjectOfType<PlayerShip>();
         playerShip.turboPewPew++;
         HUD.Instance.DisplayTurboPew(playerShip.turboPewPew);
+
+        InvokeRepeating("CountEnemyShips", 0, 1); //added on 3/3/2026
     }
 
     public void CountEnemyShips()
@@ -55,7 +57,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
 
-        if (currentNumberOfShips == 1)
+        if (currentNumberOfShips == 0)
         {
             currentWave++;
             HUD.Instance.DisplayWave(currentWave); //TODO update HUD with current wave number

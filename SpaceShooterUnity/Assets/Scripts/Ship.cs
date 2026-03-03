@@ -107,6 +107,12 @@ public class Ship : MonoBehaviour
 
     }
 
+    public void GiveSpeed(int speedToGive)
+    {
+        currentSpeed += speedToGive;
+    }
+
+    
     public void Explode()
     {
         GameObject newExplosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
