@@ -1,37 +1,27 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Powers : MonoBehaviour
 {
     public bool isNuke;
     public bool isInstaKill;
-    public bool isArmor;
+    public bool isJug;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerShip>())
+        if (collision.gameObject.GetComponent<PlayerShip>() && isJug)
         {
             //if we made it this far, we collided with THE PLAYER SHIP
-            collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
-            Explode();
+            collision.gameObject.GetComponent<PlayerShip>().JugHeal(2);
+            
+            Destroy(gameObject);
         }
-    }
-
-    public void Nuke()
-    {
-        //wipes out entire map or clears round
-        GetComponent<Ship>
-        Destroy(gameObject);
-    }
-
-    public void InstaKill()
-    {
-        //normal shots are instakills...duh
-    }
-
-    public void Armor()
-    {
-        //regain health
     }
 
     //dont spawn after each round maybe alternate but the nuke is on a timer maybe
 }
+//for jug
+    //needs to be able to read the current wave
+    //in order to spawn every 3 waves
+    //needs to spawn on the last baddieship destroyed
+    //needs to heal you to the max

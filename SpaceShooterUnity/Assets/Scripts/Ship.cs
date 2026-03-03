@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
-{    
+{
     public int currentHealth;
     public int maxHealth;
     public int currentTurboShotAmmo;
-    public int maxTurboShotAmmo = 3;
 
     public float acceleration;
     public float currentSpeed;
@@ -29,6 +28,7 @@ public class Ship : MonoBehaviour
 
     public AudioSource pewPewAudioSource;
     public AudioSource takeDamageAudioSource;
+    public AudioSource healDamageAudioSource;
 
     public bool canPewPew;
 
@@ -47,7 +47,7 @@ public class Ship : MonoBehaviour
     private void FixedUpdate()
     {
         if (rb.linearVelocity.magnitude > maxSpeed)
-        { 
+        {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
     }
@@ -150,5 +150,17 @@ public class Ship : MonoBehaviour
 
         }
         HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
+    }
+
+    public void JugHeal(int addHealth)
+    {
+        currentHealth += addHealth;
+        healDamageAudioSource.Play();
+
+        if (GetComponent<PlayerShip>())
+        {
+            //Display Health
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
     }
 }
