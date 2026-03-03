@@ -1027,8 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e040e200abcfb45a30d5421c770d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 4
-  maxHealth: 30
+  currentHealth: 10000
+  maxHealth: 10000
   acceleration: 5
   currentSpeed: 0
   maxSpeed: 10
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 257843929}
   canFire: 1
   glitterBombPrefab: {fileID: 2472803488646447174, guid: a995ea0797ce4d34a956bdd27717ffb1, type: 3}
-  maxGlitterBombs: 3
+  maxGlitterBombs: 100
   currentGlitterBombs: 0
 --- !u!58 &794190066
 CircleCollider2D:

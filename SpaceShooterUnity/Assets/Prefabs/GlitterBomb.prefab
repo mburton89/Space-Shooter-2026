@@ -172,3 +172,4 @@ MonoBehaviour:
   damageToGive: 10
   firingShip: {fileID: 0}
   glitterBombExplosionPrefab: {fileID: 6016576194058111877, guid: e7f4b9c9f18b6ae46b6e8d62e96dcc68, type: 3}
+  explosionPrefabRotation: {x: 0, y: 90, z: 90}

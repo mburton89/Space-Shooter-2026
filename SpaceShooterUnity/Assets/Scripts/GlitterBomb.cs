@@ -5,6 +5,7 @@ public class GlitterBomb : Projectile
 {
 
     public GameObject glitterBombExplosionPrefab;
+    public Vector3 explosionPrefabRotation;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,7 +27,7 @@ public class GlitterBomb : Projectile
 
     private void GlitterBombExplode()
     {
-        GameObject newExplosion = Instantiate(glitterBombExplosionPrefab, transform.position, transform.rotation);
+        GameObject newExplosion = Instantiate(glitterBombExplosionPrefab, transform.position, Quaternion.Euler(explosionPrefabRotation));
         Destroy(newExplosion, 2);
     }
 
