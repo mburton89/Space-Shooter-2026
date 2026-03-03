@@ -9,12 +9,18 @@ public class Projectile : MonoBehaviour
   public GameObject owner;
   public bool isPlayerProjectile;
   public CircleCollider2D daIrcle;
+  public bool isTurbo;
+  public float projHealth;
+  public float sizeValue;
 
   void Update()
   {
     if (isPlayerProjectile)
     {
-      daIrcle.radius = 1f;
+      //if (!isTurbo)
+      //   {
+      // daIrcle.radius = 1f;
+      //  }
       GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f);
     }
   }
@@ -26,13 +32,28 @@ public class Projectile : MonoBehaviour
       if (collision.GetComponent<BaddieShip>())
       {
         collision.GetComponent<BaddieShip>().TakeDamage(dmg);
-        Destroy(gameObject);
+        if (isTurbo)
+        {
+          //Debug.Log(projHealth);
+          projHealth = projHealth - 1f;
+          if (projHealth <= 0f)
+          {
+            EnemyShipSpawner.Instance.CountEnemies();
+            Destroy(gameObject);
+          }
+        }
+        else
+        {
+          Destroy(gameObject);
+        }
       }
     }
     else
     {
       if (collision.GetComponent<PlayerShip>())
       {
+        PlayerShip.Instance.EarnTurbo(-1);
+        HUD.Instance.UpdateTurbos(PlayerShip.Instance.turboShots);
         collision.GetComponent<PlayerShip>().TakeDamage(dmg);
         Destroy(gameObject);
       }

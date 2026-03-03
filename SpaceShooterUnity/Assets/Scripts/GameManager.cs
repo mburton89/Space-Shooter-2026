@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     Instance = this;
   }
 
+  private void FixedUpdate()
+  {
+    EnemyShipSpawner.Instance.CountEnemies();
+  }
+
   public void GameOver()
   {
     StartCoroutine(GameOverDelay());

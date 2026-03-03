@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
 
   public static HUD Instance;
   public Image healthBarFill;
+  public Image turboBarFill;
 
   public TextMeshProUGUI waveText;
   public TextMeshProUGUI highestWaveText;
@@ -27,6 +28,13 @@ public class HUD : MonoBehaviour
 
   }
 
+  public void UpdateTurboUI(float turbo, float maxTurbo)
+  {
+    float percent = turbo / maxTurbo;
+    turboBarFill.fillAmount = percent;
+
+  }
+
   public void DisplayWave(int currentWave)
   {
     waveText.SetText("WAVE " + (currentWave - 1));
@@ -34,7 +42,7 @@ public class HUD : MonoBehaviour
 
   public void UpdateTurbos(int turbos)
   {
-    turboShotsText.SetText(turbos + " TURBOSHOTS");
+    turboShotsText.SetText(turbos + "/3 TURBOSHOTS");
   }
 
   public void DisplayHighestWave(int highestWave)

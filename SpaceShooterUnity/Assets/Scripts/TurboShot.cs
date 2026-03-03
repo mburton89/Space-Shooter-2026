@@ -5,8 +5,5 @@ using UnityEngine;
 
 public class TurboShot : Projectile
 {
-
-
-
-
+  // hai :3
 }

@@ -8,8 +8,13 @@ public class PlayerShip : Ship
   public static PlayerShip Instance;
   public int turboShots;
 
-  public bool canTurbo;
+  public bool chargingTurbo;
+
+  public float turboChargeAmount;
+  public float turboChargeRate;
+  public float turboChargeMax;
   public AudioSource turboSound;
+  public AudioSource chargeSound;
 
   private void Awake()
   {
@@ -18,7 +23,7 @@ public class PlayerShip : Ship
   // Start is called before the first frame update
   void Start()
   {
-
+    HUD.Instance.UpdateTurboUI(turboChargeAmount, turboChargeMax);
   }
 
   // Update is called once per frame
@@ -33,17 +38,35 @@ public class PlayerShip : Ship
     }
     if (Input.GetKey(KeyCode.Space))
     {
-      if (turboShots > 0 && canTurbo)
+      if (turboShots > 0)
       {
-        turboShots--;
-        canTurbo = false;
-        TurboShot(2500f);
-        HUD.Instance.UpdateTurbos(turboShots);
+        if (chargingTurbo)
+        {
+          if (turboChargeAmount < turboChargeMax)
+          {
+            turboChargeAmount += turboChargeRate;
+            HUD.Instance.UpdateTurboUI(turboChargeAmount, turboChargeMax);
+          }
+          else
+          {
+            turboChargeAmount = turboChargeMax;
+            HUD.Instance.UpdateTurboUI(turboChargeAmount, turboChargeMax);
+          }
+        }
+        else
+        {
+          chargeSound.Play();
+          chargingTurbo = true;
+        }
       }
     }
     else
     {
-      canTurbo = true;
+      if (chargingTurbo)
+      {
+        TurboShot((((turboChargeAmount * -1) + turboChargeMax) * 30f) + 1000f, (turboChargeAmount / turboChargeMax) + 1f);
+      }
+
     }
 
 
@@ -56,15 +79,27 @@ public class PlayerShip : Ship
       transform.up = dirToFace;
     }
   }
-  public void TurboShot(float speed)
+  public void TurboShot(float speed, float size)
   {
+    turboShots--;
+    chargingTurbo = false;
+    chargeSound.Stop();
+    turboChargeAmount = 0;
+
+    HUD.Instance.UpdateTurboUI(turboChargeAmount, turboChargeMax);
     GameObject newProjectile = Instantiate(turboPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+    newProjectile.GetComponent<Projectile>().projHealth = (size - 1) * 5f;
+    //newProjectile.GetComponent<Projectile>().daIrcle.radius = size / 2;
     newProjectile.GetComponent<Rigidbody2D>().AddForce(projectileSpawnPoint.up * speed);
+    newProjectile.GetComponent<Transform>().localScale = new Vector3(size, size, size);
+
+
+
     newProjectile.GetComponent<Projectile>().owner = gameObject;
     newProjectile.GetComponent<Projectile>().isPlayerProjectile = isPlayerShip;
 
     turboSound.Play();
-
+    HUD.Instance.UpdateTurbos(turboShots);
 
     Destroy(newProjectile, 4f);
   }

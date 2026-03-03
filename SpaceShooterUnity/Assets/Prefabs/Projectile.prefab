@@ -165,3 +165,5 @@ MonoBehaviour:
   owner: {fileID: 0}
   isPlayerProjectile: 0
   daIrcle: {fileID: 5406007799683844185}
+  isTurbo: 0
+  projHealth: 1

@@ -48,7 +48,6 @@ public class EnemyShipSpawner : MonoBehaviour
     }
     HUD.Instance.DisplayWave(currentWave);
     HUD.Instance.DisplayHighestWave(highestWave);
-    PlayerShip.Instance.EarnTurbo(1);
     HUD.Instance.UpdateTurbos(PlayerShip.Instance.turboShots);
 
     waveSound.Play();
@@ -60,7 +59,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
     Debug.Log("Current Ship Count: " + currentShipCount);
 
-    if (currentShipCount == 1)
+    if (currentShipCount == 0)
     {
       currentWave++;
       SpawnEnemyWave();
