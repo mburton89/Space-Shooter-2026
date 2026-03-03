@@ -7,7 +7,7 @@ public class Ship : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public int currentTurboShotAmmo;
-    public int maxTurboShotAmmo = 3;
+    
 
     public float acceleration;
     public float currentSpeed;
@@ -79,23 +79,7 @@ public class Ship : MonoBehaviour
 
         Destroy(newProjectile, 4);
     }
-    public void TurboShot () //int TurboShot    int currentTurboShotAmmo, int maxTurboShotAmmo
-    {
-        Debug.Log("Fire Projectile");
-        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
-        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
-
-        float newPitch = Random.Range(0.5f, 1.2f);
-
-        pewPewAudioSource.pitch = newPitch;
-
-        pewPewAudioSource.Play();//change audio!!!! call it
-
-        StartCoroutine(CoolDown());
-
-        Destroy(newProjectile, 4);
-    }
+    
     //need to still play sound when take damage bc u r bad at code
 
     public void TakeDamage(int damageToTake)
@@ -177,12 +161,10 @@ public class Ship : MonoBehaviour
 
         }
         HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
-
-
     }
 
 
 
-    // things i want to code on my own: health packs, ally ship spawner, make lazer!!!, 
-    //side quest
+    // things i want to code on my own: health packs, ally ship spawner, make lazer!!!, ????????? ADD AUDIO FOR HIT AND TURBOSHOT
+    //ADD: turbo shot sprite? (Aseprite), health Pack, WebGL build, make cover Art, title, screenshots, discriptions, instruction section, custom page theme
 }

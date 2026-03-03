@@ -29,6 +29,8 @@ public class EnemyShipSpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+
+        InvokeRepeating("countingEnemyShips", 0, 1); //3/3/26 ADDED
     }
 
   public void SpawnWaveOfEnemies()
@@ -47,7 +49,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         }
 
-        Ship playerShip = FindObjectOfType<PlayerShip>;
+        Ship playerShip = FindObjectOfType<PlayerShip>();
         playerShip.currentTurboShotAmmo++;
 
         HUD.Instance.DisplayAmmo(playerShip.currentTurboShotAmmo);

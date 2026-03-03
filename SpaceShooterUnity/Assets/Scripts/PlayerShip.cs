@@ -7,7 +7,7 @@ public class PlayerShip : Ship
     // Start is called before the first frame update
     void Start()
     {
-        
+        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PlayerShip : Ship
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TurboShot(); //HELPPPPPPPPPPPPP
+            TurboAmmo(); //HELPPPPPPPPPPPPP
             {
                 Debug.Log("TurboShot");
             }

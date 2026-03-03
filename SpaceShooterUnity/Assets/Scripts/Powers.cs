@@ -10,23 +10,17 @@ public class Powers : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.GetComponent<PlayerShip>();
+        if (collision.gameObject.GetComponent<PlayerShip>())
         {
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
-            Explode();
         }
     }
 
    public void Nuke()
     {
         //wipes out entire map or clears round
-        GetComponent<Ship>
+        //GetComponent<Ship>
         Destroy(gameObject);
-    }
-
-    public void InstaKill()
-    {
-        //kill lol
     }
 
     public void Armor()

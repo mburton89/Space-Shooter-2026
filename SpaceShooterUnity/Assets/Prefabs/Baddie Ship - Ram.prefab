@@ -4898,7 +4898,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.15, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596828495236467982}
@@ -4952,8 +4952,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.21568626, g: 0.87962836, b: 1, a: 1}
+  m_Sprite: {fileID: 8314228033040534900, guid: c42b16de0ee0dae41873ba70c6914745, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5040,15 +5040,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 2
   maxHealth: 2
+  currentTurboShotAmmo: 0
   acceleration: 2
   currentSpeed: 2
   maxSpeed: 8
   fireRate: 1
   rb: {fileID: 8642245249353798951}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
+  turboShotPrefab: {fileID: 0}
   explosionPrefab: {fileID: 7361476547607590844, guid: 58cae30fcbe6085429e85d74a0347bf0, type: 3}
   projectileVelocity: 40
   projectileSpawnPoint: {fileID: 1596828495236467982}
   pewPewAudioSource: {fileID: 0}
+  takeDamageAudioSource: {fileID: 0}
   canPewPew: 0
+  canTurboShot: 0
   isShooter: 0
