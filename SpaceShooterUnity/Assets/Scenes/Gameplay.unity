@@ -699,6 +699,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &760921397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7747545416035250308, guid: f095fe842956cab48963a21710a3145a, type: 3}
+  m_PrefabInstance: {fileID: 1266317476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &760921400 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6141210880261204754, guid: f095fe842956cab48963a21710a3145a, type: 3}
+  m_PrefabInstance: {fileID: 1266317476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &760921403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760921397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb4a48e051fec344bc9e328aeed2283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossShip
+  currentHealth: 50
+  maxHealth: 50
+  acceleration: 5
+  currentSpeed: 0
+  maxSpeed: 9
+  fireRate: 1
+  rb: {fileID: 760921400}
+  projectilePrefab: {fileID: 186535404877285595, guid: 15390c5c4b702134e97e2975f70363ad, type: 3}
+  explosionPrefab: {fileID: 6016576194058111877, guid: cc2b0b0dabfe8354eb53ab24fa2d4554, type: 3}
+  turboShotPrefab: {fileID: 0}
+  barrageShotPrefab: {fileID: 4597788488516675665, guid: eb6734c8e7fdd984589d05894122c199, type: 3}
+  projectileVelocity: 400
+  projectileSpawnPoint: {fileID: 1570301722}
+  pewPewAudioSource: {fileID: 0}
+  canPewPew: 0
+  isShooter: 0
 --- !u!1 &794190060
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,6 +6160,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1266317476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.94025
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131051012567906423, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747545416035250308, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_Name
+      value: Baddie Ship - Lagiacrus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767626319585801131, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7747545416035250308, guid: f095fe842956cab48963a21710a3145a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 760921403}
+  m_SourcePrefab: {fileID: 100100000, guid: f095fe842956cab48963a21710a3145a, type: 3}
 --- !u!1 &1327690448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,3 +6656,4 @@ SceneRoots:
   - {fileID: 911129511}
   - {fileID: 1150331340}
   - {fileID: 264097011}
+  - {fileID: 1266317476}
