@@ -7,6 +7,7 @@ public class HealingBulb : MonoBehaviour
     public int lifeToGive;
 
     public GameObject friend;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,8 +15,6 @@ public class HealingBulb : MonoBehaviour
 
         if (collision.GetComponent<Ship>() && collision.gameObject == friend)
         {
-        
-
             collision.GetComponent<Ship>().Givelife(lifeToGive);
 
             Destroy(gameObject);

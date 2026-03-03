@@ -27,6 +27,7 @@ public class Ship : MonoBehaviour
     ParticleSystem thrustParticles;
 
     public AudioSource pewPewAudioSource;
+    public AudioSource TakingDamageAudioSource;
 
     public bool canPewPew;
 
@@ -84,7 +85,8 @@ public class Ship : MonoBehaviour
     }
 
     public void TakeDamage(int damageToTake)
-    { 
+    {
+        TakingDamageAudioSource.Play();
         currentHealth -= damageToTake;
 
         if (GetComponent<PlayerShip>())

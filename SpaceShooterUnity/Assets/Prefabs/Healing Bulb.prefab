@@ -180,3 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealingBulb
   lifeToGive: 3
   friend: {fileID: 0}
+  healAudioClip: {fileID: 0}
