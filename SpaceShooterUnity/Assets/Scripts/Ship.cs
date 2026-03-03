@@ -7,7 +7,7 @@ public class Ship : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public int currentTurboShotAmmo;
-    public int maxTurboShotAmmo;
+    public int maxTurboShotAmmo = 3;
 
     public float acceleration;
     public float currentSpeed;
@@ -18,9 +18,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject projectilePrefab;
-
     public GameObject turboShotPrefab;
-
     public GameObject explosionPrefab;
 
     public float projectileVelocity;
@@ -31,17 +29,10 @@ public class Ship : MonoBehaviour
     ParticleSystem turboShotParticles;
 
     public AudioSource pewPewAudioSource;
+    public AudioSource takeDamageAudioSource;
 
     public bool canPewPew = true;
     public bool canTurboShot;
-
-    void Start()
-    {
-        currentTurboShotAmmo = maxTurboShotAmmo;
-    }
-
-    public int maxAmmo { get; private set; }
-    public bool isDisabled { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
@@ -73,6 +64,7 @@ public class Ship : MonoBehaviour
     public void PewPew()
     {
         Debug.Log("Fire Projectile");
+
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
@@ -103,45 +95,7 @@ public class Ship : MonoBehaviour
         StartCoroutine(CoolDown());
 
         Destroy(newProjectile, 4);
-
-        //currentTurboShotAmmo --1 
-
-        currentTurboShotAmmo = 3;
-        maxTurboShotAmmo = 3;
-
-
-
-        //float ammoAmount = (float)currentturboShotAmmo / (float)maxTurboShotAmmo;
-
-        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
-
-        //if (currentturboShotAmmo < 0) ;
-
-        //currentturboShotAmmo -= TurboShot;
-
-        if (currentTurboShotAmmo > 0)
-        {
-            currentTurboShotAmmo --;
-            Debug.Log("Ammo Left: " + currentTurboShotAmmo);
-        }
-        else
-        {
-            isDisabled = false;
-            Debug.Log("Out of Turbo Shots!");
-
-        }
-
     }
-
-    public void ReplenishTurboShot()
-    {
-        currentTurboShotAmmo++;
-        Debug.Log("TurboShot Ammo Replenished!");
-
-    }
-
-    
-
     //need to still play sound when take damage bc u r bad at code
 
     public void TakeDamage(int damageToTake)
@@ -191,6 +145,44 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(fireRate);
         canPewPew = true;
     }
+
+    public void TurboShot()
+    {
+        Debug.Log("TurboShot");
+
+        GameObject newProjectile = Instantiate(turboShotPrefab, projectileSpawnPoint.position, transform.rotation);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+        float newPitch = Random.Range(0.9f, 1.1f);
+
+        pewPewAudioSource.pitch = newPitch;
+
+        StartCoroutine(CoolDown());
+
+        Destroy(newProjectile, 4);
+
+
+    }
+
+    public void TurboAmmo()
+    {
+        if (currentTurboShotAmmo > 0)
+        {
+            TurboShot();
+            currentTurboShotAmmo--;
+        }
+        else if (currentTurboShotAmmo <= 0)
+        {
+
+        }
+        HUD.Instance.DisplayAmmo(currentTurboShotAmmo);
+
+
+    }
+
+
+
     // things i want to code on my own: health packs, ally ship spawner, make lazer!!!, 
     //side quest
 }

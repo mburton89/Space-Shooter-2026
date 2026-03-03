@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using UnityEngine;
 using UnityEngine.UI; //need to use UI API in order to get access to Image and Buttono objects
@@ -31,9 +32,8 @@ public class HUD : MonoBehaviour
         turboShotAmmoText.SetText("Turbo Shots: " + currentturboShotAmmo);
     }
 
-    public void DisplayWave(int currentWave)
+    internal void DisplayWave(int currentWave)
     {
-       Debug.Log("Wave: " +  currentWave);
         waveText.SetText("Wave: " + currentWave);
     }
 

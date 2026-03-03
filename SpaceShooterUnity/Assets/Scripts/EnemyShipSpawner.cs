@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic; // w eneed this API for LIST functions
 public class EnemyShipSpawner : MonoBehaviour
@@ -46,12 +47,14 @@ public class EnemyShipSpawner : MonoBehaviour
 
         }
 
+        Ship playerShip = FindObjectOfType<PlayerShip>;
+        playerShip.currentTurboShotAmmo++;
+
+        HUD.Instance.DisplayAmmo(playerShip.currentTurboShotAmmo);
+
+
     }
 
-    //public void SpawnTurboShotAmmo()
-   // {                                   ???????
-    ///    int NumberOfTurboShotAmmo = 
-    //}
 
     public void CountEnemyShips()
     {
