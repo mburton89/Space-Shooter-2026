@@ -15,7 +15,7 @@ public class Ship : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public GameObject projectilePrefab;
+    public GameObject projectilePrefab, turboShot;
 
     public float projectileVelocity;
 
@@ -29,12 +29,19 @@ public class Ship : MonoBehaviour
 
     public bool canPewPew;
 
+    public int turboShotsLeft;
+
     // Start is called before the first frame update
     void Awake()
     {
         canPewPew = true;
 
         thrustParticles = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void Start()
+    {
+        turboShotsLeft = 3;
     }
 
     // Update is called once per frame
@@ -59,7 +66,7 @@ public class Ship : MonoBehaviour
 
     public void PewPew()
     {
-        Debug.Log("Fire Projectile");
+       
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
@@ -73,6 +80,29 @@ public class Ship : MonoBehaviour
         StartCoroutine(CoolDown());
 
         Destroy(newProjectile, 4);
+    }
+
+    public void Turbo()
+    {
+        Debug.Log("Fire Turbo");
+
+        if (turboShotsLeft > 0)
+        {
+            Debug.Log("Turbo Shot Fired");
+            GameObject newProjectile = Instantiate(turboShot, projectileSpawnPoint.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+
+            float newPitch = Random.Range(1.0f, 2.0f);
+
+            pewPewAudioSource.Play();
+
+            pewPewAudioSource.pitch = newPitch;
+
+            StartCoroutine(CoolDown());
+
+            Destroy(newProjectile, 4);
+        }
     }
 
     public void TakeDamage(int damageToTake)
