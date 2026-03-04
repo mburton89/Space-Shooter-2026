@@ -32,6 +32,8 @@ public class EnemyShipSpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
          HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+
+         InvokeRepeating("CountEnemyShips", 0, 1); //JUST ADDED 3/3/26
     }
 
     public void SpawnWaveOfEnemies()
@@ -47,14 +49,14 @@ public class EnemyShipSpawner : MonoBehaviour
             //Step 2: Spawn enemy in spawn point
             int randomShipIndexEasy = Random.Range(0, 1);
             int randomShipIndexMedium = Random.Range(2, 3);
-            int randomShipIndexHard = Random.Range(2, 4);
+            int randomShipIndexHard = Random.Range(0, 4);
 
-            if (currentWave <= 5)
+            if (currentWave <= 7)
             {
                 Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, spawnPoint.rotation, null);
             }
 
-            if (currentWave >= 10)
+            if (currentWave >= 12)
             {
                  Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, spawnPoint.rotation, null);
             }
@@ -72,7 +74,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
 
-        if(currentNumberOfShips == 1)
+        if(currentNumberOfShips == 0)
         {
             NewWave();
         }
