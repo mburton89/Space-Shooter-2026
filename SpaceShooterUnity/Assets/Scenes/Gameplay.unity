@@ -1047,11 +1047,57 @@ MonoBehaviour:
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
+  turboShot: {fileID: 186535404877285595, guid: 5cddaeff74140374890bc470022fb381, type: 3}
   projectileVelocity: 1000
   projectileSpawnPoint: {fileID: 1570301722}
   explosionPrefab: {fileID: 5647096133398634130, guid: 946c2885f2fb51345bbe6739cc55e8e9, type: 3}
   pewPewAudioSource: {fileID: 410269226}
   canPewPew: 0
+  turboShotsLeft: 0
+--- !u!1 &872813371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872813373}
+  - component: {fileID: 872813372}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872813372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872813371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345a96f6dd4c5174db2947d865580cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!4 &872813373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872813371}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063380252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,3 +1647,4 @@ SceneRoots:
   - {fileID: 6301359090148164355}
   - {fileID: 291595713}
   - {fileID: 1082378506}
+  - {fileID: 872813373}
