@@ -5728,8 +5728,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShipSpawner
   enemyShipPrefabs:
-  - {fileID: 6093277861441813026, guid: 4ad31bee7bb217d44840a6dcb2052436, type: 3}
   - {fileID: 3270815405654943958, guid: d620c21b2bcbc864eac01abf2f73a53c, type: 3}
+  - {fileID: 3270815405654943958, guid: 75bc654c33f005848a41b75c787c5e35, type: 3}
+  - {fileID: 3270815405654943958, guid: 03da89240bf9be64393b6b6737b938c1, type: 3}
+  - {fileID: 3270815405654943958, guid: ef9eb73dfe3aad944a1408d0006388d3, type: 3}
+  - {fileID: 3270815405654943958, guid: f4743413e32f7ba499dc51b2d3efd2e6, type: 3}
+  - {fileID: 3270815405654943958, guid: f4743413e32f7ba499dc51b2d3efd2e6, type: 3}
+  - {fileID: 3270815405654943958, guid: f57b8e45dcb3db147b636941a7719db5, type: 3}
+  - {fileID: 3270815405654943958, guid: 338ad0218e3f60447ad8e5ed2f5df56d, type: 3}
+  - {fileID: 3270815405654943958, guid: 9be2ab39317312f4995ed95e49fba084, type: 3}
   pivotPoint: {fileID: 1829907662}
   spawnPoint: {fileID: 1232426980}
 --- !u!1 &1230112375

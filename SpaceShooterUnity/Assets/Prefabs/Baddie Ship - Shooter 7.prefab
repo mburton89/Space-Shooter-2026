@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 3481414299072411687}
   - component: {fileID: 6572436491598468592}
   m_Layer: 0
-  m_Name: Baddie Ship - Shooter
+  m_Name: Baddie Ship - Shooter 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
