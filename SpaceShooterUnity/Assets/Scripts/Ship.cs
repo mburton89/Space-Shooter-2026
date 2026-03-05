@@ -126,7 +126,7 @@ public class Ship : MonoBehaviour
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
 
-        EnemyShipSpawner.Instance.CountEnemyShips();
+        //EnemyShipSpawner.Instance.CountEnemyShips();
 
         if (GetComponent<PlayerShip>())
         {
