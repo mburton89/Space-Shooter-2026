@@ -4,7 +4,16 @@ using System.Collections.Generic; //We need this API for LIST functionality
 
 public class EnemySpawner : MonoBehaviour
 {
+    //Also Spawns Power-Ups!!!!!!!
+
     public static EnemySpawner Instance;
+
+    public GameObject juggernogPrefab;
+    public Transform powerPivot;
+    public Transform powerPoint;
+
+    public GameObject nukePrefab;
+    public float nukeRate;
 
     public List<GameObject> enemyShipPrefab;
     public Transform pivotPoint;
@@ -25,6 +34,8 @@ public class EnemySpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestRound"));
+
+        InvokeRepeating("SpawnNuke", 0, nukeRate);
     }
 
     public void SpawnWaveOfEnemies()
@@ -40,10 +51,6 @@ public class EnemySpawner : MonoBehaviour
             //Step 2: Spawn the enemy in the spawn point
             int randomShipIndex = Random.Range(0, enemyShipPrefab.Count);
             Instantiate(enemyShipPrefab[randomShipIndex], spawnPoint.position, transform.rotation, null);
-        }
-        if(currentWave == 3)
-        {
-            
         }
        
         Ship playerShip = FindObjectOfType<PlayerShip>();
@@ -65,6 +72,11 @@ public class EnemySpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
             SpawnWaveOfEnemies();
+            
+            if (currentWave % 3 == 0)
+            {
+                SpawnJuggernog();
+            }
 
             int highestWave = PlayerPrefs.GetInt("HighestRound");
 
@@ -78,4 +90,21 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public void SpawnJuggernog()
+    {
+        float newZRotation = Random.Range(0f, 360f);
+        powerPivot.eulerAngles = new Vector3(0, 0, newZRotation);
+
+        Instantiate(juggernogPrefab, powerPoint.position, transform.rotation, null);
+    }
+
+    public void SpawnNuke()
+    {
+        Debug.Log("Nuke");
+
+        float newZRotation = Random.Range(0f, 360f);
+        powerPivot.eulerAngles = new Vector3(0, 0, newZRotation);
+
+        Instantiate(nukePrefab, powerPoint.position, transform.rotation, null);
+    }
 }

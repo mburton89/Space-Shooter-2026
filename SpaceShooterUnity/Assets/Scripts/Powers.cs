@@ -16,12 +16,15 @@ public class Powers : MonoBehaviour
             
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.GetComponent<PlayerShip>() && isNuke)
+        {
+            //if we made it this far, we collided with THE PLAYER SHIP
+            collision.gameObject.GetComponent<PlayerShip>().NukeDestroy(10);
+
+            Destroy(gameObject);
+        }
     }
 
-    //dont spawn after each round maybe alternate but the nuke is on a timer maybe
+    //dont spawn after each round maybe alternate but the nuke is on a timers
 }
-//for jug
-    //needs to be able to read the current wave
-    //in order to spawn every 3 waves
-    //needs to spawn on the last baddieship destroyed
-    //needs to heal you to the max

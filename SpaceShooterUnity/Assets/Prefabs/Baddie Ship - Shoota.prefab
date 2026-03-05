@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
+  currentTurboShotAmmo: 0
   acceleration: 2.5
   currentSpeed: 0
   maxSpeed: 5
@@ -181,10 +182,12 @@ MonoBehaviour:
   rb: {fileID: 5617333866660108882}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 5246586353009967315, guid: 6342748d3396f3f42833c0a87cf3ac76, type: 3}
+  turboShotPrefab: {fileID: 0}
   projectileVelocity: 500
   projectileSpawnPoint: {fileID: 9165666293055511383}
   pewPewAudioSource: {fileID: 211254404840409916}
   takeDamageAudioSource: {fileID: 2272359052022323352}
+  healDamageAudioSource: {fileID: 0}
   canPewPew: 1
   isShoota: 1
 --- !u!1 &3776511526694888242
@@ -392,13 +395,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4ad4cc7e870d07c4db5ce22856c707bd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 25
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

@@ -60,8 +60,6 @@ public class Ship : MonoBehaviour
 
     public void PewPew()
     {
-        Debug.Log("Fire Projectile");
-
         GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
         newProjectile.GetComponent<Projectile>().firingShip = gameObject;
@@ -162,5 +160,12 @@ public class Ship : MonoBehaviour
             //Display Health
             HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
         }
+    }
+
+    public void NukeDestroy(int damageNuke)
+    {
+        currentHealth -= damageNuke;
+        Destroy(gameObject.GetComponent<BaddieShip>(isBaddie));
+        Destroy(gameObject);
     }
 }
