@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public AudioClip GameOverSound;
+
     private void Awake()
     {
         Instance = this;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StartCoroutine(GameOverDelay());
+        AudioSource.PlayClipAtPoint(GameOverSound, Camera.main.transform.position);
     }
 
     private IEnumerator GameOverDelay()
