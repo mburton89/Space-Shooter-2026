@@ -157,8 +157,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2, y: -3}
-  m_Radius: 1.9
+  m_Offset: {x: -0.54, y: -0.66}
+  m_Radius: 5.16
 --- !u!114 &9093245099879064708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +181,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 186535404877285595, guid: 7256405068bd64941b44b4e616667786, type: 3}
   explosionPrefab: {fileID: 6016576194058111877, guid: cc2b0b0dabfe8354eb53ab24fa2d4554, type: 3}
   turboShotPrefab: {fileID: 0}
+  barrageShotPrefab: {fileID: 0}
+  healPrefab: {fileID: 0}
   projectileVelocity: 500
   projectileSpawnPoint: {fileID: 4936475225294196800}
   pewPewAudioSource: {fileID: 8993819280308450715}

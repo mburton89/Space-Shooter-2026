@@ -60,12 +60,14 @@ public class BossShip : Ship
             {
                 PewPew();
             }
+
+            if (currentHealth <= 25)
+            {
+                Barrage();
+            }
         }
 
-        if (currentHealth <= 25)
-        {
-            Barrage();
-        }
+       
 
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -19,6 +20,7 @@ public class Ship : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject turboShotPrefab;
     public GameObject barrageShotPrefab;
+    public GameObject healPrefab;
 
     public float projectileVelocity;
 
@@ -92,6 +94,23 @@ public class Ship : MonoBehaviour
             Explode();
         }
     }
+
+    public void HealDamage(int amountToHeal)
+    {
+        currentHealth += amountToHeal;
+
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        } 
+
+        if (currentHealth == maxHealth)
+        {
+            
+        }
+    }
+
+  
 
     public void Explode()
     {

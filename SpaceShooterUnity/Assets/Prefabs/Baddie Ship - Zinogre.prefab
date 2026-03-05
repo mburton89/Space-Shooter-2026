@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 2960294663060672239}
   - component: {fileID: 165783443177168626}
   - component: {fileID: 5260658288004293422}
-  - component: {fileID: 6360703434164262694}
   - component: {fileID: 8022320009855083484}
+  - component: {fileID: 448929523744197843}
   m_Layer: 0
   m_Name: Baddie Ship - Zinogre
   m_TagString: Untagged
@@ -153,8 +153,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6360703434164262694
-CircleCollider2D:
+--- !u!114 &8022320009855083484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597444829113037846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1
+  maxHealth: 1
+  acceleration: 4
+  currentSpeed: 0
+  maxSpeed: 8
+  fireRate: 1
+  rb: {fileID: 5260658288004293422}
+  projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
+  explosionPrefab: {fileID: 6016576194058111877, guid: cc2b0b0dabfe8354eb53ab24fa2d4554, type: 3}
+  turboShotPrefab: {fileID: 0}
+  barrageShotPrefab: {fileID: 0}
+  healPrefab: {fileID: 0}
+  projectileVelocity: 40
+  projectileSpawnPoint: {fileID: 6344446773802151207}
+  pewPewAudioSource: {fileID: 0}
+  canPewPew: 0
+  isShooter: 0
+--- !u!70 &448929523744197843
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,39 +212,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2, y: -1}
-  m_Radius: 2.5
---- !u!114 &8022320009855083484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597444829113037846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 1
-  maxHealth: 1
-  acceleration: 4
-  currentSpeed: 0
-  maxSpeed: 8
-  fireRate: 1
-  rb: {fileID: 5260658288004293422}
-  projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
-  explosionPrefab: {fileID: 6016576194058111877, guid: cc2b0b0dabfe8354eb53ab24fa2d4554, type: 3}
-  turboShotPrefab: {fileID: 0}
-  projectileVelocity: 40
-  projectileSpawnPoint: {fileID: 6344446773802151207}
-  pewPewAudioSource: {fileID: 0}
-  canPewPew: 0
-  isShooter: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 11.42, y: 7.6}
+  m_Direction: 1
 --- !u!1 &3892799744917361580
 GameObject:
   m_ObjectHideFlags: 0
