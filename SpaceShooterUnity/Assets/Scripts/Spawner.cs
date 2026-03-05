@@ -47,6 +47,8 @@ public class Spawner : MonoBehaviour
             int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
             Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
+
+        MoonSpawner.Instance.SpawnWaveOfObstacles();
     }
     public void CountEnemyShips()
     {
