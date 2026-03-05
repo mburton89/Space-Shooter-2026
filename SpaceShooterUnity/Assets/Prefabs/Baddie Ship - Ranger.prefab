@@ -216,7 +216,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.6830188, g: 0.029640364, b: 0.058896013, a: 1}
+  m_Color: {r: 0.7509433, g: 0.05525801, b: 0.08075434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
   bigShotPrefab: {fileID: 0}
   chargePrefab: {fileID: 0}
-  projectileVelocity: 650
+  projectileVelocity: 670
   projectileSpawnPoint: {fileID: 6095337208765233216}
   pewPewAudioSource: {fileID: 3288394871652034886}
   hurtAudioSource: {fileID: 1494142563653457830}

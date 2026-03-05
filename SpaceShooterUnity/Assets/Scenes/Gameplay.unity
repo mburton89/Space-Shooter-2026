@@ -1134,6 +1134,7 @@ MonoBehaviour:
   - {fileID: 6169247615565184133, guid: 22a658440d642aa4086ada4666c0db26, type: 3}
   - {fileID: 891259529581593432, guid: 228f5b1745879124397601e888f60cac, type: 3}
   - {fileID: 891259529581593432, guid: dd8168f99bb8ba24eae1442cfac8b4e9, type: 3}
+  - {fileID: 891259529581593432, guid: 8f74a4ebb39a877489d43d652aad8d0a, type: 3}
   pivotPoint: {fileID: 1814418143}
   spawnPoint: {fileID: 604212016}
 --- !u!1 &1495978465
@@ -6486,7 +6487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WAVE: 0'
+  m_text: 'WAVE: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0649ebc97a9893419d3fe4c55d4ee38, type: 2}
   m_sharedMaterial: {fileID: 1304202788544094426, guid: b0649ebc97a9893419d3fe4c55d4ee38, type: 2}

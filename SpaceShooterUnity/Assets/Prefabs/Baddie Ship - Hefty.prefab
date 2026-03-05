@@ -306,14 +306,14 @@ MonoBehaviour:
   acceleration: 1.6
   currentSpeed: 0
   maxSpeed: 6
-  fireRate: 4
+  fireRate: 4.2
   currentCharge: 0
   rb: {fileID: 8347024712546198170}
   projectilePrefab: {fileID: 186535404877285595, guid: 294f9d4ccb551e146a08682c6489a070, type: 3}
   explosionPrefab: {fileID: 3340079926955608245, guid: 1f6af39f046a0ce49ad89d2f8dfcb4a7, type: 3}
   bigShotPrefab: {fileID: 0}
   chargePrefab: {fileID: 0}
-  projectileVelocity: 660
+  projectileVelocity: 690
   projectileSpawnPoint: {fileID: 6095337208765233216}
   pewPewAudioSource: {fileID: 3288394871652034886}
   hurtAudioSource: {fileID: 1494142563653457830}
