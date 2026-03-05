@@ -14,6 +14,7 @@ public class Ship : MonoBehaviour
   public float maxSpeed;
 
   public float fireRate;
+  public int invinTime;
 
   public Rigidbody2D rb;
 
@@ -29,18 +30,21 @@ public class Ship : MonoBehaviour
 
   public bool isPlayerShip;
 
+  public GameObject healthPrefab;
+  public GameObject invinPrefab;
+
+  private float pickupChance;
+
+  public float healthPickupRarity;
+  public float invinPickupRarity;
+
 
   // Start is called before the first frame update
-  void Start()
+  private void Awake()
   {
     canPewPew = true;
+    pickupChance = Random.Range(0f, 1f);
 
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-    //Camera.main.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
   }
 
   private void FixedUpdate()
@@ -48,6 +52,10 @@ public class Ship : MonoBehaviour
     if (rb.velocity.magnitude > maxSpeed)
     {
       rb.velocity = rb.velocity.normalized * maxSpeed;
+    }
+    if (invinTime > 0)
+    {
+      invinTime--;
     }
   }
 
@@ -80,12 +88,18 @@ public class Ship : MonoBehaviour
 
   public void TakeDamage(int dmgToTake)
   {
-    currentHP -= dmgToTake;
-    if (isPlayerShip)
+    if (invinTime <= 0)
     {
-      HUD.Instance.UpdateHealthUI(currentHP, maxHP);
-      dmgSound.Play();
+      currentHP -= dmgToTake;
+      if (isPlayerShip)
+      {
+        HUD.Instance.UpdateHealthUI(currentHP, maxHP);
+        dmgSound.Play();
+        HUD.Instance.flashRed();
+        invinTime = 10;
+      }
     }
+
     if (currentHP <= 0)
     {
       Explode();
@@ -99,6 +113,14 @@ public class Ship : MonoBehaviour
     if (!isPlayerShip)
     {
       EnemyShipSpawner.Instance.CountEnemies();
+      if (pickupChance < healthPickupRarity)
+      {
+        Instantiate(healthPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+      }
+      else if (pickupChance < healthPickupRarity + invinPickupRarity)
+      {
+        Instantiate(invinPrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+      }
     }
     else
     {
@@ -116,6 +138,15 @@ public class Ship : MonoBehaviour
     float randMult = Random.Range(0.5f, 1.5f);
     yield return new WaitForSeconds(fireRate * randMult);
     canPewPew = true;
+  }
+
+  public void MakeInvin(int time)
+  {
+    invinTime += time;
+    if (invinTime > 300)
+    {
+      invinTime = 300;
+    }
   }
 
 

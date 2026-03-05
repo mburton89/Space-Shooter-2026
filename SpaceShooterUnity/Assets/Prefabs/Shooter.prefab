@@ -169,6 +169,7 @@ MonoBehaviour:
   currentSpeed: 0
   maxSpeed: 20
   fireRate: 0.7
+  invinTime: 0
   rb: {fileID: 939969185716075255}
   projectilePrefab: {fileID: 4809882805159961800, guid: 80102908f55224c76bfb322c9be53e64, type: 3}
   turboPrefab: {fileID: 0}
@@ -178,6 +179,10 @@ MonoBehaviour:
   dmgSound: {fileID: 0}
   canPewPew: 1
   isPlayerShip: 0
+  healthPrefab: {fileID: 2576538214204860285, guid: 900a10a28471e4cb3944a692a6402890, type: 3}
+  invinPrefab: {fileID: 2576538214204860285, guid: 0200fd96c3c6243da9829fe12f753efa, type: 3}
+  healthPickupRarity: 0.02
+  invinPickupRarity: 0.01
   turnSpeed: 0.1
   projSpeed: 750
   baddieType: 1

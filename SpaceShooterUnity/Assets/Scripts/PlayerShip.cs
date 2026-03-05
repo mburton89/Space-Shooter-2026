@@ -13,7 +13,11 @@ public class PlayerShip : Ship
   public float turboChargeAmount;
   public float turboChargeRate;
   public float turboChargeMax;
+
+
+
   public AudioSource turboSound;
+  public AudioSource superTurboSound;
   public AudioSource chargeSound;
 
   private void Awake()
@@ -64,7 +68,12 @@ public class PlayerShip : Ship
     {
       if (chargingTurbo)
       {
-        TurboShot((((turboChargeAmount * -1) + turboChargeMax) * 30f) + 1000f, (turboChargeAmount / turboChargeMax) + 1f);
+        TurboShot(4000f, (turboChargeAmount / turboChargeMax) + 1f);
+      }
+      //(((turboChargeAmount * -1) + turboChargeMax) * 30f) + 1000f << old speed formula
+      if (invinTime > 0)
+      {
+        invinTime--;
       }
 
     }
@@ -84,6 +93,12 @@ public class PlayerShip : Ship
     turboShots--;
     chargingTurbo = false;
     chargeSound.Stop();
+    if (turboChargeAmount > 40f)
+    {
+      superTurboSound.Play();
+    }
+
+    turboSound.Play();
     turboChargeAmount = 0;
 
     HUD.Instance.UpdateTurboUI(turboChargeAmount, turboChargeMax);
@@ -98,7 +113,7 @@ public class PlayerShip : Ship
     newProjectile.GetComponent<Projectile>().owner = gameObject;
     newProjectile.GetComponent<Projectile>().isPlayerProjectile = isPlayerShip;
 
-    turboSound.Play();
+
     HUD.Instance.UpdateTurbos(turboShots);
 
     Destroy(newProjectile, 4f);
@@ -107,5 +122,16 @@ public class PlayerShip : Ship
   public void EarnTurbo(int count)
   {
     turboShots += count;
+  }
+
+  public void Heal(int amount)
+  {
+    turboShots = 3;
+    HUD.Instance.UpdateTurbos(turboShots);
+    if (currentHP + amount <= maxHP)
+    {
+      currentHP += amount;
+      HUD.Instance.UpdateHealthUI(currentHP, maxHP);
+    }
   }
 }

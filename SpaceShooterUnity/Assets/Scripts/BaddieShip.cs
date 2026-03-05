@@ -10,6 +10,8 @@ public class BaddieShip : Ship
   Transform target;
   public int baddieType; // 0 = rammer, 1 = shooter
 
+
+
   // Start is called before the first frame update
   void Start()
   {

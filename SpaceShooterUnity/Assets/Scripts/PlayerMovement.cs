@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class PlayerShipMovement : Ship
 {
   // Start is called before the first frame update
+  public static PlayerShipMovement Instance;
+  private void Awake()
+  {
+    Instance = this;
+  }
   void Start()
   {
 
@@ -29,5 +35,10 @@ public class PlayerShipMovement : Ship
     {
       Thrust(-1f, false);
     }
+  }
+
+  public void Kickback(float power)
+  {
+    rb.AddForce(PlayerShip.Instance.projectileSpawnPoint.up * -power);
   }
 }

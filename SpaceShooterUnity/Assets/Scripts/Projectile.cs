@@ -52,8 +52,6 @@ public class Projectile : MonoBehaviour
     {
       if (collision.GetComponent<PlayerShip>())
       {
-        PlayerShip.Instance.EarnTurbo(-1);
-        HUD.Instance.UpdateTurbos(PlayerShip.Instance.turboShots);
         collision.GetComponent<PlayerShip>().TakeDamage(dmg);
         Destroy(gameObject);
       }

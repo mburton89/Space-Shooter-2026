@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CloseCall : MonoBehaviour
 {
-
+  private float closeCallAmount = 0f;
   public AudioSource projFlyBy;
+
+  private float invinIndic;
   // Start is called before the first frame update
   void Start()
   {
@@ -13,21 +15,33 @@ public class CloseCall : MonoBehaviour
   }
 
   // Update is called once per frame
-  void Update()
+  void FixedUpdate()
   {
+    invinIndic = PlayerShip.Instance.invinTime / 300f;
+    GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 1f, invinIndic);
 
+
+    //if (closeCallAmount > 0f)
+    //{
+    //  closeCallAmount -= 0.025f;
+    //}
   }
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
 
-    if (collision.gameObject.GetComponent<Projectile>().isPlayerProjectile == false && PlayerShip.Instance.turboShots < 3)
+    if (collision.gameObject.GetComponent<Projectile>().isPlayerProjectile == false)
     {
-      float randPitch = Random.Range(0.9f, 1.1f);
+
+      //closeCallAmount = 0.5f;
+      float randPitch = Random.Range(0.8f, 1.2f);
       projFlyBy.pitch = randPitch;
       projFlyBy.Play();
-      PlayerShip.Instance.EarnTurbo(1);
-      HUD.Instance.UpdateTurbos(PlayerShip.Instance.turboShots);
+      //PlayerShip.Instance.EarnTurbo(1);
+      //HUD.Instance.UpdateTurbos(PlayerShip.Instance.turboShots);
+
     }
+
   }
 }
+

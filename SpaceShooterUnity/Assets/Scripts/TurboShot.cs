@@ -6,4 +6,8 @@ using UnityEngine;
 public class TurboShot : Projectile
 {
   // hai :3
+  private void Awake()
+  {
+    PlayerShipMovement.Instance.Kickback(projHealth * 1000f);
+  }
 }

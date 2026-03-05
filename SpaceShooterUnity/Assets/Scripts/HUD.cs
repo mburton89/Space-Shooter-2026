@@ -10,6 +10,8 @@ public class HUD : MonoBehaviour
   public static HUD Instance;
   public Image healthBarFill;
   public Image turboBarFill;
+  public Image dmgFlash;
+  private float dmgFlashAmount = 0;
 
   public TextMeshProUGUI waveText;
   public TextMeshProUGUI highestWaveText;
@@ -18,6 +20,15 @@ public class HUD : MonoBehaviour
   private void Awake()
   {
     Instance = this;
+  }
+
+  void FixedUpdate()
+  {
+    dmgFlash.color = new Color(1f, 0f, 0f, dmgFlashAmount);
+    if (dmgFlashAmount > 0)
+    {
+      dmgFlashAmount -= 0.05f;
+    }
   }
 
 
@@ -48,5 +59,10 @@ public class HUD : MonoBehaviour
   public void DisplayHighestWave(int highestWave)
   {
     highestWaveText.SetText("BEST " + (highestWave - 1));
+  }
+
+  public void flashRed()
+  {
+    dmgFlashAmount = 1f;
   }
 }
