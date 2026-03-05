@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee828afc37421cd44a4e28ea82a8babf
+guid: 8fb81f2b921b2d749b3f56acd70139ce
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - LASER GUN
+  - Storm Gust
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

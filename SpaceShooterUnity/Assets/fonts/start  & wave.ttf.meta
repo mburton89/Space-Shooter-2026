@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1f12e90b21f90349a01c2a399d4cbb0
+guid: b7e35f6a87ee0a649a470bbdb24df154
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Astro Space
+  - Moonstar
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

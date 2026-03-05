@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 894950975}
   - component: {fileID: 894950974}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,8 +203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 174.60017}
-  m_SizeDelta: {x: 550.4, y: 66.5404}
+  m_AnchoredPosition: {x: 0, y: 141}
+  m_SizeDelta: {x: 1026.408, y: 135.5876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894950974
 MonoBehaviour:
@@ -226,17 +226,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Adventures
+  m_text: Space Adventures of the Mighty Fennec Fox
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55d7cdf29cf8c48419e87857776beed8, type: 2}
-  m_sharedMaterial: {fileID: 5370412201445002722, guid: 55d7cdf29cf8c48419e87857776beed8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c05d531637b6284aaaac6a0c67275fa, type: 2}
+  m_sharedMaterial: {fileID: -4661829797792222323, guid: 8c05d531637b6284aaaac6a0c67275fa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294289520
-  m_fontColor: {r: 0.44028127, g: 0.6599771, b: 0.9622642, a: 1}
+    rgba: 4281579318
+  m_fontColor: {r: 0.21047905, g: 0.7169812, b: 0.19953722, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.6
-  m_fontSizeBase: 50.6
+  m_fontSize: 84.3
+  m_fontSizeBase: 84.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.9141235, y: 0, z: 0, w: -93.14227}
+  m_margin: {x: 7.9141235, y: 0, z: 0, w: -22.002563}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -641,15 +641,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9f6b38c312858e644a903122515ed0a0, type: 2}
-  m_sharedMaterial: {fileID: -3074851854494335235, guid: 9f6b38c312858e644a903122515ed0a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3dcd82dfb47e71444be18404a021ff43, type: 2}
+  m_sharedMaterial: {fileID: 3236895633142379859, guid: 3dcd82dfb47e71444be18404a021ff43, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294934372
+  m_fontColor: {r: 0.3915094, g: 0.4993456, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -666,8 +666,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35.3
+  m_fontSizeBase: 35.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41960788, g: 0.97622836, b: 1, a: 1}
+  m_Color: {r: 0.5529412, g: 1, b: 0.9937464, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

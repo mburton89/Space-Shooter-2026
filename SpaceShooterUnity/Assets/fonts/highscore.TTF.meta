@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 87feedcdb715edd4f82325a3d0677362
+guid: 2bef9ceabbb4b4e42880f1f3c1bcae63
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - SOLAR SPACE DEMO
+  - DS-Digital
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

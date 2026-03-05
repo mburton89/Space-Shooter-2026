@@ -10,7 +10,7 @@ public class EnemyShipSpawner : MonoBehaviour
     public Transform spawnPoint;
 
     int currentNumberOfShips;
-    int currentWave;
+    public int currentWave;
     int baseNumberOfShips;
 
 
@@ -28,6 +28,7 @@ public class EnemyShipSpawner : MonoBehaviour
         baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
         currentNumberOfShips = baseNumberOfShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+        InvokeRepeating("CountEnemyShips", 0, 1); //added on 3/3/2026
     }
 
     public void SpawnWaveOfEnemies()
@@ -48,7 +49,6 @@ public class EnemyShipSpawner : MonoBehaviour
         playerShip.turboPewPew++;
         HUD.Instance.DisplayTurboPew(playerShip.turboPewPew);
 
-        InvokeRepeating("CountEnemyShips", 0, 1); //added on 3/3/2026
     }
 
     public void CountEnemyShips()
@@ -63,6 +63,7 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave); //TODO update HUD with current wave number
 
             SpawnWaveOfEnemies();
+            PowerupSpawner.Instance.SpawnWaveOfPowerups();
 
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
 

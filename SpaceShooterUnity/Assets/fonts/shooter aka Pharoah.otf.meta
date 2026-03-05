@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83134b5ec9888914eb2a44cbb461ac96
+guid: cb0d2af072c1b32448ae664db9b33989
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Spacetron
+  - Shoot Vector
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

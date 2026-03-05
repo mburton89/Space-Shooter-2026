@@ -179,7 +179,7 @@ MonoBehaviour:
   maxSpeed: 12
   fireRate: 1
   rb: {fileID: 6072627224432784794}
-  projectilePrefab: {fileID: 5554269229266287352, guid: ccd1c54492c63f74baeb74e7f0124c4f, type: 3}
+  projectilePrefab: {fileID: 6522535036119954500, guid: 8b1cdfcf11e986d419d5e9942a9369ee, type: 3}
   explosionPrefab: {fileID: 4488742802570108793, guid: 18a1cace040234a4ba01ab6793dc737d, type: 3}
   projectileVelocity: 1500
   projectileSpawnPoint: {fileID: 5590815484074680370}

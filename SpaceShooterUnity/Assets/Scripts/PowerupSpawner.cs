@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PowerupSpawner : MonoBehaviour
 {
+    Transform target;
+
     public static PowerupSpawner Instance;
 
     public List<GameObject> powerupPreFabs;
     public Transform pivotPoint;
     public Transform spawnPoint;
+
+    public AudioSource boostAudio;
 
     int baseNumberOfPowerups;
     int currentNumberOfPowerups;
@@ -21,13 +25,16 @@ public class PowerupSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseNumberOfPowerups = FindObjectsByType<PowerUp>(FindObjectsSortMode.None).Length;
-        currentNumberOfPowerups = baseNumberOfPowerups;
+        baseNumberOfPowerups = 1;
     }
 
     public void SpawnWaveOfPowerups()
     {
-        int numberOfPowerupsToSpawn = baseNumberOfPowerups + 1;
+        Debug.Log("Spawn Powerup Wave");
+
+        if (EnemyShipSpawner.Instance.currentWave > 2)
+        {
+        int numberOfPowerupsToSpawn = Random.Range(1, 5);
 
         for (int i = 0; i < numberOfPowerupsToSpawn; i++)
         {
@@ -36,21 +43,10 @@ public class PowerupSpawner : MonoBehaviour
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation);
 
             //step 2 spawn the enemy in the Spawn Point
-            int randomShipIndex = Random.Range(0, powerupPreFabs.Count);
-            Instantiate(powerupPreFabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
+            int randomPowerUpIndexEasy = Random.Range(0, powerupPreFabs.Count);
+            Instantiate(powerupPreFabs[randomPowerUpIndexEasy], spawnPoint.position, transform.rotation, null);
         }
-       
-        InvokeRepeating("CountPowerups", 0, 1); 
-    }
-    public void CountEnemyShips()
-    {
-        currentNumberOfPowerups = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
-
-        Debug.Log("Number of Current Powerups: " + currentNumberOfPowerups); //this will print to console so we can test
-
-        if (currentNumberOfPowerups == 0)
-        {
-            SpawnWaveOfPowerups();
         }
     }
+  
 }
