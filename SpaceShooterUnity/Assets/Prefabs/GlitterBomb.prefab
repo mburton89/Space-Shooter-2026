@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5110611388114509900}
   - component: {fileID: 2228346659165358729}
   - component: {fileID: 4846719604918839726}
+  - component: {fileID: 6731982043446681259}
   m_Layer: 0
   m_Name: GlitterBomb
   m_TagString: Untagged
@@ -173,3 +174,41 @@ MonoBehaviour:
   firingShip: {fileID: 0}
   glitterBombExplosionPrefab: {fileID: 6016576194058111877, guid: e7f4b9c9f18b6ae46b6e8d62e96dcc68, type: 3}
   explosionPrefabRotation: {x: 0, y: 90, z: 90}
+  blastRadius: {fileID: 6731982043446681259}
+  bombBody: {fileID: 2228346659165358729}
+--- !u!58 &6731982043446681259
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472803488646447174}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.0000001
