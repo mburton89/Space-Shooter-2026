@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealingBulb
   lifeToGive: 3
+  maxLifeToGive: 3
   friend: {fileID: 0}
   heal: {fileID: 8300000, guid: 38ef617407a49054cb518795e14e0699, type: 3}
 --- !u!1 &6212142808863059361
