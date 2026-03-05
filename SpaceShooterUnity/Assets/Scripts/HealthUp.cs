@@ -1,9 +1,11 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
 
     public int healthToGive;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,11 +35,6 @@ public class PowerUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
-       
-    
 
     }
     

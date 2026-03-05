@@ -13,7 +13,7 @@ public class BaddieShip : Ship
     // Start is called before the first frame update
     void Start()
     {
-        target = FindObjectOfType<PlayerShip>().transform;
+        target = FindAnyObjectByType<PlayerShip>().transform;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

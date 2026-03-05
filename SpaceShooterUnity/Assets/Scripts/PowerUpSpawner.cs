@@ -11,10 +11,9 @@ public class PowerUpSpawner : MonoBehaviour
     public Transform pivotPoint;
     public Transform spawnPoint;
 
-    public AudioSource addHealthAudio;
 
-    int currentNumberOfPowerUps;
-    int baseNumberOfPowerUps;
+    public int currentNumberOfPowerUps;
+    public int baseNumberOfPowerUps;
 
     private void Awake()
     {
@@ -24,7 +23,7 @@ public class PowerUpSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseNumberOfPowerUps = 2;
+        baseNumberOfPowerUps = 1;
         
     }
 
@@ -33,7 +32,7 @@ public class PowerUpSpawner : MonoBehaviour
         Debug.Log("Spawn Power Wave");
         if (EnemyShipSpawner.Instance.currentWave > 2)
         {
-        int numberOfPowerUpsToSpawn = Random.Range(1, 5);
+        int numberOfPowerUpsToSpawn = Random.Range(1, 3);
 
         for(int i = 0; i < numberOfPowerUpsToSpawn; i++)
         {
@@ -42,10 +41,12 @@ public class PowerUpSpawner : MonoBehaviour
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation); //Rotate pivot point 2 new angle
 
              //Step 2: Spawn enemy in spawn point
-            int randomPowerUpIndexEasy = Random.Range(0, powerUpPrefabs.Count);
+            int randomPowerUpIndexEasy = Random.Range(0, 2);
             Instantiate(powerUpPrefabs[randomPowerUpIndexEasy], spawnPoint.position, spawnPoint.rotation, null);
         }
         }
+
+       
     }
 
 

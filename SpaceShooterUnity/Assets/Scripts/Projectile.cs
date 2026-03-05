@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int damageToGive;
+    
+    public bool isProjectile;
 
     [HideInInspector] public GameObject firingShip; //The ship that fired the projectile. This helps us avoid doing damage to the wrong ship.
 
@@ -18,6 +20,11 @@ public class Projectile : MonoBehaviour
 
             collision.GetComponent<Ship>().TakeDamage(damageToGive);
 
+            Destroy(gameObject);
+        }
+
+        if (isProjectile == true && collision.GetComponent<Projectile>())
+        {
             Destroy(gameObject);
         }
     }

@@ -4881,7 +4881,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 87e6013dc624eb7468e0d095a563967a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.626
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5072,7 +5072,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c41c1839a5f50cb4fa7b43bc5a8370fc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.613
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5335,16 +5335,26 @@ MonoBehaviour:
   acceleration: 4
   currentSpeed: 0
   maxSpeed: 14
-  fireRate: 0.5
+  fireRate: 1
+  turboFireRate: 0
   rb: {fileID: 3212814538374927954}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 6603328854964769578, guid: 55603f203d60fee488cd90d55657adc4, type: 3}
-  projectileVelocity: 600
+  turboShotPrefab: {fileID: 0}
+  turboShotParticlesPrefab: {fileID: 0}
+  projectileVelocity: 568
   projectileSpawnPoint: {fileID: 3042242956205040397}
   explosionSpawnPoint: {fileID: 4911096399146969829}
+  turboShotSpawnPoint: {fileID: 0}
   pewPewAudioSource: {fileID: 5307444891284695350}
   takeDamageAudioSource: {fileID: 7120638389992252478}
+  turboShotAudioSource: {fileID: 0}
+  addHealthAudio: {fileID: 0}
+  addBIGHealthAudio: {fileID: 0}
   canPewPew: 1
+  canTurboShot: 0
+  currentTurboShots: 0
+  maxTurboShots: 0
   isShooter: 1
 --- !u!1 &7669281160991254180
 GameObject:

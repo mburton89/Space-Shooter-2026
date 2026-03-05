@@ -32,11 +32,15 @@ public class Ship : MonoBehaviour
     public AudioSource pewPewAudioSource;
     public AudioSource takeDamageAudioSource;
     public AudioSource turboShotAudioSource;
+     public AudioSource addHealthAudio;
+     public AudioSource addBIGHealthAudio;
 
     public bool canPewPew;
     public bool canTurboShot;
     public int currentTurboShots;
     public int maxTurboShots;
+
+
 
 
     // Start is called before the first frame update
@@ -196,6 +200,8 @@ public class Ship : MonoBehaviour
        if (GetComponent<PlayerShip>())
         {
             HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+            addHealthAudio.Play();
+            addBIGHealthAudio.Play();
         }
     }
     
