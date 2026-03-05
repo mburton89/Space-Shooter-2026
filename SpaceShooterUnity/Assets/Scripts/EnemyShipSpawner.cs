@@ -1,5 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic; // we need this API for LIST functionality
+using System.Collections.Generic;
+using Unity.VisualScripting;  // we need this API for LIST functionality
 
 public class EnemyShipSpawner : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class EnemyShipSpawner : MonoBehaviour
     public Transform pivotPoint;
     public Transform spawnPoint;
 
+
     int currentNumberOfShips;
     int currentWave;
-    int baseNumberOfShips;
-    //TODO max waves if we want to "beat" the game
+    int baseNumberofShips;
+    // TODO max waves if we want to "beat" the game
 
     private void Awake()
     {
@@ -23,47 +25,47 @@ public class EnemyShipSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
-        currentNumberOfShips = baseNumberOfShips;
+        baseNumberofShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
+        currentNumberOfShips = baseNumberofShips;
         HUD.Instance.DisplayHighestWave(PlayerPrefs.GetInt("HighestWave"));
+        InvokeRepeating("CountEnemyShips", 0, 0); //helps keep the game going
     }
-
     public void SpawnWaveOfEnemies()
     {
-        int numberOfEnemiesToSpawn = baseNumberOfShips + currentWave - 1;
+        int numberOfEnemiesToSpawn = baseNumberofShips + currentWave - 1;
 
-        for (int i = 0; i < numberOfEnemiesToSpawn; i++)
+        for(int i = 0; i < numberOfEnemiesToSpawn; i++)
         {
-            //Step 1: Rotate the Pivot Point (claw machine arm pivot)
+            //Rotate the claw machine arm
             float newZRotation = Random.Range(0f, 360f);
             pivotPoint.eulerAngles = new Vector3(0, 0, newZRotation);
-
-            //Step 2: Spawn/Instantiate the enemy at the Spawn Point
+            //Spawn Instantiate the enemy at the Spawn Point
             int randomShipIndex = Random.Range(0, enemyShipPrefabs.Count);
             Instantiate(enemyShipPrefabs[randomShipIndex], spawnPoint.position, transform.rotation, null);
         }
-    }
+        FindObjectOfType<PlayerShip>().turboShotsLeft++;
+        HUD.Instance.DisplayTurbo(FindObjectOfType<PlayerShip>().turboShotsLeft);
 
+    }
     public void CountEnemyShips()
-    { 
+    {
         currentNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
 
-        Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
+        Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); // this will print to console so we can test
 
-        if (currentNumberOfShips == 1)
+        if(currentNumberOfShips == 1)
         {
             currentWave++;
-            HUD.Instance.DisplayWave(currentWave); //TODO Update HUD with current wave number
+            HUD.Instance.DisplayWave(currentWave);
+
             SpawnWaveOfEnemies();
 
             int highestWaveAchieved = PlayerPrefs.GetInt("HighestWave");
 
             if (currentWave > highestWaveAchieved)
             {
-                //YAAYYYYY, WE SET A NEW HIGH SCORE / WAVE
+                //YOU SET A NEW HIGHSCORE / WAVE
                 PlayerPrefs.SetInt("HighestWave", currentWave);
-
-                //TODO Tell HUD to show highest wave
                 HUD.Instance.DisplayHighestWave(currentWave);
             }
         }

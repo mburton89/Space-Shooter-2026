@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da8e23ffa97c0cb489a582fcc830b484
+guid: 5c8ed5802b70cd54696bf4587c2aa2c2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - space 1
+  - Roblox Font
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

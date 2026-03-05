@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(GameOverDelay());
     }
-
     private IEnumerator GameOverDelay()
     {
         yield return new WaitForSeconds(3);

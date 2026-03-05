@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a258cd38a15385f4c832163e87fe6756
+guid: c1255b097157d904ba6414534b8802a2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - SPACE
+  - Daily Vibes
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

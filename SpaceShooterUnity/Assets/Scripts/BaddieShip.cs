@@ -18,11 +18,12 @@ public class BaddieShip : Ship
     {
         //if we made it this far, we collided with SOMETHING
 
-        if (collision.gameObject.GetComponent<PlayerShip>())
+        if(collision.gameObject.GetComponent<PlayerShip>())
         {
             //if we made it this far, we collided with THE PLAYER SHIP
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
             Explode();
+
         }
     }
 
@@ -33,7 +34,7 @@ public class BaddieShip : Ship
         {
             FollowTarget();
 
-            if (isShooter && canPewPew)
+            if(isShooter && canPewPew)
             {
                 PewPew();
             }

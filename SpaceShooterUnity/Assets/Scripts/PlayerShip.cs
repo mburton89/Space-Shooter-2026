@@ -23,6 +23,16 @@ public class PlayerShip : Ship
             Thrust();
         }
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (turboShotsLeft > 0)
+            {
+                Turbo();
+                turboShotsLeft--;
+                HUD.Instance.DisplayTurbo(turboShotsLeft);
+            }
+        }
+
         FollowMouse(); 
     }
 
