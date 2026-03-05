@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public int damageToGive;
 
     [HideInInspector] public GameObject firingShip; //The ship that fired the projectile. This helps us avoid doing damage to the wrong ship.
+    public bool dontDestroy;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +19,16 @@ public class Projectile : MonoBehaviour
 
             collision.GetComponent<Ship>().TakeDamage(damageToGive);
 
-            Destroy(gameObject);
+            if (dontDestroy)
+            {
+                //handle planet logic
+
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+                
         }
     }
 }

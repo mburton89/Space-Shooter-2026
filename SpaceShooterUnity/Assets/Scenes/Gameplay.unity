@@ -6832,7 +6832,7 @@ MonoBehaviour:
   maxY: 500
   minZ: 0
   maxZ: 0
-  numberOfCrashPlanetsToSpawn: 1000
+  numberOfCrashPlanetsToSpawn: 500
   damageToGive: 100
   planet: {fileID: 1355639874969981871, guid: 0b8e518c843dcd848be13e7b6dbb69d7, type: 3}
 --- !u!4 &1268517995
@@ -7521,6 +7521,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015179662}
   m_CullTransparentMesh: 1
+--- !u!1 &2093316833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093316835}
+  - component: {fileID: 2093316834}
+  m_Layer: 0
+  m_Name: Health Power Up Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2093316834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093316833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c625ec81c0dba7a49bbb63a3047964f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarSpawner
+  maxX: 1000
+  maxY: 1000
+  minZ: 0
+  maxZ: 0
+  numberOfStarsToSpawn: 1000
+  star: {fileID: 6904596886147428478, guid: 088fe20918d324f4c878aaf456973c66, type: 3}
+--- !u!4 &2093316835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093316833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.40526, y: 5.38134, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2137030476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,3 +7715,4 @@ SceneRoots:
   - {fileID: 1345749884}
   - {fileID: 1279902927}
   - {fileID: 1268517995}
+  - {fileID: 2093316835}

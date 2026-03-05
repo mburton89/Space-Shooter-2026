@@ -101,6 +101,16 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void GiveLife(int lifeToGive)
+    {
+        currentHealth += lifeToGive;
+
+        if (GetComponent<PlayerShip>())
+        {
+            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+        }
+    }
+
     public void Explode()
     {
         //TODO: Make cool 'splosion particles
