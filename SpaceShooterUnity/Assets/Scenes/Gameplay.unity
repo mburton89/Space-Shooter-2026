@@ -7530,7 +7530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093316835}
-  - component: {fileID: 2093316834}
+  - component: {fileID: 2093316836}
   m_Layer: 0
   m_Name: Health Power Up Spawner
   m_TagString: Untagged
@@ -7538,24 +7538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2093316834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093316833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c625ec81c0dba7a49bbb63a3047964f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StarSpawner
-  maxX: 1000
-  maxY: 1000
-  minZ: 0
-  maxZ: 0
-  numberOfStarsToSpawn: 1000
-  star: {fileID: 6904596886147428478, guid: 088fe20918d324f4c878aaf456973c66, type: 3}
 --- !u!4 &2093316835
 Transform:
   m_ObjectHideFlags: 0
@@ -7571,6 +7553,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093316836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093316833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6099288320eb7c48b2a4f356421dac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSpawner
+  maxX: 1000
+  maxY: 1000
+  minZ: 0
+  maxZ: 0
+  numberOfPowerUpsToSpawn: 500
+  Health: {fileID: 6904596886147428478, guid: 088fe20918d324f4c878aaf456973c66, type: 3}
 --- !u!1 &2137030476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7605,7 +7605,7 @@ MonoBehaviour:
   minZ: 250
   maxZ: 2500
   numberOfStarsToSpawn: 5000
-  star: {fileID: 6904596886147428478, guid: 088fe20918d324f4c878aaf456973c66, type: 3}
+  star: {fileID: 5037878210233367275, guid: 4e8aaec56fbda774fa52119162b79a27, type: 3}
 --- !u!4 &2137030478
 Transform:
   m_ObjectHideFlags: 0
