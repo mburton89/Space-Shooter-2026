@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
 
         Debug.Log("Number of Current Enemy Ships: " + currentNumberOfShips); //this will print to console so we can test
 
-        if (currentNumberOfShips == 1)
+        if (currentNumberOfShips <= 1)
         {
             currentWave++;
             //TODO Update HUD with current wave number
@@ -100,8 +100,6 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnNuke()
     {
-        Debug.Log("Nuke");
-
         float newZRotation = Random.Range(0f, 360f);
         powerPivot.eulerAngles = new Vector3(0, 0, newZRotation);
 

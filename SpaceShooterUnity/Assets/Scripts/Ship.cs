@@ -162,10 +162,18 @@ public class Ship : MonoBehaviour
         }
     }
 
-    public void NukeDestroy(int damageNuke)
+    public void NukeDestroy()
     {
-        currentHealth -= damageNuke;
-        Destroy(gameObject.GetComponent<BaddieShip>(isBaddie));
-        Destroy(gameObject);
+        BaddieShip[] baddies = FindObjectsOfType<BaddieShip>();
+        foreach (BaddieShip baddie in baddies)
+        {
+            baddie.Explode();
+        }
+        StartCoroutine(NukeEnemyCount());
+    }
+    IEnumerator NukeEnemyCount()
+    {
+        yield return new WaitForSeconds(1);
+        EnemySpawner.Instance.CountEnemyShips();
     }
 }

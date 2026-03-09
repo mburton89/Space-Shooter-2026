@@ -189,6 +189,7 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 2272359052022323352}
   healDamageAudioSource: {fileID: 0}
   canPewPew: 1
+  isBaddie: 1
   isShoota: 1
 --- !u!1 &3776511526694888242
 GameObject:

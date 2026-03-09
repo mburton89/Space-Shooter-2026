@@ -8,7 +8,6 @@ public class BaddieShip : Ship
     Transform target;
     //bool or boolean is a true or false statement essentially
     public bool isShoota;
-    public bool isBaddie;
 
     // Start is called before the first frame update
     void Start()

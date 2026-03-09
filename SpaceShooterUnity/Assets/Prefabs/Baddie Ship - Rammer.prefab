@@ -5184,4 +5184,5 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 7492802731464937383}
   healDamageAudioSource: {fileID: 0}
   canPewPew: 0
+  isPlayer: 1
   isShoota: 0

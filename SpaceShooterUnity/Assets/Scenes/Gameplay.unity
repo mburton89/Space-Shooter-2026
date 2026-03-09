@@ -202,6 +202,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4870294198637411888, guid: f78f2d7cfaad2ee4484846ad29cfde93, type: 3}
+      propertyPath: isBaddie
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349145959933484579, guid: f78f2d7cfaad2ee4484846ad29cfde93, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.97185
@@ -1926,7 +1930,7 @@ MonoBehaviour:
   powerPivot: {fileID: 1127179870}
   powerPoint: {fileID: 1300088170}
   nukePrefab: {fileID: 8094551622075634467, guid: d90f5cba399244048b1c66e126dbf144, type: 3}
-  nukeRate: 5
+  nukeRate: 30
   enemyShipPrefab:
   - {fileID: 9029263491161358499, guid: f78f2d7cfaad2ee4484846ad29cfde93, type: 3}
   - {fileID: 144338575549810698, guid: a59b222c5cf051c4f8321179cbdbb012, type: 3}

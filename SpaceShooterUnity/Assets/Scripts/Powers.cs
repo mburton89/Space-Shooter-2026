@@ -20,7 +20,7 @@ public class Powers : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerShip>() && isNuke)
         {
             //if we made it this far, we collided with THE PLAYER SHIP
-            collision.gameObject.GetComponent<PlayerShip>().NukeDestroy(10);
+            collision.gameObject.GetComponent<PlayerShip>().NukeDestroy();
 
             Destroy(gameObject);
         }
