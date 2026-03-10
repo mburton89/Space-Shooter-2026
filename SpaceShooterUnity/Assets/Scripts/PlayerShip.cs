@@ -7,7 +7,7 @@ public class PlayerShip : Ship
     
     public GameObject glitterBombPrefab;
 
-    public int maxGlitterBombs = 3;
+    public int maxGlitterBombs;
     public int currentGlitterBombs;
 
     // Start is called before the first frame update
