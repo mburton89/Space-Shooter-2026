@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEngine.Rendering.PostProcessing;
 public class PowerUps : MonoBehaviour
 {
 
@@ -16,7 +17,6 @@ public class PowerUps : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        baseNumberOfPowerUps = 2;
     }
 
     void Start()
@@ -26,7 +26,8 @@ public class PowerUps : MonoBehaviour
 
     public void SpawnHealthUps(int wave)
     {
-        int numberOfUpsToSpawn = baseNumberOfPowerUps + wave;
+        int baseNumberOfPowerUps = wave / 5;
+        int numberOfUpsToSpawn = baseNumberOfPowerUps + 2;
 
         if (wave > 2)
         {

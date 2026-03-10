@@ -92,8 +92,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.68, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1142855377034032952}
   - {fileID: 3326235872814866669}
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a239f42b2aa7af145807efa53be87ec1, type: 3}
   m_Color: {r: 0.9647059, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -220,8 +220,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.28
+  m_Offset: {x: 0, y: -3.1781826}
+  m_Radius: 7.2782726
 --- !u!114 &7501489141952664120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,11 +244,18 @@ MonoBehaviour:
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   projectileVelocity: 40
   projectileSpawnPoint: {fileID: 1142855377034032952}
+  dualProjectilePrefab: {fileID: 0}
+  dualProjectileSpawnPoint: {fileID: 0}
+  dualProjectilePrefab2: {fileID: 0}
+  dualProjectileSpawnPoint2: {fileID: 0}
   explosionPrefab: {fileID: 5788019658807085793, guid: 87d257e4e47fc9a42b014ad2bb583eda, type: 3}
   explosionSpawnPoint: {fileID: 3326235872814866669}
   pewPewAudioSource: {fileID: 0}
   takeHitAudioSource: {fileID: 1333820928014065471}
+  HealthUpAudioSource: {fileID: 0}
   canPewPew: 0
+  turboShots: 3
+  turboProjectilePrefab: {fileID: 0}
   isShooter: 0
 --- !u!1 &3259922769779077182
 GameObject:
@@ -406,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 8377716849167562413}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.01, y: -0.31, z: 0}
+  m_LocalPosition: {x: -0.37, y: -6.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

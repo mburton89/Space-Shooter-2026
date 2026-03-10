@@ -23,6 +23,9 @@ public class Ship : MonoBehaviour
     public GameObject dualProjectilePrefab;
     public Transform dualProjectileSpawnPoint;
 
+    public GameObject dualProjectilePrefab2;
+    public Transform dualProjectileSpawnPoint2;
+
     public GameObject explosionPrefab;
     public Transform explosionSpawnPoint;
 
@@ -31,6 +34,8 @@ public class Ship : MonoBehaviour
     public AudioSource pewPewAudioSource;
 
     public AudioSource takeHitAudioSource;
+
+    public AudioSource HealthUpAudioSource;
 
     public bool canPewPew = true;
 
@@ -84,22 +89,41 @@ public class Ship : MonoBehaviour
             StartCoroutine(Cooldown());
 
             Destroy(newProjectile2, 4);
+
+            Debug.Log("Fire Projectile Dual");
+            GameObject newProjectile3 = Instantiate(dualProjectilePrefab2, dualProjectileSpawnPoint2.position, transform.rotation);
+            newProjectile3.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile3.GetComponent<Projectile>().firingShip = gameObject;
+
+            float newPitch3 = Random.Range(0.8f, 1.2f);
+
+            pewPewAudioSource.pitch = newPitch3;
+
+            pewPewAudioSource.Play();
+
+            StartCoroutine(Cooldown());
+
+            Destroy(newProjectile2, 4);
         }
 
-        Debug.Log("Fire Projectile");
-        GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
-        newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newProjectile.GetComponent<Projectile>().firingShip = gameObject;
+        else
+        {
+            Debug.Log("Fire Projectile");
+            GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, transform.rotation);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+            newProjectile.GetComponent<Projectile>().firingShip = gameObject;
 
-        float newPitch = Random.Range(0.8f, 1.2f);
+            float newPitch = Random.Range(0.8f, 1.2f);
 
-        pewPewAudioSource.pitch = newPitch;
+            pewPewAudioSource.pitch = newPitch;
 
-        pewPewAudioSource.Play();
+            pewPewAudioSource.Play();
 
-        StartCoroutine(Cooldown());
-        
-        Destroy(newProjectile, 4);
+            StartCoroutine(Cooldown());
+
+            Destroy(newProjectile, 4);
+        }
+
     }
     public void Turbo()
     {
@@ -156,11 +180,16 @@ public class Ship : MonoBehaviour
 
     public void giveHealth(int healthToGive)
     {
-        currentHealth += healthToGive;
+        HealthUpAudioSource.Play();
 
-        if (GetComponent<PlayerShip>())
+        if (currentHealth != maxHealth)
         {
-            HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+            currentHealth += healthToGive;
+
+            if (GetComponent<PlayerShip>())
+            {
+                HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+            }
         }
     }
 
