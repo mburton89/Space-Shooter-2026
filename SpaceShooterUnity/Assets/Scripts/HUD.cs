@@ -30,8 +30,10 @@ public class HUD : MonoBehaviour
 
     public void UpdateTurboShotUI(int currentTurboShots)
     {
+        //if (GetComponent<PlayerShip>())
+      //  {
         Debug.Log("Current Turbo Shots:" + currentTurboShots);
-        Ship playerShip = FindObjectOfType<PlayerShip>();
+        Ship playerShip = FindAnyObjectByType<PlayerShip>();
         
         //this function updates vis of turbo shot images
         if (playerShip.currentTurboShots == 0)
@@ -62,6 +64,7 @@ public class HUD : MonoBehaviour
             turboShotTwo.enabled = true;
             turboShotThree.enabled = true;
         }
+       // }
     }
 
     internal void DisplayWave(int currentWave)

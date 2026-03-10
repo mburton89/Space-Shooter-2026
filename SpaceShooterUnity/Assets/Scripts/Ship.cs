@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -8,6 +11,7 @@ public class Ship : MonoBehaviour
     public int maxHealth;
 
     public float acceleration;
+    public float maxAcceleration;
     public float currentSpeed;
     public float maxSpeed;
 
@@ -20,23 +24,28 @@ public class Ship : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject turboShotPrefab;
     public GameObject turboShotParticlesPrefab;
-
+    
     public float projectileVelocity;
 
     public Transform projectileSpawnPoint;
     public Transform explosionSpawnPoint;
     public Transform turboShotSpawnPoint;
 
-    ParticleSystem thrustParticles;
+    public ParticleSystem thrustParticles;
+    public ParticleSystem speedThrustParticles;
+    public ParticleSystem turboShotParticles;
 
     public AudioSource pewPewAudioSource;
     public AudioSource takeDamageAudioSource;
     public AudioSource turboShotAudioSource;
      public AudioSource addHealthAudio;
      public AudioSource addBIGHealthAudio;
+     public AudioSource firstSpeedAudio;
+     public AudioSource endSpeedAudio;
 
     public bool canPewPew;
     public bool canTurboShot;
+    bool spedUp;
     public int currentTurboShots;
     public int maxTurboShots;
 
@@ -46,7 +55,7 @@ public class Ship : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        thrustParticles = GetComponentInChildren<ParticleSystem>();
+        
     }
 
     // Update is called once per frame
@@ -65,8 +74,19 @@ public class Ship : MonoBehaviour
 
     public void Thrust()
     {
-        rb.AddForce(transform.up * acceleration);
+        rb.AddForce(transform.up * acceleration * 20 * Time.deltaTime);
+        if (spedUp ==false)
+        {
         thrustParticles.Emit(1);
+        speedThrustParticles.Stop();
+        }
+
+        if (spedUp == true)
+        {
+            Debug.Log("Particle Switch");
+        thrustParticles.Stop();
+        speedThrustParticles.Emit(1);
+        }
         
     }
 
@@ -85,42 +105,46 @@ public class Ship : MonoBehaviour
 
         StartCoroutine(CoolDown());
 
-        Destroy(newProjectile, 3);
+        Destroy(newProjectile, 4);
 
     }
 
+    
     public void TurboShot()
     {
-        
+        if (GetComponent<PlayerShip>())
+        {
+         Ship playerShip = FindAnyObjectByType<PlayerShip>();
         if (currentTurboShots >= 1 && canTurboShot)
             {
-        Debug.Log("Turbo Shot");
-        GameObject newTurboShot = Instantiate(turboShotPrefab, turboShotSpawnPoint.position, transform.rotation);
-        GameObject turboShotParticles = Instantiate(turboShotParticlesPrefab, turboShotSpawnPoint.position, transform.rotation);
-        newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
-        newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
+                Debug.Log("Turbo Shot");
+                GameObject newTurboShot = Instantiate(turboShotPrefab, turboShotSpawnPoint.position, transform.rotation);
+                GameObject turboShotParticles = Instantiate(turboShotParticlesPrefab, turboShotSpawnPoint.position, transform.rotation);
+                newTurboShot.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
+                newTurboShot.GetComponent<TurboShot>().firingShip = gameObject;
 
-        float newPitch = Random.Range(.5f, 1.6f);
+                float newPitch = Random.Range(.5f, 1.6f);
 
-        turboShotAudioSource.Play();
-        turboShotAudioSource.pitch = newPitch;
+                turboShotAudioSource.Play();
+                turboShotAudioSource.pitch = newPitch;
 
-        Debug.Log("Current Turbo Shots:" + currentTurboShots);
-        currentTurboShots --;
-        
-        LimitTurboShots();
-        HUD.Instance.UpdateTurboShotUI(currentTurboShots);
+                Debug.Log("Current Turbo Shots:" + currentTurboShots);
+                playerShip.currentTurboShots --;
+                
+                LimitTurboShots();
+                HUD.Instance.UpdateTurboShotUI(currentTurboShots);
 
-         StartCoroutine(TurboCoolDown());
+                StartCoroutine(TurboCoolDown());
 
-         Destroy(newTurboShot, 4);
+                Destroy(newTurboShot, 4);
+                    }
             
         }
     }
 
-    
     public void LimitTurboShots()
     {
+       
         if (currentTurboShots > maxTurboShots)
         {
             currentTurboShots = maxTurboShots;
@@ -134,7 +158,6 @@ public class Ship : MonoBehaviour
         currentTurboShots++;
         LimitTurboShots();
         HUD.Instance.UpdateTurboShotUI(currentTurboShots);
-    
 
     }
     
@@ -203,6 +226,33 @@ public class Ship : MonoBehaviour
             addHealthAudio.Play();
             addBIGHealthAudio.Play();
         }
+    }
+
+    public void GiveSpeed(int speedBoostToGive)
+    {
+        spedUp = true;
+        acceleration += speedBoostToGive;
+        StartCoroutine(SpeedDelay());
+        
+        firstSpeedAudio.Play();
+
+    }
+
+    public void LimitSpeed()
+    {
+        if (acceleration > maxAcceleration)
+        {
+            Debug.Log("Speed Limited");
+            spedUp = false;
+            acceleration = maxAcceleration;
+            endSpeedAudio.Play();
+        }
+    }
+
+     IEnumerator SpeedDelay()
+    {
+        yield return new WaitForSeconds(5);
+        FindAnyObjectByType<PlayerShip>().LimitSpeed();
     }
     
 }

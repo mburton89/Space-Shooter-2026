@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class PowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, 20f);
     }
 
      private void OnTriggerEnter2D(Collider2D collision)
@@ -31,8 +32,17 @@ public class PowerUp : MonoBehaviour
 
             Debug.Log("GivenHealth");
             collision.GetComponent<PlayerShip>().GiveHealth(healthToGive);
+            LimitHealth();
 
             Destroy(gameObject);
+        }
+
+        void LimitHealth()
+        {
+        if (FindAnyObjectByType<PlayerShip>().currentHealth > FindAnyObjectByType<PlayerShip>().maxHealth)
+        {
+            FindAnyObjectByType<PlayerShip>().currentHealth = FindAnyObjectByType<PlayerShip>().maxHealth;
+        }
         }
     }
 

@@ -93,8 +93,8 @@ public class EnemyShipSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave);
 
 
-            //FindObjectOfType<Ship>().AddTurboShot();
-            Debug.Log("Turbo SHot Wave Bonus");
+           // FindAnyObjectByType<PlayerShip>().AddTurboShot();
+            Debug.Log("Turbo Shot Wave Bonus");
             Ship playerShip = FindAnyObjectByType<Ship>();
             playerShip.currentTurboShots++;
             HUD.Instance.UpdateTurboShotUI(playerShip.currentTurboShots);
