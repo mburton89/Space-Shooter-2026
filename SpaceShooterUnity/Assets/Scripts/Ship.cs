@@ -65,7 +65,7 @@ public class Ship : MonoBehaviour
 
     public void Thrust()
     {
-        rb.AddForce(transform.up * acceleration);
+        rb.AddForce(transform.up * acceleration * 60 * Time.deltaTime);
         thrustParticles.Emit(1);
     }
 
@@ -131,7 +131,7 @@ public class Ship : MonoBehaviour
         {
             Debug.Log("Use Turbo");
             GameObject newProjectile = Instantiate(turboProjectilePrefab, projectileSpawnPoint.position, transform.rotation);
-            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity * Time.deltaTime);
+            newProjectile.GetComponent<Rigidbody2D>().AddForce(transform.up * projectileVelocity);
             newProjectile.GetComponent<TurboProjectile>().firingShip = gameObject;
 
             float newPitch = Random.Range(0.8f, 1.2f);
