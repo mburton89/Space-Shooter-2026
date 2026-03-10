@@ -16,6 +16,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject projectilePrefab;
+    public GameObject wormPrefab;
 
     public float projectileVelocity;
     public float currentCharge;
@@ -25,6 +26,7 @@ public class Ship : MonoBehaviour
     public Transform projectileSpawnPoint;
 
     ParticleSystem thrustParticles;
+    ParticleSystem thrustParticlesRight;
 
     public GameObject explosionPrefab;
     public GameObject TurboPrefab;
@@ -60,7 +62,7 @@ public class Ship : MonoBehaviour
 
     public void Thrust()
     {
-        rb.AddForce(transform.up * acceleration);
+        rb.AddForce(transform.up * acceleration * 100 * Time.deltaTime);
         thrustParticles.Emit(1);
     }
 
@@ -132,8 +134,19 @@ public class Ship : MonoBehaviour
         }
     }
 
+    public void RestoreHealth(int healthtoGive)
+    {
+        // if currentHealth < maxhealth
+        currentHealth += healthtoGive;
+
+        HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
+    }
+
     public void Explode()
     {
+        int dropChance = Random.Range(1, 10);
+        Debug.Log(dropChance);
+
         //TODO: Make cool 'splosion particles
         GameObject newExplosion = Instantiate(explosionPrefab, projectileSpawnPoint.position, transform.rotation);
 
@@ -143,6 +156,13 @@ public class Ship : MonoBehaviour
         {
             GameManager.Instance.GameOver();
         }
+
+        if (dropChance == 3)
+        {
+            GameObject newWorm = Instantiate(wormPrefab, transform.position, transform.rotation);
+        }
+
+
 
         //Code CAN be called here because WE'RE ALIVE 
 
