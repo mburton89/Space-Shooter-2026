@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e42f318bb96f6574f97d002246fd5087
+guid: 8bc6dcd9156f15d4dbfcf44e9596d258
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1024685572769175166
-    second: G1 Starscream Sprite_0
+      213: 497946201012233468
+    second: G1_Jet_Starscream_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: G1 Starscream Sprite_0
+      name: G1_Jet_Starscream_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 24
-        height: 24
+        y: 3
+        width: 64
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e76df53791a683e00800000000000000
-      internalID: 1024685572769175166
+      spriteID: cf4e69c7e6f09e600800000000000000
+      internalID: 497946201012233468
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      G1 Starscream Sprite_0: 1024685572769175166
+      G1_Jet_Starscream_0: 497946201012233468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

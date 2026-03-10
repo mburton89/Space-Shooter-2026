@@ -9,12 +9,15 @@ public class PlayerShip : Ship
     public int turboAmmo = 3;
     public GameObject turboProjectilePrefab;
     public AudioSource turboAudioSource;
+    public SpriteRenderer shipRenderer; // Drag your SpriteRenderer here in Inspector
+    public Sprite[] shipSkins;          // Array of your 3 ship sprites
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        int skinIndex = PlayerPrefs.GetInt("SelectedSkin", 0); // default to 0
+        shipRenderer.sprite = shipSkins[skinIndex];
     }
 
     // Update is called once per frame
