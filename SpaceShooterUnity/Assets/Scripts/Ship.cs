@@ -58,8 +58,11 @@ public class Ship : MonoBehaviour
 
     public void Thrust()
     {
-        rb.AddForce(transform.up * acceleration);
-        thrustParticles.Emit(1);
+        rb.AddForce(transform.up * acceleration * 300 * Time.deltaTime);
+        if(thrustParticles != null)
+        {
+            thrustParticles.Emit(1);
+        }
     }
 
     public void PewPew()

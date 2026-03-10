@@ -4975,7 +4975,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -5040,9 +5040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 15
   maxHealth: 15
-  acceleration: 0.6
+  acceleration: 0.8
   currentSpeed: 0
-  maxSpeed: 5
+  maxSpeed: 6
   fireRate: 1
   rb: {fileID: 2964432946080788915}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
