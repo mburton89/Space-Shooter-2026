@@ -1307,12 +1307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e040e200abcfb45a30d5421c770d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 4
-  maxHealth: 4
+  currentHealth: 6
+  maxHealth: 6
   currentTurboShotAmmo: 3
-  acceleration: 2.5
+  acceleration: 8
   currentSpeed: 0
-  maxSpeed: 10
+  maxSpeed: 12
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}

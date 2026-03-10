@@ -172,12 +172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc62095edb46d7444a3e42873b61c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
+  currentHealth: 2
+  maxHealth: 2
   currentTurboShotAmmo: 0
-  acceleration: 2.5
+  acceleration: 5
   currentSpeed: 0
-  maxSpeed: 5
+  maxSpeed: 10
   fireRate: 3
   rb: {fileID: 5617333866660108882}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
@@ -189,7 +189,6 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 2272359052022323352}
   healDamageAudioSource: {fileID: 0}
   canPewPew: 1
-  isBaddie: 1
   isShoota: 1
 --- !u!1 &3776511526694888242
 GameObject:

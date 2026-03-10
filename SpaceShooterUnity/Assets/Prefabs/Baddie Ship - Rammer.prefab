@@ -5170,9 +5170,9 @@ MonoBehaviour:
   currentHealth: 3
   maxHealth: 3
   currentTurboShotAmmo: 0
-  acceleration: 2.5
+  acceleration: 7.5
   currentSpeed: 0
-  maxSpeed: 7.5
+  maxSpeed: 10
   fireRate: 1
   rb: {fileID: 68270316324909382}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
@@ -5184,5 +5184,4 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 7492802731464937383}
   healDamageAudioSource: {fileID: 0}
   canPewPew: 0
-  isPlayer: 1
   isShoota: 0
