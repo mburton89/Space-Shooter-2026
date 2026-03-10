@@ -5039,14 +5039,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 2
+  acceleration: 20
   currentSpeed: 0
-  maxSpeed: 5
+  maxSpeed: 40
   fireRate: 1
   rb: {fileID: 4623686189607161612}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 6016576194058111877, guid: cc2b0b0dabfe8354eb53ab24fa2d4554, type: 3}
   turboShotPrefab: {fileID: 0}
+  barrageShotPrefab: {fileID: 0}
+  healPrefab: {fileID: 0}
   projectileVelocity: 40
   projectileSpawnPoint: {fileID: 7301347678727118296}
   pewPewAudioSource: {fileID: 0}

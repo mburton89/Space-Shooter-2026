@@ -1,36 +1,66 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using TreeEditor;
 
 public class HealthSpawner : MonoBehaviour
 {
+    public static HealthSpawner Instance;
 
-    public float maxX;
-    public float maxY;
-    public float minZ;
-    public float maxZ;
+    public List<GameObject> powerUpPrefabs;
+    public Transform pivotPointTwo;
+    public Transform spawnPointTwo;
 
-    public int numberOfStarsToSpawn;
+    int currentNumberOfPowerups;
+    int currentWave;
+    int baseNumberOfPowerups;
 
-    public GameObject Health;
+    private void Awake()
+    {
+        Instance = this;
+        currentWave = 1;
+    }
 
     void Start()
     {
-        SpawnHealth();
+        baseNumberOfPowerups = FindObjectsByType<HealPowerUp>(FindObjectsSortMode.None).Length;
+        currentNumberOfPowerups = baseNumberOfPowerups;
+
+        InvokeRepeating("CountEnemyShips", 0, 1);
     }
 
-    void SpawnHealth()
+    public void SpawnWaveOfPowerups()
     {
-        for (int i = 0; i < numberOfStarsToSpawn; i++)
+        int numberOfPowerupsToSpawn = baseNumberOfPowerups + currentWave - 1;
+
+        for (int i = 0; i < numberOfPowerupsToSpawn; i++)
         {
-            float randX = Random.Range(-maxX, maxX);
-            float randY = Random.Range(-maxY, maxY);
-            float randZ = Random.Range(minZ, maxZ);
+            //Step 1: rotate pivot poin (claw arm)
+            float newZRotation = Random.Range(0f, 360f);
+            pivotPointTwo.eulerAngles = new Vector3(0, 0, newZRotation);
 
-            Vector3 spawnPosition = new Vector3(randX, randY, randZ);
+            //step 2: Spawn/Instantiate the enemy in the spawn point 
+            int randomShipIndex = Random.Range(0, powerUpPrefabs.Count);
+            Instantiate(powerUpPrefabs[randomShipIndex], spawnPointTwo.position, transform.rotation, null);
+        }
 
-            Instantiate(Health, spawnPosition, Quaternion.identity, transform);
+    }
+
+    public void CountEnemyShips()
+    {
+        currentNumberOfPowerups = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
+
+        Debug.Log("Number of Current Powerups: " + currentNumberOfPowerups); //this will print to console so we can test
+
+        if (currentNumberOfPowerups == 0)
+        {
+            currentWave += 1;
+
+
+
+            HUD.Instance.DisplayWave(currentWave); //TODO Update HUD with current wave number
+            SpawnWaveOfPowerups();
+
+         
         }
     }
 }
