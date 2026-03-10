@@ -4,8 +4,8 @@ using UnityEngine;
 public class BlastRadius : MonoBehaviour
 {
     public Collider2D blastCollider;
-    public float growthRate = 0.001f;
-    public float maxSize = 1f;
+    public float growthRate;
+    public float maxSize;
 //    public bool startFromZero = true;
 //    public bool startGrowingImmediately = true;
 
@@ -43,8 +43,6 @@ public class BlastRadius : MonoBehaviour
             //If we made it this far, the thing we collided with is a SHIP. WOOHOO! ANNNNNNDD, its not the ship that fired the projectile
 
             collision.GetComponent<Ship>().TakeDamage(damageToGive);
-
-            Destroy(gameObject, 1);
         }
     }
     public void StartGrowing()
@@ -55,7 +53,7 @@ public class BlastRadius : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!isGrowing) return;
+        if (!isGrowing) return;
 
         //increase progress
         currentGrowthProgress += Time.deltaTime * growthRate;
@@ -67,10 +65,11 @@ public class BlastRadius : MonoBehaviour
         transform.localScale = currentScale;
 
         //stop growing on target
-        if ( t>- 1f)
+        if ( t >= 1f)
         {
             transform.localScale = targetScale;
             isGrowing = false;
+            Destroy(gameObject);
         }
 
     }
