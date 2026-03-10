@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoonSpawner
   obstaclePrefabs:
   - {fileID: 7435915672082097381, guid: 42df0708c76c12a4e890b0904247f2d5, type: 3}
+  - {fileID: 1855245526251949966, guid: 562e2a6af18402343a2048f0b64b997a, type: 3}
   pivotPoint: {fileID: 1871546403}
   spawnPoint: {fileID: 1597221113}
 --- !u!1 &350759726
@@ -5700,7 +5701,7 @@ Transform:
   m_GameObject: {fileID: 794190060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
