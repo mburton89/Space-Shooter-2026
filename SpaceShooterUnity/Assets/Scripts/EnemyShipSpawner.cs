@@ -50,7 +50,7 @@ public class EnemyShipSpawner : MonoBehaviour
                 Instantiate(enemyShipPrefabs[randomShipIndexEasy], spawnPoint.position, transform.rotation, null);
             }
 
-            else if (currentWave < 10)
+            else if (currentWave < 8)
             {
                 int randomShipIndexMedium = Random.Range(0, 3);
                 Instantiate(enemyShipPrefabs[randomShipIndexMedium], spawnPoint.position, transform.rotation, null);

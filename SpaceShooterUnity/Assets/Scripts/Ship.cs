@@ -73,7 +73,7 @@ public class Ship : MonoBehaviour
     {
         EnemyShipSpawner findWave = FindObjectOfType<EnemyShipSpawner>();
 
-        if (findWave.currentWave > 8)
+        if (findWave.currentWave > 7 && GetComponent<PlayerShip>())
         {
             Debug.Log("Fire Projectile Dual");
             GameObject newProjectile2 = Instantiate(dualProjectilePrefab, dualProjectileSpawnPoint.position, transform.rotation);

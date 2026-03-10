@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: fireRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4424646903180913767, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: m_Sprite
