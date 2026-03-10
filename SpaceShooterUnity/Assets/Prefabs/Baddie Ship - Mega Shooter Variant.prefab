@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: fireRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: maxSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
+      propertyPath: acceleration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4424646903180913767, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: m_Sprite
       value: 

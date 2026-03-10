@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: maxSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: maxHealth
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: acceleration
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 957665171646173282, guid: e97d410b011eea14d9e5922a4d128054, type: 3}
       propertyPath: currentHealth
