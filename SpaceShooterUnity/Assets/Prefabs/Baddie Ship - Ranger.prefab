@@ -303,9 +303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 1.6
+  acceleration: 2.4
   currentSpeed: 0
-  maxSpeed: 7
+  maxSpeed: 6.5
   fireRate: 3
   currentCharge: 0
   rb: {fileID: 8347024712546198170}
@@ -363,7 +363,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 5b0fccf9daf62a4478d8ebfc1b25de46, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5f4bef1acb231a04ba461e45835ee0c4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

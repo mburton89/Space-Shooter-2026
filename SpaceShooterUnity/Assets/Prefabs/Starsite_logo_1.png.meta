@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 4ebb9b1e9fdf01d4a97c1002bf0bb5b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -129895078059180030
+    second: Starsite_logo_1_0
+  - first:
+      213: 2357875751377724801
+    second: Starsite_logo_1_1
+  - first:
+      213: -7511998300400433407
+    second: Starsite_logo_1_2
+  - first:
+      213: 6530422856536619575
+    second: Starsite_logo_1_3
+  - first:
+      213: 7884840937509579889
+    second: Starsite_logo_1_4
+  - first:
+      213: -8596323596405438725
+    second: Starsite_logo_1_5
+  - first:
+      213: -4595191736168175491
+    second: Starsite_logo_1_6
+  - first:
+      213: -2325745629917429070
+    second: Starsite_logo_1_7
+  - first:
+      213: 1635772330114018853
+    second: Starsite_logo_1_8
+  - first:
+      213: -163786321185678543
+    second: Starsite_logo_1_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Starsite_logo_1_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 95
+        width: 316
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200063e5d15823ef0800000000000000
+      internalID: -129895078059180030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_1
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 95
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1856069d08bd8b020800000000000000
+      internalID: 2357875751377724801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_2
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 241
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1074b47985500c790800000000000000
+      internalID: -7511998300400433407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_3
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 95
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73af4f40df8b0aa50800000000000000
+      internalID: 6530422856536619575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_4
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 95
+        width: 196
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c67b69e059c6d60800000000000000
+      internalID: 7884840937509579889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_5
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 95
+        width: 148
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf602fdfb39b3b880800000000000000
+      internalID: -8596323596405438725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_6
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 95
+        width: 196
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78a2ea56799a30c0800000000000000
+      internalID: -4595191736168175491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_7
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 95
+        width: 50
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2cad20caa49bfd0800000000000000
+      internalID: -2325745629917429070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_8
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 95
+        width: 270
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52eebdd744e63b610800000000000000
+      internalID: 1635772330114018853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Starsite_logo_1_9
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 22
+        width: 1678
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13bd8aa653d1abdf0800000000000000
+      internalID: -163786321185678543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Starsite_logo_1_0: -129895078059180030
+      Starsite_logo_1_1: 2357875751377724801
+      Starsite_logo_1_2: -7511998300400433407
+      Starsite_logo_1_3: 6530422856536619575
+      Starsite_logo_1_4: 7884840937509579889
+      Starsite_logo_1_5: -8596323596405438725
+      Starsite_logo_1_6: -4595191736168175491
+      Starsite_logo_1_7: -2325745629917429070
+      Starsite_logo_1_8: 1635772330114018853
+      Starsite_logo_1_9: -163786321185678543
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

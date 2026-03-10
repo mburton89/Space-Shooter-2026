@@ -34,7 +34,7 @@ public class EnemyShipSpawner : MonoBehaviour
 
         InvokeRepeating("countEnemyShips", 0, 1);
     }
-
+    //Spawn Hellion under this method, determine right wave (increment 0) and then release hell
     public void spawnWaveOfEnemies()
     {
         int numberOfEnemiesToSpawn = baseNumberOfShips + currentWave - 1;
