@@ -919,9 +919,9 @@ MonoBehaviour:
   currentHealth: 8
   maxHealth: 8
   currentTurboShotAmmo: 3
-  acceleration: 5
+  acceleration: 30
   currentSpeed: 0
-  maxSpeed: 9
+  maxSpeed: 20
   fireRate: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
@@ -6886,12 +6886,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7213599663443642469, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213599663443642469, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
       propertyPath: canPewPew
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7213599663443642469, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
       propertyPath: isShooter
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213599663443642469, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
+      propertyPath: acceleration
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7213599663443642469, guid: 38e5ba5e46406bc408532b4f5909e196, type: 3}
       propertyPath: pewPewAudioSource
