@@ -1,6 +1,7 @@
-using System.Collections.Generic;
+
 using UnityEngine;
-using TreeEditor;
+using System.Collections.Generic;
+
 
 public class HealthSpawner : MonoBehaviour
 {
@@ -60,7 +61,19 @@ public class HealthSpawner : MonoBehaviour
             HUD.Instance.DisplayWave(currentWave); //TODO Update HUD with current wave number
             SpawnWaveOfPowerups();
 
-         
+
+        }
+    }
+
+    public void CountPowerups()
+    {
+        currentNumberOfPowerups = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
+
+        Debug.Log("Number of Current Enemy Ships: " + currentNumberOfPowerups); //this will print to console so we can test
+
+        if (currentNumberOfPowerups == 0)
+        {
+            currentWave += 1;
         }
     }
 }
