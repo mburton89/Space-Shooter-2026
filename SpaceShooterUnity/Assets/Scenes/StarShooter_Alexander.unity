@@ -2084,7 +2084,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 6603328854964769578, guid: 55603f203d60fee488cd90d55657adc4, type: 3}
   turboShotPrefab: {fileID: 5067907036429666249, guid: ff506d12ec7440c47aa3568c10a31776, type: 3}
   turboShotParticlesPrefab: {fileID: 8040048049919909782, guid: 963b4c153d8aae946ad4f4709b8ccd87, type: 3}
-  projectileVelocity: 1000
+  projectileVelocity: 1100
   projectileSpawnPoint: {fileID: 1570301722}
   explosionSpawnPoint: {fileID: 1770529898}
   turboShotSpawnPoint: {fileID: 852434685}
@@ -14539,7 +14539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649571158349500257, guid: d0471b0beb017bd44a0bd14071fb6af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8
+      value: 8.77
       objectReference: {fileID: 0}
     - target: {fileID: 6649571158349500257, guid: d0471b0beb017bd44a0bd14071fb6af9, type: 3}
       propertyPath: m_LocalPosition.z

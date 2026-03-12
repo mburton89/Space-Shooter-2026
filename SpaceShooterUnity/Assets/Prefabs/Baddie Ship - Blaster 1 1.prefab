@@ -10041,10 +10041,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  acceleration: 30
+  acceleration: 40
   maxAcceleration: 30
   currentSpeed: 0
-  maxSpeed: 25
+  maxSpeed: 40
   fireRate: 2
   turboFireRate: 0
   rb: {fileID: 2862860926641547571}
@@ -10052,7 +10052,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 6603328854964769578, guid: 55603f203d60fee488cd90d55657adc4, type: 3}
   turboShotPrefab: {fileID: 0}
   turboShotParticlesPrefab: {fileID: 0}
-  projectileVelocity: 600
+  projectileVelocity: 800
   projectileSpawnPoint: {fileID: 4294804591532025546}
   explosionSpawnPoint: {fileID: 4380094797787960742}
   turboShotSpawnPoint: {fileID: 0}

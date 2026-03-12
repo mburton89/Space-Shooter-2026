@@ -10170,9 +10170,9 @@ MonoBehaviour:
   currentHealth: 2
   maxHealth: 2
   acceleration: 45
-  maxAcceleration: 45
+  maxAcceleration: 55
   currentSpeed: 0
-  maxSpeed: 25
+  maxSpeed: 40
   fireRate: 1
   turboFireRate: 0
   rb: {fileID: 3212814538374927954}
@@ -10180,7 +10180,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 6603328854964769578, guid: 55603f203d60fee488cd90d55657adc4, type: 3}
   turboShotPrefab: {fileID: 0}
   turboShotParticlesPrefab: {fileID: 0}
-  projectileVelocity: 568
+  projectileVelocity: 800
   projectileSpawnPoint: {fileID: 3042242956205040397}
   explosionSpawnPoint: {fileID: 4911096399146969829}
   turboShotSpawnPoint: {fileID: 0}

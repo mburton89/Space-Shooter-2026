@@ -10041,7 +10041,7 @@ MonoBehaviour:
   currentHealth: 2
   maxHealth: 2
   acceleration: 40
-  maxAcceleration: 40
+  maxAcceleration: 50
   currentSpeed: 0
   maxSpeed: 30
   fireRate: 1

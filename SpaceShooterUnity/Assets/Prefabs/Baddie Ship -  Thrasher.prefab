@@ -10043,7 +10043,7 @@ MonoBehaviour:
   acceleration: 50
   maxAcceleration: 50
   currentSpeed: 0
-  maxSpeed: 25
+  maxSpeed: 30
   fireRate: 1
   turboFireRate: 0
   rb: {fileID: 3805055349617845649}
