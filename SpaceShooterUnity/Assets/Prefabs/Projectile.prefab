@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8a96371805e564c8c177394214fd52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 1
+  damageToGive: 2
   firingShip: {fileID: 0}
 --- !u!1 &8799502346895995920
 GameObject:
