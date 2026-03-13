@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: adbe57b37eb7af84798a1dd101fcaf4c
+guid: eb648a024f83f17409e7aeda043ec931
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2201391469820268153
-    second: Hyena Ship Sprite_0
+      213: 5346162148309606965
+    second: speed boost_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hyena Ship Sprite_0
+      name: speed boost_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 66
-        width: 520
-        height: 986
+        x: 545
+        y: 375
+        width: 117
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97e463ad0e9ec8e10800000000000000
-      internalID: 2201391469820268153
+      spriteID: 53222a11622613a40800000000000000
+      internalID: 5346162148309606965
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hyena Ship Sprite_0: 2201391469820268153
+      speed boost_0: 5346162148309606965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

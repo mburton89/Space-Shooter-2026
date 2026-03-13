@@ -116,10 +116,10 @@ TextureImporter:
       name: fennec fox  Ship Sprite_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 119
-        width: 962
-        height: 665
+        x: 119
+        y: 54
+        width: 665
+        height: 962
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
