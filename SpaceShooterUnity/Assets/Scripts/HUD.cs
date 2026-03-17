@@ -44,4 +44,7 @@ public class HUD : MonoBehaviour
     {
         highestWaveText.SetText("BEST: " + highestWave);
     }
+
+
+
 }

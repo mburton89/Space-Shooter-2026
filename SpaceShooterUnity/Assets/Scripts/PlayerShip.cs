@@ -40,8 +40,9 @@ public class PlayerShip : Ship
             }
             else
             {
-                Debug.Log("Out of bombs!");
+                // Debug.Log("Out of bombs!");
             }
+
         }
     }
 
@@ -54,7 +55,7 @@ public class PlayerShip : Ship
 
         currentGlitterBombs--;
 
-        Debug.Log("Current bombs: " + currentGlitterBombs);
+        // Debug.Log("Current bombs: " + currentGlitterBombs);
 
         HUD.Instance.UpdateGlitterBombInventory(currentGlitterBombs);
 
@@ -74,7 +75,7 @@ public class PlayerShip : Ship
 
     public void ReplenishBombs()
     {
-        Debug.Log("Replenish Bombs!");
+        //Debug.Log("Replenish Bombs!");
         
         currentGlitterBombs++;
         HUD.Instance.UpdateGlitterBombInventory(currentGlitterBombs);

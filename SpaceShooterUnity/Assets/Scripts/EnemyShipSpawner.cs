@@ -68,7 +68,7 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         //Index all ships in game
         currentNumberOfShips = FindObjectsByType<BaddieShip>(FindObjectsSortMode.None).Length;
-        Debug.Log("Number of Enemy Ships: " + currentNumberOfShips);
+        // Debug.Log("Number of Enemy Ships: " + currentNumberOfShips);
 
         if (currentNumberOfShips == 0)
         {
