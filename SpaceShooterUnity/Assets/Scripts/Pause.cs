@@ -7,6 +7,9 @@ public class Pause : MonoBehaviour
     public GameObject PausePanel;
     public GameObject PauseIcon;
 
+    public AudioSource resumeAudioSource;
+    public AudioSource pauseAudioSource;
+
     // Update is called once per frame
 
     private void Start()
@@ -41,12 +44,14 @@ public class Pause : MonoBehaviour
     {
         if (gamePaused)
         {
+            pauseAudioSource.Play();
             Time.timeScale = 0f;
             PausePanel.SetActive(true);
             PauseIcon.SetActive(true);
         }
         else
         {
+            resumeAudioSource.Play();
             Time.timeScale = 1;
             PausePanel.SetActive(false);
             PauseIcon.SetActive(false);

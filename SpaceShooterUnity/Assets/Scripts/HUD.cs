@@ -33,18 +33,18 @@ public class HUD : MonoBehaviour
     public void DisplayWave(int currentWave)
     {
         Debug.Log("WAVE: " + currentWave);
-        waveText.SetText("WAVE: " + currentWave);
+        waveText.SetText("" + currentWave);
     }
 
     public void DisplayHighestWave(int highestWave)
     {
-        highestWaveText.SetText("BEST: " + highestWave);
+        highestWaveText.SetText("" + highestWave);
     }
 
     public void DisplayShotUI(float currentShot)
     {
         Debug.Log("Special: " + currentShot);
-        shotText.SetText("Charge: " + currentShot);
+        shotText.SetText("" + currentShot);
     }
 
 }

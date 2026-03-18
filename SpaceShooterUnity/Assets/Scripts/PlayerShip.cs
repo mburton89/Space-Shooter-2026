@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PlayerShip : Ship
 {
+
+    public AudioSource soundtrackAudioSource;
+    ParticleSystem thrustParticles;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        soundtrackAudioSource.Play();
+        thrustParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame

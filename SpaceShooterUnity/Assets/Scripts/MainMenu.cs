@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public Button creditsButton;
 
+    public AudioSource selectAudioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,21 +21,24 @@ public class MainMenu : MonoBehaviour
 
     public void DisplayRecordWave(int highestWave)
     {
-        recordWave.SetText("RECORD WAVE: " + highestWave);
+        recordWave.SetText("HIGH SCORE: " + highestWave);
     }
 
     void HandleStartButtonClicked()
     {
+        selectAudioSource.Play();
         SceneManager.LoadScene(1);
     }
 
     void HandleCreditsButtonClicked()
     {
+        selectAudioSource.Play();
         SceneManager.LoadScene(2);
     }
 
     void HandleBackButtonClicked()
     {
+        selectAudioSource.Play();
         SceneManager.LoadScene(0);
     }
 

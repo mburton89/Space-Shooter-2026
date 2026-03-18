@@ -159,6 +159,7 @@ public class Ship : MonoBehaviour
         }
 
         // Start of line, playership is active
+
         Destroy(gameObject);
         Destroy(newExplosion, 1);
 
