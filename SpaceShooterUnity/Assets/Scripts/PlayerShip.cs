@@ -11,29 +11,38 @@ public class PlayerShip : Ship
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Pause.gamePaused)
         {
-            PewPew();
-        }
 
-        if (Input.GetMouseButton(1))
-        {
-            Thrust();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                PewPew();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChargeShot();
-        }
+            if (Input.GetMouseButton(1))
+            {
+                Thrust();
+            }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Explode();
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ChargeShot();
+            }
 
-        FollowMouse(); 
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Explode();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+
+            FollowMouse();
+        }
     }
 
     void FollowMouse()
