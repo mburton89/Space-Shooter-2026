@@ -6,13 +6,11 @@ public class PlayerShip : Ship
 {
 
     public AudioSource soundtrackAudioSource;
-    ParticleSystem thrustParticles;
 
     // Start is called before the first frame update
     void Start()
     {
         soundtrackAudioSource.Play();
-        thrustParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
