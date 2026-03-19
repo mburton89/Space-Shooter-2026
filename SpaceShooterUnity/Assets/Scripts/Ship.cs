@@ -11,7 +11,9 @@ public class Ship : MonoBehaviour
     public float currentSpeed;
     public float maxSpeed;
 
-    public float fireRate;
+    public float fireRateMinimum;
+    public float fireRateMaximum;
+    private float fireRate;
 
     public Rigidbody2D rb;
 
@@ -34,6 +36,11 @@ public class Ship : MonoBehaviour
     {
         thrustParticles = GetComponentInChildren<ParticleSystem>();
         canFire = true;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(CoolDown());
     }
 
     // Update is called once per frame
@@ -115,6 +122,7 @@ public class Ship : MonoBehaviour
     private IEnumerator CoolDown()
     {
         canFire = false;
+        fireRate = Random.Range(fireRateMinimum, fireRateMaximum);
         yield return new WaitForSeconds(fireRate);
         canFire = true;
     }

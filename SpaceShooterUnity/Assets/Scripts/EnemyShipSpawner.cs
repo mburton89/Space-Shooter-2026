@@ -85,7 +85,7 @@ public class EnemyShipSpawner : MonoBehaviour
             }
 
             SpawnWaveOfEnemies();
-            FindObjectOfType<PlayerShip>().ReplenishBombs();
+            FindObjectOfType<PlayerShip>().ReplenishOnWave(currentWave);
         }
 
     }

@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 284686616}
   - component: {fileID: 284686615}
   - component: {fileID: 284686619}
+  - component: {fileID: 284686620}
   m_Layer: 5
   m_Name: Canvas - Pause Menu
   m_TagString: Untagged
@@ -628,6 +629,104 @@ MonoBehaviour:
   musicToggleButtonText: {fileID: 675122601}
   pauseMenuIsActive: 0
   musicToggledOn: 0
+  gameplayMusic: {fileID: 284686620}
+--- !u!82 &284686620
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284686614}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 33618bef1702e7b43b61ef08eda53837, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 177
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &473784666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1354,6 @@ GameObject:
   - component: {fileID: 794190062}
   - component: {fileID: 794190061}
   - component: {fileID: 794190065}
-  - component: {fileID: 794190066}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -1415,12 +1513,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e040e200abcfb45a30d5421c770d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10000
-  maxHealth: 10000
+  currentHealth: 10
+  maxHealth: 10
   acceleration: 5
   currentSpeed: 0
   maxSpeed: 10
-  fireRate: 0
+  fireRateMinimum: 0
+  fireRateMaximum: 0
   rb: {fileID: 794190062}
   projectilePrefab: {fileID: 186535404877285595, guid: b584e898718b92944b27e3e7c59dfb6e, type: 3}
   explosionPrefab: {fileID: 6016576194058111877, guid: ab44d469c3e9d6349b2fd36b7bfb772d, type: 3}
@@ -1430,44 +1529,8 @@ MonoBehaviour:
   takeDamageAudioSource: {fileID: 257843929}
   canFire: 1
   glitterBombPrefab: {fileID: 2472803488646447174, guid: a995ea0797ce4d34a956bdd27717ffb1, type: 3}
-  maxGlitterBombs: 100
+  maxGlitterBombs: 2
   currentGlitterBombs: 0
---- !u!58 &794190066
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794190060}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_Radius: 7
 --- !u!1 &881896559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,7 +7604,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.9
+  m_fontSize: 63
   m_fontSizeBase: 36.9
   m_fontWeight: 400
   m_enableAutoSizing: 1

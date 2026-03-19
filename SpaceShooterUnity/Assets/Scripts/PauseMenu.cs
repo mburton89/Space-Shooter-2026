@@ -20,9 +20,14 @@ public class PauseMenu : MonoBehaviour
     public bool pauseMenuIsActive;
     public bool musicToggledOn;
 
+    public AudioSource gameplayMusic;
+
+    private float fixedDeltaTime;
+
     private void Awake()
     {
         Instance = this;
+        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,14 +49,10 @@ public class PauseMenu : MonoBehaviour
         {
             if (pauseMenuIsActive == false)
             {
-                pauseMenuCanvas.SetActive(true);
-                pauseMenuIsActive = true;
                 HandlePauseMenuOpened();
             }
             else if (pauseMenuIsActive == true)
             {
-                pauseMenuCanvas.SetActive(false);
-                pauseMenuIsActive = false;
                 HandlePauseMenuClosed();
             }
         }
@@ -59,17 +60,22 @@ public class PauseMenu : MonoBehaviour
 
     public void HandlePauseMenuOpened()
     {
-        // set timescale to 0
+        pauseMenuCanvas.SetActive(true);
+        pauseMenuIsActive = true;
+        Time.timeScale = 0f;
         Debug.Log("Pause Menu Opened");
     }
 
     public void HandlePauseMenuClosed()
     {
-        // set timescale to 1?
+        pauseMenuCanvas.SetActive(false);
+        pauseMenuIsActive = false;
+        Time.timeScale = 1f;
         Debug.Log("Pause Menu Closed");
     }
     public void HandleReturnToMainMenu()
     {
+        HandlePauseMenuClosed();
         SceneManager.LoadScene(0);
     }
     public void HandleMusicToggle()
@@ -77,7 +83,7 @@ public class PauseMenu : MonoBehaviour
         if (musicToggledOn == true)
         {
             Debug.Log("Music Off");
-            //Turn off music player
+            StopMusic();
 
             musicToggledOn = false;
             musicToggleButtonText.SetText("MUSIC: OFF");
@@ -86,10 +92,20 @@ public class PauseMenu : MonoBehaviour
         else if (musicToggledOn == false)
         {
             Debug.Log("Music On");
-            //Turn on music player
+            PlayMusic();
 
             musicToggledOn = true;
             musicToggleButtonText.SetText("MUSIC: ON");
         }
+    }
+
+    public void PlayMusic()
+    {
+        gameplayMusic.Play();
+    }
+
+    public void StopMusic()
+    {
+        gameplayMusic.Stop();
     }
 }

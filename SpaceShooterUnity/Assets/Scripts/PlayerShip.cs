@@ -10,6 +10,8 @@ public class PlayerShip : Ship
     public int maxGlitterBombs;
     public int currentGlitterBombs;
 
+    private int healthToReplenish;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,11 +75,25 @@ public class PlayerShip : Ship
         transform.up = directionToFace;
     }
 
-    public void ReplenishBombs()
+    public void ReplenishOnWave(int currentWave)
     {
         //Debug.Log("Replenish Bombs!");
-        
+
         currentGlitterBombs++;
+        if (currentGlitterBombs > maxGlitterBombs)
+        {
+            currentGlitterBombs = maxGlitterBombs;
+        }
         HUD.Instance.UpdateGlitterBombInventory(currentGlitterBombs);
+
+        currentHealth = GetComponent<Ship>().currentHealth;
+        maxHealth = GetComponent<Ship>().maxHealth;
+
+        currentHealth += maxHealth / 4;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        HUD.Instance.UpdateHealthUI(currentHealth, maxHealth);
     }
 }
