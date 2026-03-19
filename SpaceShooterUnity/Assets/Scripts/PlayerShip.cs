@@ -9,7 +9,7 @@ public class PlayerShip : Ship
     ParticleSystem thrustParticles;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         soundtrackAudioSource.Play();
         thrustParticles = GetComponentInChildren<ParticleSystem>();

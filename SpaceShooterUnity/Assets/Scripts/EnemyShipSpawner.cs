@@ -52,8 +52,11 @@ public class EnemyShipSpawner : MonoBehaviour
         }
 
         Ship playerShip = FindObjectOfType<PlayerShip>();
-        playerShip.currentCharge += 1;
-        HUD.Instance.DisplayShotUI(playerShip.currentCharge);
+        if (playerShip != null)
+        {
+            playerShip.currentCharge += 1;
+            HUD.Instance.DisplayShotUI(playerShip.currentCharge);
+        }
     }
 
     public void countEnemyShips()

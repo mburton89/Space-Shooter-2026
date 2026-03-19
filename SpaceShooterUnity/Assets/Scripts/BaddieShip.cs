@@ -12,7 +12,7 @@ public class BaddieShip : Ship
     // Start is called before the first frame update
     void Start()
     {
-        target = FindObjectOfType<PlayerShip>().transform;
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,6 +28,8 @@ public class BaddieShip : Ship
     // Update is called once per frame
     void Update()
     {
+        target = FindObjectOfType<PlayerShip>().transform;
+
         if (target != null)
         {
             FollowTarget();
@@ -36,6 +38,9 @@ public class BaddieShip : Ship
             {
                 PewPew();
             }
+        } else
+        {
+
         }
     }
 
