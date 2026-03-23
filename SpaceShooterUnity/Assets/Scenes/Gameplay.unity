@@ -292,7 +292,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6647,6 +6647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21aa6936f16dc554f8d48e80d77b27d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentWave: 1
 --- !u!4 &1987330612
 Transform:
   m_ObjectHideFlags: 0
