@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Web
+  m_Name: Web 1
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.Build.Profile.BuildProfile
   m_AssetVersion: 1
   m_BuildTarget: 20
   m_Subtarget: 0
   m_PlatformId: 84a3bb9e7420477f885e98145999eb20
   m_PlatformBuildProfile:
-    rid: 7584076589680820225
+    rid: 7584076589902594108
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_ScriptingDefines: []
@@ -40,7 +40,7 @@ MonoBehaviour:
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
         0.1254902, a: 1}'
-    - line: '|   m_ShowUnitySplashScreen: 0'
+    - line: '|   m_ShowUnitySplashScreen: 1'
     - line: '|   m_ShowUnitySplashLogo: 1'
     - line: '|   m_SplashScreenOverlayOpacity: 1'
     - line: '|   m_SplashScreenAnimation: 1'
@@ -511,9 +511,6 @@ MonoBehaviour:
     - line: '|   - serializedVersion: 3'
     - line: '|     m_BuildTarget: Android'
     - line: '|     m_Formats: 03000000'
-    - line: '|   - serializedVersion: 3'
-    - line: '|     m_BuildTarget: WebGL'
-    - line: '|     m_Formats: 05000000'
     - line: '|   playModeTestRunnerEnabled: 0'
     - line: '|   runPlayModeTestAsEditModeTest: 0'
     - line: '|   actionOnDotNetUnhandledException: 1'
@@ -871,13 +868,7 @@ MonoBehaviour:
     - line: '|   XboxOneOverrideIdentityName: '
     - line: '|   XboxOneOverrideIdentityPublisher: '
     - line: '|   vrEditorSettings: {}'
-    - line: '|   cloudServicesEnabled:'
-    - line: '|     Build: 0'
-    - line: '|     Game Performance: 0'
-    - line: '|     Legacy Analytics: 0'
-    - line: '|     Purchasing: 0'
-    - line: '|     UDP: 0'
-    - line: '|     Unity Ads: 0'
+    - line: '|   cloudServicesEnabled: {}'
     - line: '|   luminIcon:'
     - line: '|     m_Name: '
     - line: '|     m_ModelFolderPath: '
@@ -918,7 +909,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7584076589680820225
+    - rid: 7584076589902594108
       type: {class: WebGLPlatformSettings, ns: UnityEditor.WebGL, asm: UnityEditor.WebGL.Extensions}
       data:
         m_Development: 0
