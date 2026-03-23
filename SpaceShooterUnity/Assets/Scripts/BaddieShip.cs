@@ -9,26 +9,28 @@ public class BaddieShip : Ship
     public bool isShooter;
     public float shootDelay = 2f; // seconds before the ship can shoot
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         target = FindObjectOfType<PlayerShip>().transform;
+        canPewPew = false; // Disable shooting initially
+        StartCoroutine(EnableShootingAfterDelay());
+    }
+
+    IEnumerator EnableShootingAfterDelay()
+    {
+        yield return new WaitForSeconds(shootDelay);
+        canPewPew = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if we made it this far, we collided with SOMETHING
-
         if (collision.gameObject.GetComponent<PlayerShip>())
         {
-            //if we made it this far, we collided with THE PLAYER SHIP
             collision.gameObject.GetComponent<PlayerShip>().TakeDamage(1);
             Explode();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target != null)
@@ -49,3 +51,4 @@ public class BaddieShip : Ship
         Thrust();
     }
 }
+

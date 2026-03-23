@@ -345,6 +345,7 @@ MonoBehaviour:
   pewPewAudioSource: {fileID: 1516498798938500019}
   canPewPew: 1
   isShooter: 1
+  shootDelay: 1
 --- !u!1 &6097701289794647630
 GameObject:
   m_ObjectHideFlags: 0
