@@ -7,6 +7,8 @@ public class BaddieShip : Ship
     Transform target;
 
     public bool isShooter;
+    public float shootDelay = 2f; // seconds before the ship can shoot
+
 
     // Start is called before the first frame update
     void Start()
