@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Transformers: S.T.A.R.S'
+  m_text: 'Transformers: S.T.A.R.S.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b48c80964841de4ab5bafff8c718331, type: 2}
   m_sharedMaterial: {fileID: -4692492637605067173, guid: 2b48c80964841de4ab5bafff8c718331, type: 2}
