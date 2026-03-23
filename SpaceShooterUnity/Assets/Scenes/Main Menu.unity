@@ -362,7 +362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shooter
+  m_text: Moon Beam
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cac6443da86469143a65b83d8331b32a, type: 2}
   m_sharedMaterial: {fileID: 5434982257526910639, guid: cac6443da86469143a65b83d8331b32a, type: 2}
